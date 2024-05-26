@@ -12,7 +12,7 @@ From mathcomp Require Import ssreflect ssrbool ssrfun eqtype ssrnat div seq
                choice fintype.
 
 Require Import Ascii String.
-From sticker Require Import AutomatonModule.
+Require Import AutomatonModule.
 
 Open Scope nat_scope.
 Definition m1_d : State->Symbol->State :=

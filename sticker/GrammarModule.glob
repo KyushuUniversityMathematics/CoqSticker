@@ -1,0 +1,512 @@
+DIGEST 8a6d232f5f4cc74aa09135487051cbb3
+FGrammarModule
+R599:611 mathcomp.ssreflect.all_ssreflect <> <> lib
+R630:634 Coq.Strings.Ascii <> <> lib
+R636:641 Coq.Strings.String <> <> lib
+R643:646 Coq.Bool.Bool <> <> lib
+R648:654 Coq.Lists.ListSet <> <> lib
+R672:686 AutomatonModule <> <> lib
+R688:700 StickerModule <> <> lib
+def 739:742 <> Rule
+R753:755 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R747:752 AutomatonModule <> Symbol def
+R756:767 AutomatonModule <> SymbolString def
+def 781:787 <> RuleSet
+R792:795 Coq.Init.Datatypes <> list ind
+R797:800 GrammarModule <> Rule def
+def 814:824 <> StartSymbol
+R829:834 AutomatonModule <> Symbol def
+def 848:861 <> TerminalSymbol
+R865:871 AutomatonModule <> Symbols def
+def 885:901 <> NonTerminalSymbol
+R906:912 AutomatonModule <> Symbols def
+def 926:932 <> Grammar
+R981:983 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R971:973 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R951:953 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R937:950 GrammarModule <> TerminalSymbol def
+R954:970 GrammarModule <> NonTerminalSymbol def
+R974:980 GrammarModule <> RuleSet def
+R984:994 GrammarModule <> StartSymbol def
+def 1030:1037 <> list_inQ
+R1042:1047 mathcomp.ssreflect.eqtype Equality.Exports eqType abbrev
+binder 1040:1040 <> a:1
+R1053:1053 GrammarModule <> a:1 var
+binder 1051:1051 <> s:2
+R1060:1063 Coq.Init.Datatypes <> list ind
+R1065:1065 GrammarModule <> a:1 var
+binder 1057:1058 <> ss:3
+R1068:1071 Coq.Init.Datatypes <> bool ind
+R1082:1083 GrammarModule <> ss:3 var
+R1094:1096 Coq.Init.Datatypes <> nil constr
+R1101:1105 Coq.Init.Datatypes <> false constr
+R1112:1113 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R1119:1121 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R1128:1133 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R1138:1155 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R1123:1126 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R1122:1122 GrammarModule <> s:2 var
+R1134:1137 Coq.Init.Datatypes <> true constr
+R1156:1163 GrammarModule <> list_inQ:4 def
+R1165:1165 GrammarModule <> s:2 var
+def 1184:1193 <> string_inQ
+R1198:1202 Coq.Strings.Ascii <> ascii ind
+binder 1196:1196 <> a:6
+R1208:1213 Coq.Strings.String <> string ind
+binder 1206:1206 <> s:7
+R1216:1219 Coq.Init.Datatypes <> bool ind
+R1230:1230 GrammarModule <> s:7 var
+R1241:1251 Coq.Strings.String <> EmptyString constr
+R1256:1260 Coq.Init.Datatypes <> false constr
+R1267:1272 Coq.Strings.String <> String constr
+R1287:1289 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R1294:1299 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R1304:1313 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R1291:1292 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R1290:1290 GrammarModule <> a:6 var
+R1300:1303 Coq.Init.Datatypes <> true constr
+R1314:1323 GrammarModule <> string_inQ:8 def
+R1325:1325 GrammarModule <> a:6 var
+def 1344:1352 <> TerminalQ
+R1358:1371 GrammarModule <> TerminalSymbol def
+binder 1355:1356 <> ts:10
+R1378:1389 AutomatonModule <> SymbolString def
+binder 1375:1376 <> ss:11
+R1392:1395 Coq.Init.Datatypes <> bool ind
+R1407:1408 GrammarModule <> ss:11 var
+R1417:1427 Coq.Strings.String <> EmptyString constr
+R1432:1435 Coq.Init.Datatypes <> true constr
+R1439:1444 Coq.Strings.String <> String constr
+R1453:1456 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R1465:1472 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R1487:1493 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R1458:1462 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R1463:1464 GrammarModule <> ts:10 var
+R1473:1481 GrammarModule <> TerminalQ:12 def
+R1483:1484 GrammarModule <> ts:10 var
+R1494:1498 Coq.Init.Datatypes <> false constr
+def 1515:1523 <> g_onestep
+R1529:1532 GrammarModule <> Rule def
+binder 1526:1527 <> rl:14
+R1538:1549 AutomatonModule <> SymbolString def
+binder 1536:1536 <> s:15
+R1553:1556 Coq.Init.Datatypes <> list ind
+R1558:1569 AutomatonModule <> SymbolString def
+R1588:1589 GrammarModule <> rl:14 var
+R1580:1580 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1582:1583 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1585:1585 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1600:1600 GrammarModule <> s:15 var
+R1609:1619 Coq.Strings.String <> EmptyString constr
+R1624:1627 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_']' not
+R1631:1636 Coq.Strings.String <> String constr
+R1648:1651 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R1658:1669 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R1732:1740 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R1653:1656 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R1670:1674 mathcomp.ssreflect.seq <> undup def
+R1677:1679 Coq.Init.Datatypes <> app def
+R1715:1718 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R1729:1730 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R1719:1724 Coq.Strings.String <> append def
+R1682:1684 mathcomp.ssreflect.seq <> map def
+R1698:1706 GrammarModule <> g_onestep:16 def
+R1708:1709 GrammarModule <> rl:14 var
+R1687:1692 Coq.Strings.String <> String constr
+R1741:1745 mathcomp.ssreflect.seq <> undup def
+R1748:1750 mathcomp.ssreflect.seq <> map def
+R1764:1772 GrammarModule <> g_onestep:16 def
+R1774:1775 GrammarModule <> rl:14 var
+R1753:1758 Coq.Strings.String <> String constr
+def 1799:1808 <> g_onestep'
+R1814:1820 GrammarModule <> RuleSet def
+binder 1811:1812 <> rs:19
+R1826:1837 AutomatonModule <> SymbolString def
+binder 1824:1824 <> s:20
+R1842:1844 mathcomp.ssreflect.seq <> seq abbrev
+R1846:1857 AutomatonModule <> SymbolString def
+R1862:1866 mathcomp.ssreflect.seq <> undup def
+R1868:1874 mathcomp.ssreflect.seq <> flatten def
+R1876:1878 mathcomp.ssreflect.seq <> map def
+R1907:1908 GrammarModule <> rs:19 var
+binder 1885:1886 <> rl:21
+R1891:1899 GrammarModule <> g_onestep def
+R1901:1902 GrammarModule <> rl:21 var
+R1904:1904 GrammarModule <> s:20 var
+def 1925:1935 <> g_generate'
+R1940:1942 Coq.Init.Datatypes <> nat ind
+binder 1938:1938 <> n:22
+R1948:1954 GrammarModule <> Grammar def
+binder 1946:1946 <> g:23
+R1959:1962 Coq.Init.Datatypes <> list ind
+R1964:1975 AutomatonModule <> SymbolString def
+R2007:2007 GrammarModule <> g:23 var
+R1986:1986 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1989:1990 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1994:1995 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1998:1999 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2002:2002 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2016:2020 AutomatonModule <> nstep def
+R2025:2034 GrammarModule <> g_onestep' def
+R2022:2022 GrammarModule <> n:22 var
+R2041:2045 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R2067:2068 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R2046:2051 Coq.Strings.String <> String constr
+R2056:2066 Coq.Strings.String <> EmptyString constr
+def 2083:2092 <> g_generate
+R2097:2099 Coq.Init.Datatypes <> nat ind
+binder 2095:2095 <> n:25
+R2105:2111 GrammarModule <> Grammar def
+binder 2103:2103 <> g:26
+R2116:2119 Coq.Init.Datatypes <> list ind
+R2121:2132 AutomatonModule <> SymbolString def
+R2139:2143 mathcomp.ssreflect.seq <> undup def
+R2146:2152 mathcomp.ssreflect.seq <> flatten def
+R2154:2159 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R2175:2178 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R2180:2183 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R2196:2197 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+binder 2179:2179 <> i:27
+binder 2179:2179 <> i:28
+R2160:2170 GrammarModule <> g_generate' def
+R2172:2172 GrammarModule <> i:27 var
+R2174:2174 GrammarModule <> g:26 var
+R2184:2191 Coq.Lists.List <> seq def
+R2195:2195 GrammarModule <> n:25 var
+def 2213:2223 <> g_language'
+R2228:2230 Coq.Init.Datatypes <> nat ind
+binder 2226:2226 <> n:29
+R2236:2242 GrammarModule <> Grammar def
+binder 2234:2234 <> g:30
+R2247:2250 Coq.Init.Datatypes <> list ind
+R2252:2263 AutomatonModule <> SymbolString def
+R2295:2295 GrammarModule <> g:30 var
+R2274:2274 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2277:2278 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2282:2283 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2286:2287 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2290:2290 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2303:2308 mathcomp.ssreflect.seq <> filter def
+R2335:2344 GrammarModule <> g_generate def
+R2346:2346 GrammarModule <> n:29 var
+R2348:2348 GrammarModule <> g:30 var
+R2316:2324 GrammarModule <> TerminalQ def
+def 2368:2377 <> g_language
+R2382:2384 Coq.Init.Datatypes <> nat ind
+binder 2380:2380 <> n:32
+R2390:2396 GrammarModule <> Grammar def
+binder 2388:2388 <> g:33
+R2401:2404 Coq.Init.Datatypes <> list ind
+R2406:2417 AutomatonModule <> SymbolString def
+R2424:2428 mathcomp.ssreflect.seq <> undup def
+R2431:2437 mathcomp.ssreflect.seq <> flatten def
+R2439:2444 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R2460:2463 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R2465:2468 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R2481:2482 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+binder 2464:2464 <> i:34
+binder 2464:2464 <> i:35
+R2445:2455 GrammarModule <> g_language' def
+R2457:2457 GrammarModule <> i:34 var
+R2459:2459 GrammarModule <> g:33 var
+R2469:2476 Coq.Lists.List <> seq def
+R2480:2480 GrammarModule <> n:32 var
+def 2498:2503 <> nfgen'
+R2508:2510 Coq.Init.Datatypes <> nat ind
+binder 2506:2506 <> n:36
+R2528:2529 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2516:2527 AutomatonModule <> SymbolString def
+R2530:2533 Coq.Init.Datatypes <> bool ind
+binder 2514:2514 <> f:37
+R2539:2545 GrammarModule <> Grammar def
+binder 2537:2537 <> g:38
+R2552:2557 AutomatonModule <> Symbol def
+binder 2549:2550 <> s1:39
+R2561:2564 Coq.Init.Datatypes <> list ind
+R2566:2577 AutomatonModule <> SymbolString def
+R2607:2607 GrammarModule <> g:38 var
+R2588:2588 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2591:2592 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2596:2597 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2600:2601 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2604:2604 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2616:2621 mathcomp.ssreflect.seq <> filter def
+R2649:2654 AutomatonModule <> nfstep def
+R2661:2670 GrammarModule <> g_onestep' def
+R2658:2658 GrammarModule <> n:36 var
+R2656:2656 GrammarModule <> f:37 var
+R2677:2681 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R2703:2704 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R2682:2687 Coq.Strings.String <> String constr
+R2689:2690 GrammarModule <> s1:39 var
+R2692:2702 Coq.Strings.String <> EmptyString constr
+R2628:2636 GrammarModule <> TerminalQ def
+def 2724:2728 <> nfgen
+R2733:2735 Coq.Init.Datatypes <> nat ind
+binder 2731:2731 <> n:41
+R2753:2754 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2741:2752 AutomatonModule <> SymbolString def
+R2755:2758 Coq.Init.Datatypes <> bool ind
+binder 2739:2739 <> f:42
+R2764:2770 GrammarModule <> Grammar def
+binder 2762:2762 <> g:43
+R2777:2782 AutomatonModule <> Symbol def
+binder 2774:2775 <> s1:44
+R2786:2789 Coq.Init.Datatypes <> list ind
+R2791:2802 AutomatonModule <> SymbolString def
+R2809:2813 mathcomp.ssreflect.seq <> undup def
+R2816:2822 mathcomp.ssreflect.seq <> flatten def
+R2824:2829 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R2845:2848 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R2850:2853 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R2866:2867 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+binder 2849:2849 <> i:45
+binder 2849:2849 <> i:46
+R2830:2835 GrammarModule <> nfgen' def
+R2837:2837 GrammarModule <> i:45 var
+R2839:2839 GrammarModule <> f:42 var
+R2841:2841 GrammarModule <> g:43 var
+R2843:2844 GrammarModule <> s1:44 var
+R2854:2861 Coq.Lists.List <> seq def
+R2865:2865 GrammarModule <> n:41 var
+def 2883:2889 <> nffgen'
+R2894:2896 Coq.Init.Datatypes <> nat ind
+binder 2892:2892 <> n:47
+R2914:2915 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2902:2913 AutomatonModule <> SymbolString def
+R2916:2919 Coq.Init.Datatypes <> bool ind
+binder 2900:2900 <> f:48
+R2925:2931 GrammarModule <> Grammar def
+binder 2923:2923 <> g:49
+R2938:2943 AutomatonModule <> Symbol def
+binder 2935:2936 <> s1:50
+R2950:2955 AutomatonModule <> Symbol def
+binder 2947:2948 <> s2:51
+R2959:2962 Coq.Init.Datatypes <> list ind
+R2964:2975 AutomatonModule <> SymbolString def
+R3007:3007 GrammarModule <> g:49 var
+R2988:2988 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2991:2992 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2996:2997 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3000:3001 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3004:3004 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3017:3022 mathcomp.ssreflect.seq <> filter def
+R3056:3061 AutomatonModule <> nfstep def
+R3068:3077 GrammarModule <> g_onestep' def
+R3065:3065 GrammarModule <> n:47 var
+R3063:3063 GrammarModule <> f:48 var
+R3084:3088 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R3110:3111 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R3089:3094 Coq.Strings.String <> String constr
+R3096:3097 GrammarModule <> s1:50 var
+R3099:3109 Coq.Strings.String <> EmptyString constr
+R3032:3041 GrammarModule <> string_inQ def
+R3043:3044 GrammarModule <> s2:51 var
+def 3133:3138 <> nffgen
+R3143:3145 Coq.Init.Datatypes <> nat ind
+binder 3141:3141 <> n:53
+R3163:3164 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3151:3162 AutomatonModule <> SymbolString def
+R3165:3168 Coq.Init.Datatypes <> bool ind
+binder 3149:3149 <> f:54
+R3174:3180 GrammarModule <> Grammar def
+binder 3172:3172 <> g:55
+R3187:3192 AutomatonModule <> Symbol def
+binder 3184:3185 <> s1:56
+R3199:3204 AutomatonModule <> Symbol def
+binder 3196:3197 <> s2:57
+R3208:3211 Coq.Init.Datatypes <> list ind
+R3213:3224 AutomatonModule <> SymbolString def
+R3231:3235 mathcomp.ssreflect.seq <> undup def
+R3238:3244 mathcomp.ssreflect.seq <> flatten def
+R3246:3251 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R3271:3274 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R3276:3279 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R3292:3293 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+binder 3275:3275 <> i:58
+binder 3275:3275 <> i:59
+R3252:3258 GrammarModule <> nffgen' def
+R3260:3260 GrammarModule <> i:58 var
+R3262:3262 GrammarModule <> f:54 var
+R3264:3264 GrammarModule <> g:55 var
+R3266:3267 GrammarModule <> s1:56 var
+R3269:3270 GrammarModule <> s2:57 var
+R3280:3287 Coq.Lists.List <> seq def
+R3291:3291 GrammarModule <> n:53 var
+def 3310:3318 <> lincheck'
+R3325:3341 GrammarModule <> NonTerminalSymbol def
+binder 3321:3323 <> nts:60
+R3347:3358 AutomatonModule <> SymbolString def
+binder 3345:3345 <> w:61
+R3362:3365 Coq.Init.Datatypes <> bool ind
+R3370:3370 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'<'_x not
+R3445:3447 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'<'_x not
+R3371:3381 Coq.Lists.List <> length abbrev
+R3387:3392 mathcomp.ssreflect.seq <> filter def
+R3426:3437 AutomatonModule <> str_to_chars def
+R3439:3439 GrammarModule <> w:61 var
+binder 3404:3404 <> x:62
+R3410:3414 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R3409:3409 GrammarModule <> x:62 var
+R3415:3417 GrammarModule <> nts:60 var
+def 3461:3476 <> list_logical_and
+R3481:3483 mathcomp.ssreflect.seq <> seq abbrev
+R3485:3488 Coq.Init.Datatypes <> bool ind
+binder 3479:3479 <> l:63
+R3493:3496 Coq.Init.Datatypes <> bool ind
+R3507:3507 GrammarModule <> l:63 var
+R3516:3519 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_']' not
+R3524:3527 Coq.Init.Datatypes <> true constr
+R3532:3533 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R3541:3543 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R3551:3557 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R3576:3584 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R3545:3546 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R3547:3550 Coq.Init.Datatypes <> true constr
+R3558:3573 GrammarModule <> list_logical_and:64 def
+R3585:3589 Coq.Init.Datatypes <> false constr
+def 3608:3615 <> lincheck
+R3620:3626 GrammarModule <> Grammar def
+binder 3618:3618 <> g:66
+R3631:3634 Coq.Init.Datatypes <> bool ind
+R3666:3666 GrammarModule <> g:66 var
+R3647:3647 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3650:3651 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3655:3656 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3659:3660 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3663:3663 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3675:3690 GrammarModule <> list_logical_and def
+R3698:3700 mathcomp.ssreflect.seq <> map def
+binder 3714:3714 <> x:68
+R3732:3732 GrammarModule <> x:68 var
+R3725:3725 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3727:3727 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3729:3729 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3738:3746 GrammarModule <> lincheck' def
+def 3782:3786 <> lpart
+R3791:3807 GrammarModule <> NonTerminalSymbol def
+binder 3789:3789 <> n:70
+R3813:3824 AutomatonModule <> SymbolString def
+binder 3811:3811 <> w:71
+R3828:3839 AutomatonModule <> SymbolString def
+R3850:3850 GrammarModule <> w:71 var
+R3859:3869 Coq.Strings.String <> EmptyString constr
+R3874:3884 Coq.Strings.String <> EmptyString constr
+R3888:3893 Coq.Strings.String <> String constr
+R3903:3906 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R3914:3920 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R3932:3955 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R3908:3912 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R3913:3913 GrammarModule <> n:70 var
+R3921:3931 Coq.Strings.String <> EmptyString constr
+R3956:3961 Coq.Strings.String <> String constr
+R3966:3970 GrammarModule <> lpart:72 def
+R3972:3972 GrammarModule <> n:70 var
+def 3992:3996 <> rpart
+R4001:4017 GrammarModule <> NonTerminalSymbol def
+binder 3999:3999 <> n:74
+R4023:4034 AutomatonModule <> SymbolString def
+binder 4021:4021 <> w:75
+R4038:4049 AutomatonModule <> SymbolString def
+R4060:4060 GrammarModule <> w:75 var
+R4069:4079 Coq.Strings.String <> EmptyString constr
+R4084:4094 Coq.Strings.String <> EmptyString constr
+R4098:4103 Coq.Strings.String <> String constr
+R4113:4116 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R4124:4130 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R4132:4156 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R4166:4166 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R4118:4122 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R4123:4123 GrammarModule <> n:74 var
+R4157:4161 GrammarModule <> rpart:76 def
+R4163:4163 GrammarModule <> n:74 var
+def 4183:4187 <> jth_n
+R4194:4210 GrammarModule <> NonTerminalSymbol def
+binder 4190:4192 <> nts:78
+R4216:4221 AutomatonModule <> Symbol def
+binder 4214:4214 <> h:79
+R4224:4226 Coq.Init.Datatypes <> nat ind
+R4237:4239 GrammarModule <> nts:78 var
+R4247:4250 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_']' not
+R4261:4262 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R4269:4272 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R4278:4284 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R4286:4304 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R4274:4275 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R4273:4273 GrammarModule <> h:79 var
+R4305:4305 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R4316:4319 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R4306:4310 GrammarModule <> jth_n:80 def
+R4315:4315 GrammarModule <> h:79 var
+def 4337:4341 <> jpart
+R4348:4364 GrammarModule <> NonTerminalSymbol def
+binder 4344:4346 <> nts:82
+R4370:4381 AutomatonModule <> SymbolString def
+binder 4368:4368 <> w:83
+R4385:4387 Coq.Init.Datatypes <> nat ind
+R4398:4398 GrammarModule <> w:83 var
+R4407:4417 Coq.Strings.String <> EmptyString constr
+R4426:4431 Coq.Strings.String <> String constr
+R4443:4446 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R4456:4463 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R4475:4484 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R4496:4496 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R4448:4452 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R4453:4455 GrammarModule <> nts:82 var
+R4464:4468 GrammarModule <> jth_n def
+R4470:4472 GrammarModule <> nts:82 var
+R4485:4489 GrammarModule <> jpart:84 def
+R4491:4493 GrammarModule <> nts:82 var
+def 4515:4526 <> g_flanguage'
+R4531:4533 Coq.Init.Datatypes <> nat ind
+binder 4529:4529 <> n:86
+R4551:4552 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4539:4550 AutomatonModule <> SymbolString def
+R4553:4556 Coq.Init.Datatypes <> bool ind
+binder 4537:4537 <> f:87
+R4562:4568 GrammarModule <> Grammar def
+binder 4560:4560 <> g:88
+R4571:4574 Coq.Init.Datatypes <> list ind
+R4576:4587 AutomatonModule <> SymbolString def
+R4619:4619 GrammarModule <> g:88 var
+R4598:4598 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R4601:4602 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R4606:4607 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R4610:4611 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R4614:4614 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R4627:4632 mathcomp.ssreflect.seq <> filter def
+R4659:4664 AutomatonModule <> nfstep def
+R4686:4690 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R4710:4711 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R4691:4702 AutomatonModule <> chars_to_str def
+R4704:4706 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R4709:4709 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R4671:4680 GrammarModule <> g_onestep' def
+R4668:4668 GrammarModule <> n:86 var
+R4666:4666 GrammarModule <> f:87 var
+R4640:4648 GrammarModule <> TerminalQ def
+def 4731:4741 <> g_flanguage
+R4746:4748 Coq.Init.Datatypes <> nat ind
+binder 4744:4744 <> n:90
+R4766:4767 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4754:4765 AutomatonModule <> SymbolString def
+R4768:4771 Coq.Init.Datatypes <> bool ind
+binder 4752:4752 <> f:91
+R4777:4783 GrammarModule <> Grammar def
+binder 4775:4775 <> g:92
+R4786:4789 Coq.Init.Datatypes <> list ind
+R4791:4802 AutomatonModule <> SymbolString def
+R4809:4813 mathcomp.ssreflect.seq <> undup def
+R4820:4826 mathcomp.ssreflect.seq <> flatten def
+R4828:4833 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R4852:4855 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R4857:4860 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R4873:4874 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+binder 4856:4856 <> i:93
+binder 4856:4856 <> i:94
+R4834:4845 GrammarModule <> g_flanguage' def
+R4847:4847 GrammarModule <> i:93 var
+R4849:4849 GrammarModule <> f:91 var
+R4851:4851 GrammarModule <> g:92 var
+R4861:4868 Coq.Lists.List <> seq def
+R4872:4872 GrammarModule <> n:90 var

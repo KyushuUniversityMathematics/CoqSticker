@@ -1,0 +1,72 @@
+DIGEST 94235f5e8ffd4662541da88dc391710b
+FAutomatonEx
+R597:605 mathcomp.ssreflect.ssreflect <> <> lib
+R607:613 mathcomp.ssreflect.ssrbool <> <> lib
+R615:620 mathcomp.ssreflect.ssrfun <> <> lib
+R622:627 mathcomp.ssreflect.eqtype <> <> lib
+R629:634 mathcomp.ssreflect.ssrnat <> <> lib
+R636:638 mathcomp.ssreflect.div <> <> lib
+R640:642 mathcomp.ssreflect.seq <> <> lib
+R659:664 mathcomp.ssreflect.choice <> <> lib
+R666:672 mathcomp.ssreflect.fintype <> <> lib
+R691:695 Coq.Strings.Ascii <> <> lib
+R697:702 Coq.Strings.String <> <> lib
+R720:734 AutomatonModule <> <> lib
+def 771:774 <> m1_d
+R783:784 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R778:782 AutomatonModule <> State def
+R791:792 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R785:790 AutomatonModule <> Symbol def
+R793:797 AutomatonModule <> State def
+binder 806:806 <> q:1
+binder 808:808 <> x:2
+R819:819 AutomatonEx <> q:1 var
+R845:845 AutomatonEx <> x:2 var
+R941:941 AutomatonEx <> x:2 var
+def 1047:1048 <> m1
+R1051:1059 AutomatonModule <> Automaton def
+R1063:1063 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1072:1073 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1096:1097 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1102:1103 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1105:1106 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1113:1113 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1064:1067 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_';'_x_';'_'..'_';'_x_']' not
+R1069:1069 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_';'_x_';'_'..'_';'_x_']' not
+R1071:1071 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_';'_x_';'_'..'_';'_x_']' not
+R1074:1077 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_';'_x_';'_'..'_';'_x_']' not
+R1086:1086 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_';'_x_';'_'..'_';'_x_']' not
+R1095:1095 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_';'_x_';'_'..'_';'_x_']' not
+R1098:1101 AutomatonEx <> m1_d def
+R1107:1110 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R1112:1112 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+def 1128:1131 <> m2_d
+R1140:1141 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1135:1139 AutomatonModule <> State def
+R1148:1149 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1142:1147 AutomatonModule <> Symbol def
+R1150:1154 AutomatonModule <> State def
+binder 1163:1163 <> q:6
+binder 1165:1165 <> x:7
+R1176:1176 AutomatonEx <> q:6 var
+R1202:1202 AutomatonEx <> x:7 var
+R1298:1298 AutomatonEx <> x:7 var
+R1393:1393 AutomatonEx <> x:7 var
+def 1499:1500 <> m2
+R1503:1511 AutomatonModule <> Automaton def
+R1515:1515 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1526:1527 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1550:1551 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1556:1557 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1559:1560 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1567:1567 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1516:1519 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_';'_x_';'_'..'_';'_x_']' not
+R1521:1521 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_';'_x_';'_'..'_';'_x_']' not
+R1523:1523 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_';'_x_';'_'..'_';'_x_']' not
+R1525:1525 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_';'_x_';'_'..'_';'_x_']' not
+R1528:1531 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_';'_x_';'_'..'_';'_x_']' not
+R1540:1540 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_';'_x_';'_'..'_';'_x_']' not
+R1549:1549 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_';'_x_';'_'..'_';'_x_']' not
+R1552:1555 AutomatonEx <> m2_d def
+R1561:1564 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R1566:1566 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not

@@ -12,7 +12,7 @@ From mathcomp Require Import ssreflect ssrbool eqtype ssrnat seq.
 
 Require Import Ascii String List.
 
-From sticker Require Import AutomatonModule.
+Require Import AutomatonModule.
 
 Close Scope nat_scope.
 
@@ -136,5 +136,5 @@ let ' (x,y,i,j) := d in
 x.
 
 Definition ss_language (n:nat) (stk:Sticker) : list SymbolString :=
-map ss_language_f (filter wk (ss_generate n stk)).s
+map ss_language_f (filter wk (ss_generate n stk)).
 
