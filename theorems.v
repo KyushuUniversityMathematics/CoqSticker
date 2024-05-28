@@ -1,7 +1,8 @@
 From mathcomp Require Import ssreflect ssrbool ssrfun eqtype ssrnat div seq.
 
 Require Import Ascii String.
-From sticker Require Import AutomatonModule AutomatonEx.
+
+Require Import AutomatonModule AutomatonEx.
 Open Scope nat_scope.
 Open Scope string_scope.
 
@@ -21,22 +22,20 @@ by [].
 Qed.
 
 
-Fixpoint remove_head_ab w:=
+Fixpoint abword (w:string):bool:=
 match w with
-|String "a" w' => remove_head_ab w'
-|String "b" w' => remove_head_ab w'
-|_ => w
+|"" => true
+|String "a" w' => abword w'
+|String "b" w' => abword w'
+|_ => false
 end.
-Definition abword (w:string):bool:= remove_head_ab w=="".
 
-Fixpoint remove_a (w:string):string:=
+Fixpoint numb (w:string):nat:=
 match w with
-|String "b" w' => "b" ++ remove_a w'
-|String "a" w' => remove_a w'
-|_ => ""
+|"" => 0
+|String "b" w' => S (numb w')
+|String _ w' => numb w'
 end.
-Definition numb w := length (remove_a w).
-
 
 Fixpoint ban n:=
 match n with
@@ -57,16 +56,14 @@ destruct b3;destruct b4;
 destruct b5;destruct b6;
 by [left | right].
 Qed.
-Lemma abword_lemma:
-forall w:string, abword (String "a" w) -> abword w.
-Proof. by move. Qed. (*何で！？*)
+
 
 Lemma sub_abword_lemma :
 forall (x : ascii)(w : string), abword (String x w) -> abword w.
 Proof.
 move => x w H.
 move : (head_ab x w H) => H'.
-by case : H' => H'; rewrite H' in H; move : H;simpl.
+by case : H' => H'; rewrite H' in H; move : H; simpl.
 Qed.
 
 Lemma m1_A_odd1_lemma :
