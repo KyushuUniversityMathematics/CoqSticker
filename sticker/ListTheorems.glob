@@ -1,0 +1,70 @@
+DIGEST 30f53f4a44fac728442ec00c9429bde6
+FListTheorems
+R29:41 mathcomp.ssreflect.all_ssreflect <> <> lib
+R59:62 Coq.Lists.List <> <> lib
+R64:68 Coq.Arith.Arith <> <> lib
+prf 78:83 <> appnil
+R88:93 mathcomp.ssreflect.eqtype Equality.Exports eqType abbrev
+binder 86:86 <> e:1
+R98:101 Coq.Init.Datatypes <> list ind
+R103:103 ListTheorems <> e:1 var
+binder 96:96 <> l:2
+R107:109 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R106:106 ListTheorems <> l:2 var
+R111:112 Coq.Init.Datatypes <> ::list_scope:x_'++'_x not
+R110:110 ListTheorems <> l:2 var
+R113:115 Coq.Init.Datatypes <> nil constr
+prf 185:192 <> in_undup
+R197:202 mathcomp.ssreflect.eqtype Equality.Exports eqType abbrev
+binder 195:195 <> e:3
+R207:210 Coq.Init.Datatypes <> list ind
+R212:212 ListTheorems <> e:3 var
+binder 205:205 <> l:4
+R217:217 ListTheorems <> e:3 var
+binder 215:215 <> a:5
+R220:220 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R236:240 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R248:248 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R222:227 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R235:235 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R221:221 ListTheorems <> a:5 var
+R228:232 mathcomp.ssreflect.seq <> undup def
+R234:234 ListTheorems <> l:4 var
+R242:246 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R241:241 ListTheorems <> a:5 var
+R247:247 ListTheorems <> l:4 var
+R285:290 Coq.ssr.ssrbool <> in_mem def
+R325:331 mathcomp.ssreflect.seq <> mem_seq def
+R325:331 mathcomp.ssreflect.seq <> mem_seq def
+R370:371 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R370:371 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R407:409 mathcomp.ssreflect.eqtype <> eqP thm
+R407:409 mathcomp.ssreflect.eqtype <> eqP thm
+R407:409 mathcomp.ssreflect.eqtype <> eqP thm
+prf 572:577 <> in_app
+R582:587 mathcomp.ssreflect.eqtype Equality.Exports eqType abbrev
+binder 580:580 <> e:6
+R596:599 Coq.Init.Datatypes <> list ind
+R601:601 ListTheorems <> e:6 var
+binder 590:591 <> l1:7
+binder 593:594 <> l2:8
+R606:606 ListTheorems <> e:6 var
+binder 604:604 <> a:9
+R621:623 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R610:614 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R609:609 ListTheorems <> a:9 var
+R617:618 Coq.Init.Datatypes <> ::list_scope:x_'++'_x not
+R615:616 ListTheorems <> l1:7 var
+R619:620 ListTheorems <> l2:8 var
+R624:624 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
+R633:636 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
+R645:645 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
+R626:630 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R625:625 ListTheorems <> a:9 var
+R631:632 ListTheorems <> l1:7 var
+R638:642 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R637:637 ListTheorems <> a:9 var
+R643:644 ListTheorems <> l2:8 var
+R690:695 Coq.ssr.ssrbool <> in_mem def
+R710:711 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R710:711 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not

@@ -1,0 +1,129 @@
+From mathcomp Require Import all_ssreflect.
+
+Require Import Ascii String Bool ListSet.
+Require Import AutomatonModule StickerModule GrammarModule3.
+
+
+Definition N:NonTerminalSymbol := [::("l","l");("r","r");("s","s")].
+Definition T:TerminalSymbol := [::("A","A");("B","B")].
+Definition rule1:Rule := (("s","s"),generate_str' "lBr" "lBr").
+Definition rule2:Rule := (("r","r"),generate_str' "ABr" "ABr").
+Definition rule3:Rule := (("l","l"),EmptyString').
+Definition rule4:Rule := (("r","r"),EmptyString').
+Definition R:RuleSet := [::rule1;rule2;rule3;rule4].
+Definition s:StartSymbol := ("s","s").
+Definition g1:Grammar := (T,N,R,s).
+Compute g_language 10 g1.
+
+Close Scope nat_scope.
+Definition Domino' := (string*string)*(string*string)*(string*string).
+Open Scope nat_scope.
+Fixpoint language (n:nat)(V:list Symbol):list SymbolString :=
+(*n文字の文字列を生成 Ex:language 2 [::"a"%char;"b"%char] -> [::"aa";"ab";"ba;";"bb"]*)
+match n with
+|0 => [::""]
+|S n' => flatten [seq (map (String v) (language n' V))| v <- V]
+end.
+Compute language 3 [::"a"%char;"b"%char].
+Fixpoint language' (n:nat)(V:list Symbol):list SymbolString :=
+(*1文字以上n文字以下の文字列を生成*)
+match n with
+|0 => nil
+|S n' => app (language' n' V) (language n V)
+end.
+Compute language' 3 [::"a"%char;"b"%char].
+Fixpoint articulation (n:nat)(a:ascii):string :=
+match n with
+|0 => ""
+|S n' => String a (articulation n' a)
+end.
+
+Fixpoint pick_string (n m:nat)(s:string):string :=
+match n with
+|0 =>
+  match m with
+  |0 => ""
+  |S m' =>
+    match s with
+    |"" => ""
+    |String h s' => String h (pick_string n m' s')
+    end
+  end
+|S n' =>
+  match s with
+  |"" => ""
+  |String h s' => pick_string n' m s'
+  end
+end. 
+Definition Domino2Domino' (D:Domino):Domino':=
+let ' (s,t,x,y) := D in
+let l := max x y in
+let m := min ((length s)-x) ((length t)-y) in
+let r := max ((length s)-x-m) ((length t)-y-m) in
+let s' := articulation y "l"%char ++ s ++ (articulation (l+m+r-y-(length s)) "r"%char) in
+let t' := articulation x "l"%char ++ t ++ (articulation (l+m+r-x-(length t)) "r"%char) in
+((pick_string 0 l s',pick_string 0 l t'),
+ (pick_string l m s',pick_string l m t'),
+ (pick_string (l+m) r s',pick_string (l+m) r t')).
+
+Definition Domino'2Domino (D:Domino'):Domino :=
+let ' (d1,d2,d3) := D in
+let (s1,t1) := d1 in
+let (s2,t2) := d2 in
+let (s3,t3) := d3 in
+match s1 with
+|String "l" _ =>
+  match s3 with
+  |String "r" _ =>(s2,t1++t2++t3,0,length s1)
+  |_ => (s2++s3,t1++t2,0,length s1)
+  end
+|_ =>
+  match s3 with
+  |String "r" _ =>(s1++s2,t2++t3,length s1,0)
+  |_ => (s1++s2++s3,t2,length s1,0)
+  end
+end.
+
+Compute articulation 7 "f"%char.
+Fixpoint max_stick (A:list Domino):nat :=
+(*指定したドミノ列の中で最長の粘着末端の長さ*)
+match A with
+|nil => 0
+|h::A' =>
+  let ' (l,r,x,y) := h in
+  max (max x y) (max_stick A')
+end.
+Fixpoint max_stick' (D:list (Domino*Domino)):nat :=
+(*指定した(ドミノ*ドミノ)列の中で最長の粘着末端の長さ*)
+match D with
+|nil => 0
+|h::D' =>
+  let ' ((l1,r1,x1,y1),(l2,r2,x2,y2)) := h in
+  max (max (max x1 x2) (max y1 y2)) (max_stick' D')
+end.
+Definition convert_n (V:list Symbol)(A:list Domino)(D:list (Domino * Domino)):NonTerminalSymbol :=
+(*非終端文字の有限集合*)
+let d := max (max_stick A) (max_stick' D) in
+let U := language' d V in
+app [::("l","l");("r","r");("s","s")]
+  (app [seq (u,articulation (length u) "l")|u <- U]
+    (app [seq (articulation (length u) "l",u)|u <- U]
+      (app [seq (u,articulation (length u) "r")|u <- U]
+        [seq (articulation (length u) "r",u)|u <- U]))).
+Fixpoint convert_t (rho:list (Symbol * Symbol)):TerminalSymbol :=
+(*終端文字の有限集合　asciiをstringに書き換え*)
+match rho with
+|nil => nil
+|h::rho' =>
+  let (a, b):= h in
+  (String a "",String b "")::(convert_t rho')
+end.
+Definition convert_r (nt:NonTerminalSymbol)(A:list Domino)(D:list (Domino*Domino)):RuleSet :=
+let start := [seq ()]
+
+Definition Sticket_to_Grammar (S:Sticker):Grammar :=
+let ' (V, rho, A, D) := S in
+let ' n := convert_n V A D in
+let ' t := convert_t rho in
+let ' r := convert_r nt A D in
+(n, t, r, ("s"%char,"s"%char)).
