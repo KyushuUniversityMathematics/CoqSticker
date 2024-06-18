@@ -14,6 +14,9 @@ Qed.
 Lemma in_app {e:eqType}(l1 l2:list e)(a:e):a \in l1++l2 = (a \in l1)||(a \in l2).
 Proof. by elim l1;[|move => a0 l H;unfold in_mem;simpl;case (a==a0);simpl]. Qed.
 
+Lemma in_cons {e:eqType}(l:list e)(a b:e):a \in b::l = (a==b)||(a\in l).
+Proof. unfold in_mem;by simpl. Qed.
+
 
 
 
