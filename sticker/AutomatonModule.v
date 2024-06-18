@@ -84,9 +84,14 @@ Fixpoint dstar (d:State -> Symbol -> State) (s:State) (ss:SymbolString):State :=
 if ss is (String a x) then
       dstar d (d s a) x
 else s.
+Fixpoint Vword (s:string)(V:Symbols):bool :=
+match s with
+|EmptyString => true
+|String h s' => (h \in V)&&(Vword s' V)
+end.
 
 Definition accept (m:Automaton) (w:SymbolString): bool :=
-let ' (q, s, d, s0, f):=m in ((dstar d s0 w) \in f).
+let ' (q, s, d, s0, f):=m in (Vword w s)&&((dstar d s0 w) \in f).
 
 Definition accepts (m:Automaton) (ss:SymbolStrings): SymbolStrings :=
 (filter (accept m) ss).
@@ -97,8 +102,7 @@ Definition power {a:eqType} {b:eqType} (f:(a -> (seq b))) (s:seq a):seq b:=
 Open Scope nat_scope.
 Fixpoint nstep {a:eqType} (n:nat) (f:(a->(seq a))) (s:seq a):seq a:=
 match n with
-|0 => [::]
-|1 => (power f) s
+|0 => s
 |S p => (power f) (nstep p f s)
 end.
 
@@ -110,3 +114,17 @@ match n with
 |S p => filter fp ((power f) (nstep p f s))
 end.
 
+Fixpoint delta_collect (s:State)(n:nat)(K:States)(V:Symbols)
+(delta:State->Symbol->State):bool :=
+let a := ascii_of_nat n in
+let b := ((a \in V) == ((delta s a)\in K)) in
+match n with
+|0 => b
+|S n' => b&&(delta_collect s n' K V delta)
+end.
+Fixpoint delta_collectK (K K1:States)(V:Symbols)(delta:State->Symbol->State)
+:bool :=
+match K1 with
+|nil => true
+|s::K1' => (delta_collect s 255 K V delta)&&(delta_collectK K K1' V delta)
+end.
