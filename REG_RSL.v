@@ -1,6 +1,6 @@
 From mathcomp Require Import all_ssreflect.
 
-Require Import Ascii String Bool ListSet Recdef Arith.
+Require Import Ascii String Bool ListSet Arith.
 Require Import AutomatonModule StickerModule2 ListTheorems.
 
 Fixpoint language (n:nat)(V:list Symbol):list SymbolString :=
