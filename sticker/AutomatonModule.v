@@ -91,7 +91,8 @@ match s with
 end.
 
 Definition accept (m:Automaton) (w:SymbolString): bool :=
-let ' (q, s, d, s0, f):=m in (Vword w s)&&((dstar d s0 w) \in f).
+let ' (K, V, d, s0, F):=m in
+  (Vword w V)&&(s0\in K)&&(nil==[seq f<-F|(fun x=>x\notin K) f])&&((dstar d s0 w) \in F).
 
 Definition accepts (m:Automaton) (ss:SymbolStrings): SymbolStrings :=
 (filter (accept m) ss).

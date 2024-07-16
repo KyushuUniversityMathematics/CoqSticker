@@ -35,21 +35,21 @@ let s' := substring x (length s) s in
 let t' := substring y (length t) t in
 lrcheck' rho s' t'.
 
-Definition wk (d:Domino) : bool :=
+Definition wk (rho:Rho)(d:Domino) : bool :=
 let ' (s,t,x,y) := d in
-(x==0)&&(y==0)&&((length s)==(length t)).
+(x==0)&&(y==0)&&((length s)==(length t))&&(lrcheck rho d).
 
 
 Open Scope nat_scope.
 
 Definition mu (rho:Rho) (d1:Domino) (d2:Domino): list Domino :=
 match d1,d2 with
-|("",r1,x1,y1),(l2,r2,x2,y2) => filter (lrcheck rho) [::(l2,r1++r2,max 0 (x2 - y2 - (length r1)),max 0 (length r1 + y2 - x2))]
-|(l1,"",x1,y1),(l2,r2,x2,y2) => filter (lrcheck rho) [::(l1++l2,r2,max 0 (x2 - y2 + (length l1)),max 0 (y2 - x2 - (length l1)))]
-|(l1,r1,x1,y1),("",r2,x2,y2) => filter (lrcheck rho) [::(l1,r1++r2,x1,y1)]
-|(l1,r1,x1,y1),(l2,"",x2,y2) => filter (lrcheck rho) [::(l1++l2,r1,x1,y1)]
+|("",r1,_,_),(l2,r2,x2,y2) => filter (lrcheck rho) [::(l2,r1++r2,max 0 (x2 - y2 - (length r1)),max 0 (length r1 + y2 - x2))]
+|(l1,"",_,_),(l2,r2,x2,y2) => filter (lrcheck rho) [::(l1++l2,r2,max 0 (x2 - y2 + (length l1)),max 0 (y2 - x2 - (length l1)))]
+|(l1,r1,x1,y1),("",r2,_,_) => filter (lrcheck rho) [::(l1,r1++r2,x1,y1)]
+|(l1,r1,x1,y1),(l2,"",_,_) => filter (lrcheck rho) [::(l1++l2,r1,x1,y1)]
 |(l1,r1,x1,y1),(l2,r2,x2,y2) =>
-  if (x1 + y2 + (String.length r1)) == (x2 + y1 + (String.length l1)) then 
+  if (x1 + y2 + (length r1)) == (x2 + y1 + (length l1)) then 
     filter (lrcheck rho) [:: ((l1 ++ l2), (r1 ++ r2), x1, y1)]
   else [::]
 end.
@@ -57,27 +57,32 @@ end.
 
 Definition mu' (rho:Rho) (rr:Domino*Domino) (d:Domino) : list Domino :=
 let ' (l,r) := rr in
-if (mu rho l d) == nil then
-  [::d]
-else
-  if (mu rho d r) == nil then
-    [::]
-  else
-    (flatten [seq mu rho d' r|d' <- mu rho l d]).
+flatten [seq mu rho d' r|d' <- mu rho l d].
 
-Fixpoint ss_onestep (rho:Rho) (rr:list (Domino*Domino)) (d:Domino) : list Domino :=
-match rr with
-  | [::] => [::d]
-  | rr0::rr1 => undup((mu' rho rr0 d) ++ (ss_onestep rho rr1 d))
+Fixpoint ss_generate (n:nat) (stk:Sticker) : list Domino :=
+let ' (_,rho,A,D) := stk in
+match n with
+|0 => A
+|S n' => let dmn := ss_generate n' stk in
+  undup dmn++(flatten [seq mu' rho rr d|rr <- D,d<-dmn])
 end.
 
-Definition ss_generate (n:nat) (stk:Sticker) : list Domino :=
-let ' (s,rho,a,r) := stk in
- (nstep n (ss_onestep rho r)) a.
+Fixpoint ss_generate_prime (n:nat)(stk:Sticker):list Domino :=
+let ' (_,rho,A,D) := stk in
+match n with
+|0 => A
+|S n' => let dmn := ss_generate_prime n' stk in
+  undup dmn++(flatten [seq mu' rho rr d|rr<-D,d <- [seq d<-dmn|~~ wk rho d]])
+end.
 
 Definition ss_language_f (d:Domino) : SymbolString :=
 let ' (x,y,i,j) := d in
 x.
 
 Definition ss_language (n:nat) (stk:Sticker) : list SymbolString :=
-map ss_language_f (filter wk (ss_generate n stk)).
+let ' (_,rho,_,_) := stk in
+map ss_language_f (filter (wk rho) (ss_generate n stk)).
+
+Definition ss_language_prime (n:nat)(stk:Sticker):list SymbolString :=
+let ' (_,rho,_,_) := stk in
+[seq ss_language_f d | d <- [seq d <- ss_generate_prime n stk|wk rho d]].
