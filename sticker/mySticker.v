@@ -4,6 +4,39 @@ Require Import Ascii String.
 Inductive domino{symbol:finType}:=
 |null : domino
 |Domino :seq symbol -> seq symbol -> nat -> nat -> domino.
+Definition eqb_domino{s:finType}(d1 d2:@domino s):bool :=
+match d1,d2 with
+|null,null => true
+|Domino l1 r1 x1 y1,Domino l2 r2 x2 y2 =>
+  (l1==l2)&&(r1==r2)&&(x1==x2)&&(y1==y2)
+|_,_ => false
+end.
+Lemma eq_dominoP{s:finType}:Equality.axiom (@eqb_domino s).
+Proof. move=>a b;rewrite/eqb_domino;apply/(iffP idP);case:a;case:b.
+done.
+done.
+done.
+move=>l l0 n n0 l1 l2 n1 n2.
+move/andP=>[H]/eqP=>H1.
+move:H;move/andP=>[/andP H]/eqP=>H2.
+move:H=>[/eqP H3 /eqP H4].
+congruence.
+done.
+done.
+done.
+move=>l l0 n n0 l1 l2 n1 n2.
+move=>[H H1 H2 H3].
+apply/andP.
+split;[|apply/eqP/H3].
+apply/andP.
+split;[|apply/eqP/H2].
+apply/andP.
+split;[apply/eqP/H|apply/eqP/H1].
+Qed.
+Canonical domino_eqMixin{symbol:finType} := EqMixin (@eq_dominoP symbol).
+Canonical domino_eqType{symbol:finType} := 
+  Eval hnf in EqType _ (@domino_eqMixin symbol).
+
 Definition mu{symbol:finType}(d1 d2:@domino symbol):@domino symbol:=
 match d1,d2 with
 |Domino nil _ _ _ ,Domino nil _ _ _ => null

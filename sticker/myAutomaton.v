@@ -15,6 +15,9 @@ match str with
 end.
 Definition accept{state symbol:finType}(M:@automaton state symbol)
   (str:seq symbol):bool := dstar (delta M) (init M) str\in final M.
+Definition accepts{state symbol:finType}(M:@automaton state symbol)
+  (l:seq (seq symbol)):seq (seq symbol):=
+[seq str<-l|accept M str].
 
 Lemma dstarLemma {state symbol : finType}(delta:state->symbol->state)(q:state)
 (s t:seq symbol):dstar delta q (s++t) = dstar delta (dstar delta q s) t.
