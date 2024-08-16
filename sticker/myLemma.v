@@ -6,15 +6,6 @@ Proof. split;[move/(subnBl_leq 0);by rewrite subn0|].
 move:m;elim:n;[move=>m;rewrite subn0=>H;by rewrite H|].
 move=>n H;by case;[|move=>m;rewrite subSS;move/H]. Qed.
 
-Lemma appnil {e:eqType}(l:list e):l = l++nil.
-Proof. by elim l;[|simpl;move => a l0 H;rewrite <- H]. Qed.
-
-Lemma in_undup {e:eqType}(l:list e)(a:e):(a \in (undup l)) = (a \in l).
-Proof.
-elim l;[by []|simpl;unfold in_mem;simpl;move => a0 l0 H].
-by case_eq (mem_seq l0 a0);simpl;rewrite <- H;[case_eq (a==a0)
-;[simpl;move => H';rewrite <-(eqP H');rewrite H|]|].
-Qed.
 Lemma filter_cons{T : Type}(p : pred T)(a:T)(s:seq T):
 [seq x <- a::s | p x] = 
   if p a then a::[seq x<-s|p x] else [seq x<-s|p x].
