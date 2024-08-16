@@ -1,0 +1,518 @@
+DIGEST 68391c8f5dcb07afa31e0409efb77d46
+FAutomatonModule
+R601:609 mathcomp.ssreflect.ssreflect <> <> lib
+R611:617 mathcomp.ssreflect.ssrbool <> <> lib
+R619:624 mathcomp.ssreflect.ssrfun <> <> lib
+R626:631 mathcomp.ssreflect.eqtype <> <> lib
+R633:638 mathcomp.ssreflect.ssrnat <> <> lib
+R640:642 mathcomp.ssreflect.div <> <> lib
+R644:646 mathcomp.ssreflect.seq <> <> lib
+R663:668 mathcomp.ssreflect.choice <> <> lib
+R670:676 mathcomp.ssreflect.fintype <> <> lib
+R695:699 Coq.Strings.Ascii <> <> lib
+R701:706 Coq.Strings.String <> <> lib
+def 744:752 <> eq_string
+binder 754:754 <> a:1
+binder 756:756 <> b:2
+R769:778 Coq.Strings.String <> string_dec def
+R780:780 AutomatonModule <> a:1 var
+R782:782 AutomatonModule <> b:2 var
+R789:792 Coq.Init.Specif <> left constr
+R799:802 Coq.Init.Datatypes <> true constr
+R811:815 Coq.Init.Datatypes <> false constr
+prf 829:838 <> eq_stringP
+R842:855 mathcomp.ssreflect.eqtype Equality axiom def
+R857:865 AutomatonModule <> eq_string def
+R894:897 Coq.ssr.ssrbool <> iffP thm
+R899:901 Coq.ssr.ssrbool <> idP thm
+R914:922 AutomatonModule <> eq_string def
+R934:943 Coq.Strings.String <> string_dec def
+R894:897 Coq.ssr.ssrbool <> iffP thm
+R899:901 Coq.ssr.ssrbool <> idP thm
+R914:922 AutomatonModule <> eq_string def
+R914:922 AutomatonModule <> eq_string def
+R914:922 AutomatonModule <> eq_string def
+R914:922 AutomatonModule <> eq_string def
+R934:943 Coq.Strings.String <> string_dec def
+R934:943 Coq.Strings.String <> string_dec def
+R934:943 Coq.Strings.String <> string_dec def
+R934:943 Coq.Strings.String <> string_dec def
+def 962:975 <> string_eqMixin
+R980:986 mathcomp.ssreflect.eqtype Equality.Exports EqMixin abbrev
+R988:997 AutomatonModule <> eq_stringP thm
+def 1010:1022 <> string_eqType
+R1039:1044 mathcomp.ssreflect.eqtype Equality.Exports EqType abbrev
+R1048:1061 AutomatonModule <> string_eqMixin canonstruc
+def 1076:1083 <> eq_ascii
+binder 1085:1085 <> a:3
+binder 1087:1087 <> b:4
+R1100:1108 Coq.Strings.Ascii <> ascii_dec def
+R1110:1110 AutomatonModule <> a:3 var
+R1112:1112 AutomatonModule <> b:4 var
+R1119:1122 Coq.Init.Specif <> left constr
+R1129:1132 Coq.Init.Datatypes <> true constr
+R1141:1145 Coq.Init.Datatypes <> false constr
+prf 1159:1167 <> eq_asciiP
+R1171:1184 mathcomp.ssreflect.eqtype Equality axiom def
+R1186:1193 AutomatonModule <> eq_ascii def
+R1222:1225 Coq.ssr.ssrbool <> iffP thm
+R1227:1229 Coq.ssr.ssrbool <> idP thm
+R1242:1249 AutomatonModule <> eq_ascii def
+R1261:1269 Coq.Strings.Ascii <> ascii_dec def
+R1222:1225 Coq.ssr.ssrbool <> iffP thm
+R1227:1229 Coq.ssr.ssrbool <> idP thm
+R1242:1249 AutomatonModule <> eq_ascii def
+R1242:1249 AutomatonModule <> eq_ascii def
+R1242:1249 AutomatonModule <> eq_ascii def
+R1242:1249 AutomatonModule <> eq_ascii def
+R1261:1269 Coq.Strings.Ascii <> ascii_dec def
+R1261:1269 Coq.Strings.Ascii <> ascii_dec def
+R1261:1269 Coq.Strings.Ascii <> ascii_dec def
+R1261:1269 Coq.Strings.Ascii <> ascii_dec def
+def 1288:1300 <> ascii_eqMixin
+R1305:1311 mathcomp.ssreflect.eqtype Equality.Exports EqMixin abbrev
+R1313:1321 AutomatonModule <> eq_asciiP thm
+def 1334:1345 <> ascii_eqType
+R1362:1367 mathcomp.ssreflect.eqtype Equality.Exports EqType abbrev
+R1371:1383 AutomatonModule <> ascii_eqMixin canonstruc
+def 1396:1407 <> str_to_chars
+R1412:1417 Coq.Strings.String <> string ind
+binder 1410:1410 <> s:5
+R1422:1425 Coq.Init.Datatypes <> list ind
+R1427:1431 Coq.Strings.Ascii <> ascii ind
+R1442:1442 AutomatonModule <> s:5 var
+R1450:1460 Coq.Strings.String <> EmptyString constr
+R1465:1468 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_']' not
+R1471:1476 Coq.Strings.String <> String constr
+R1488:1490 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R1506:1506 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R1491:1502 AutomatonModule <> str_to_chars:6 def
+def 1524:1535 <> chars_to_str
+R1540:1543 Coq.Init.Datatypes <> list ind
+R1545:1549 Coq.Strings.Ascii <> ascii ind
+binder 1538:1538 <> l:8
+R1553:1558 Coq.Strings.String <> string ind
+R1568:1568 AutomatonModule <> l:8 var
+R1577:1580 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_']' not
+R1601:1602 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R1609:1614 Coq.Strings.String <> String constr
+R1619:1630 AutomatonModule <> chars_to_str:9 def
+def 1650:1654 <> sstar
+R1659:1664 mathcomp.ssreflect.eqtype Equality.Exports eqType abbrev
+binder 1657:1657 <> a:11
+R1670:1672 Coq.Init.Datatypes <> nat ind
+binder 1668:1668 <> n:12
+R1678:1680 mathcomp.ssreflect.seq <> seq abbrev
+R1682:1682 AutomatonModule <> a:11 var
+binder 1676:1676 <> s:13
+R1685:1687 mathcomp.ssreflect.seq <> seq abbrev
+R1690:1692 mathcomp.ssreflect.seq <> seq abbrev
+R1694:1694 AutomatonModule <> a:11 var
+R1704:1704 AutomatonModule <> n:12 var
+R1710:1712 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.+1' not
+R1722:1722 AutomatonModule <> s:13 var
+R1728:1731 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R1752:1756 mathcomp.ssreflect.seq <> ::seq_scope:x_'++'_x not
+R1823:1823 mathcomp.ssreflect.seq <> ::seq_scope:x_'++'_x not
+R1743:1746 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R1751:1751 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R1747:1750 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_']' not
+R1757:1761 mathcomp.ssreflect.seq <> undup def
+R1764:1770 mathcomp.ssreflect.seq <> flatten def
+R1772:1776 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R1813:1813 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R1815:1818 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R1820:1821 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+binder 1814:1814 <> x:17
+binder 1814:1814 <> x:18
+R1777:1781 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R1793:1795 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R1797:1801 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R1811:1812 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+binder 1796:1796 <> w:19
+binder 1796:1796 <> w:20
+R1788:1791 mathcomp.ssreflect.seq <> ::seq_scope:x_'++'_x not
+R1782:1785 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R1787:1787 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R1786:1786 AutomatonModule <> x:17 var
+R1792:1792 AutomatonModule <> w:19 var
+R1802:1806 AutomatonModule <> sstar:14 def
+R1810:1810 AutomatonModule <> s:13 var
+R1819:1819 AutomatonModule <> s:13 var
+R1829:1832 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_']' not
+R1838:1841 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_']' not
+def 1854:1860 <> sigman'
+R1865:1870 mathcomp.ssreflect.eqtype Equality.Exports eqType abbrev
+binder 1863:1863 <> a:21
+R1876:1878 mathcomp.ssreflect.seq <> seq abbrev
+R1880:1880 AutomatonModule <> a:21 var
+binder 1874:1874 <> s:22
+R1886:1888 Coq.Init.Datatypes <> nat ind
+binder 1884:1884 <> n:23
+R1891:1893 mathcomp.ssreflect.seq <> seq abbrev
+R1896:1898 mathcomp.ssreflect.seq <> seq abbrev
+R1900:1900 AutomatonModule <> a:21 var
+R1909:1909 AutomatonModule <> n:23 var
+R1915:1917 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.+1' not
+R1927:1931 mathcomp.ssreflect.seq <> undup def
+R1934:1940 mathcomp.ssreflect.seq <> flatten def
+R1942:1946 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R1985:1985 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R1987:1990 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R1992:1993 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+binder 1986:1986 <> x:26
+binder 1986:1986 <> x:27
+R1947:1951 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R1963:1965 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R1967:1971 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R1983:1984 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+binder 1966:1966 <> w:28
+binder 1966:1966 <> w:29
+R1958:1961 mathcomp.ssreflect.seq <> ::seq_scope:x_'++'_x not
+R1952:1955 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R1957:1957 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R1956:1956 AutomatonModule <> x:26 var
+R1962:1962 AutomatonModule <> w:28 var
+R1972:1978 AutomatonModule <> sigman':24 def
+R1980:1980 AutomatonModule <> s:22 var
+R1991:1991 AutomatonModule <> s:22 var
+R2002:2004 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R2009:2009 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R2005:2008 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_']' not
+def 2024:2029 <> sigman
+R2034:2036 mathcomp.ssreflect.seq <> seq abbrev
+R2038:2049 AutomatonModule <> ascii_eqType canonstruc
+binder 2032:2032 <> s:30
+R2055:2057 Coq.Init.Datatypes <> nat ind
+binder 2053:2053 <> n:31
+R2060:2062 mathcomp.ssreflect.seq <> seq abbrev
+R2064:2069 Coq.Strings.String <> string ind
+R2077:2079 mathcomp.ssreflect.seq <> map def
+R2095:2101 AutomatonModule <> sigman' def
+R2105:2105 AutomatonModule <> n:31 var
+R2103:2103 AutomatonModule <> s:30 var
+R2081:2092 AutomatonModule <> chars_to_str def
+def 2120:2126 <> sigmann
+R2131:2133 mathcomp.ssreflect.seq <> seq abbrev
+R2135:2146 AutomatonModule <> ascii_eqType canonstruc
+binder 2129:2129 <> s:32
+R2152:2154 Coq.Init.Datatypes <> nat ind
+binder 2150:2150 <> n:33
+R2157:2159 mathcomp.ssreflect.seq <> seq abbrev
+R2161:2166 Coq.Strings.String <> string ind
+R2174:2174 AutomatonModule <> n:33 var
+R2180:2182 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.+1' not
+R2192:2192 mathcomp.ssreflect.seq <> ::seq_scope:x_'++'_x not
+R2204:2209 mathcomp.ssreflect.seq <> ::seq_scope:x_'++'_x not
+R2220:2220 mathcomp.ssreflect.seq <> ::seq_scope:x_'++'_x not
+R2193:2199 AutomatonModule <> sigmann:34 def
+R2201:2201 AutomatonModule <> s:32 var
+R2210:2215 AutomatonModule <> sigman def
+R2217:2217 AutomatonModule <> s:32 var
+R2219:2219 AutomatonModule <> n:33 var
+R2227:2230 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_']' not
+def 2243:2246 <> star
+R2251:2256 mathcomp.ssreflect.eqtype Equality.Exports eqType abbrev
+binder 2249:2249 <> a:36
+R2262:2264 Coq.Init.Datatypes <> nat ind
+binder 2260:2260 <> n:37
+R2270:2272 mathcomp.ssreflect.seq <> seq abbrev
+R2275:2277 mathcomp.ssreflect.seq <> seq abbrev
+R2279:2279 AutomatonModule <> a:36 var
+binder 2268:2268 <> s:38
+R2283:2285 mathcomp.ssreflect.seq <> seq abbrev
+R2288:2290 mathcomp.ssreflect.seq <> seq abbrev
+R2293:2293 AutomatonModule <> a:36 var
+R2302:2302 AutomatonModule <> n:37 var
+R2308:2310 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.+1' not
+R2330:2334 mathcomp.ssreflect.seq <> ::seq_scope:x_'++'_x not
+R2395:2395 mathcomp.ssreflect.seq <> ::seq_scope:x_'++'_x not
+R2321:2324 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R2329:2329 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R2325:2328 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_']' not
+R2335:2339 mathcomp.ssreflect.seq <> undup def
+R2342:2348 mathcomp.ssreflect.seq <> flatten def
+R2350:2354 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R2385:2385 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R2387:2390 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R2392:2393 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+binder 2386:2386 <> x:41
+binder 2386:2386 <> x:42
+R2355:2359 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R2366:2368 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R2370:2374 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R2383:2384 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+binder 2369:2369 <> w:43
+binder 2369:2369 <> w:44
+R2361:2364 mathcomp.ssreflect.seq <> ::seq_scope:x_'++'_x not
+R2360:2360 AutomatonModule <> x:41 var
+R2365:2365 AutomatonModule <> w:43 var
+R2375:2378 AutomatonModule <> star:39 def
+R2382:2382 AutomatonModule <> s:38 var
+R2391:2391 AutomatonModule <> s:38 var
+R2401:2404 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_']' not
+def 2442:2446 <> State
+R2451:2453 Coq.Init.Datatypes <> nat ind
+def 2467:2472 <> States
+R2477:2479 mathcomp.ssreflect.seq <> seq abbrev
+R2481:2485 AutomatonModule <> State def
+def 2499:2504 <> Symbol
+R2509:2513 Coq.Strings.Ascii <> ascii ind
+def 2527:2533 <> Symbols
+R2538:2541 Coq.Init.Datatypes <> list ind
+R2543:2548 AutomatonModule <> Symbol def
+def 2562:2573 <> SymbolString
+R2578:2583 Coq.Strings.String <> string ind
+def 2597:2609 <> SymbolStrings
+R2614:2617 Coq.Init.Datatypes <> list ind
+R2619:2624 Coq.Strings.String <> string ind
+def 2639:2647 <> Automaton
+R2702:2704 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2694:2696 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2669:2672 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2693:2693 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2659:2661 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2653:2658 AutomatonModule <> States def
+R2662:2668 AutomatonModule <> Symbols def
+R2678:2679 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2673:2677 AutomatonModule <> State def
+R2686:2687 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2680:2685 AutomatonModule <> Symbol def
+R2688:2692 AutomatonModule <> State def
+R2697:2701 AutomatonModule <> State def
+R2705:2710 AutomatonModule <> States def
+def 2724:2728 <> dstar
+R2738:2741 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2733:2737 AutomatonModule <> State def
+R2748:2751 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2742:2747 AutomatonModule <> Symbol def
+R2752:2756 AutomatonModule <> State def
+binder 2731:2731 <> d:45
+R2762:2766 AutomatonModule <> State def
+binder 2760:2760 <> s:46
+R2773:2784 AutomatonModule <> SymbolString def
+binder 2770:2771 <> ss:47
+R2787:2791 AutomatonModule <> State def
+R2799:2800 AutomatonModule <> ss:47 var
+R2806:2811 Coq.Strings.String <> String constr
+R2829:2833 AutomatonModule <> dstar:48 def
+R2838:2838 AutomatonModule <> d:45 var
+R2840:2840 AutomatonModule <> s:46 var
+R2835:2835 AutomatonModule <> d:45 var
+R2852:2852 AutomatonModule <> s:46 var
+def 2864:2868 <> Vword
+R2873:2878 Coq.Strings.String <> string ind
+binder 2871:2871 <> s:50
+R2883:2889 AutomatonModule <> Symbols def
+binder 2881:2881 <> V:51
+R2892:2895 Coq.Init.Datatypes <> bool ind
+R2906:2906 AutomatonModule <> s:50 var
+R2914:2924 Coq.Strings.String <> EmptyString constr
+R2929:2932 Coq.Init.Datatypes <> true constr
+R2935:2940 Coq.Strings.String <> String constr
+R2950:2950 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R2958:2961 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R2972:2972 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R2952:2956 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R2957:2957 AutomatonModule <> V:51 var
+R2962:2966 AutomatonModule <> Vword:52 def
+R2971:2971 AutomatonModule <> V:51 var
+def 2991:2996 <> accept
+R3001:3009 AutomatonModule <> Automaton def
+binder 2999:2999 <> m:54
+R3015:3026 AutomatonModule <> SymbolString def
+binder 3013:3013 <> w:55
+R3030:3033 Coq.Init.Datatypes <> bool ind
+R3062:3062 AutomatonModule <> m:54 var
+R3044:3044 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3046:3047 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3049:3050 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3052:3053 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3056:3057 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3059:3059 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3131:3133 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R3154:3154 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R3091:3093 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R3130:3130 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R3069:3069 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R3079:3082 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R3090:3090 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R3070:3074 AutomatonModule <> Vword def
+R3076:3076 AutomatonModule <> w:55 var
+R3085:3088 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R3097:3098 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R3094:3096 Coq.Init.Datatypes <> nil constr
+R3099:3103 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R3105:3106 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R3108:3108 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R3129:3129 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+binder 3104:3104 <> f:57
+binder 3114:3114 <> x:58
+R3118:3124 Coq.ssr.ssrbool <> ::bool_scope:x_'\notin'_x not
+R3117:3117 AutomatonModule <> x:58 var
+R3128:3128 AutomatonModule <> f:57 var
+R3134:3134 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R3147:3152 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R3135:3139 AutomatonModule <> dstar def
+R3146:3146 AutomatonModule <> w:55 var
+def 3169:3175 <> accepts
+R3180:3188 AutomatonModule <> Automaton def
+binder 3178:3178 <> m:59
+R3195:3207 AutomatonModule <> SymbolStrings def
+binder 3192:3193 <> ss:60
+R3211:3223 AutomatonModule <> SymbolStrings def
+R3229:3234 mathcomp.ssreflect.seq <> filter def
+R3247:3248 AutomatonModule <> ss:60 var
+R3237:3242 AutomatonModule <> accept def
+R3244:3244 AutomatonModule <> m:59 var
+def 3264:3268 <> power
+R3273:3278 mathcomp.ssreflect.eqtype Equality.Exports eqType abbrev
+binder 3271:3271 <> a:61
+R3284:3289 mathcomp.ssreflect.eqtype Equality.Exports eqType abbrev
+binder 3282:3282 <> b:62
+R3297:3301 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3307:3307 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3296:3296 AutomatonModule <> a:61 var
+R3302:3304 mathcomp.ssreflect.seq <> seq abbrev
+R3306:3306 AutomatonModule <> b:62 var
+binder 3293:3293 <> f:63
+R3314:3316 mathcomp.ssreflect.seq <> seq abbrev
+R3318:3318 AutomatonModule <> a:61 var
+binder 3312:3312 <> s:64
+R3321:3323 mathcomp.ssreflect.seq <> seq abbrev
+R3325:3325 AutomatonModule <> b:62 var
+R3330:3334 mathcomp.ssreflect.seq <> undup def
+R3337:3343 mathcomp.ssreflect.seq <> flatten def
+R3346:3348 mathcomp.ssreflect.seq <> map def
+R3352:3352 AutomatonModule <> s:64 var
+R3350:3350 AutomatonModule <> f:63 var
+def 3390:3394 <> nstep
+R3399:3404 mathcomp.ssreflect.eqtype Equality.Exports eqType abbrev
+binder 3397:3397 <> a:65
+R3410:3412 Coq.Init.Datatypes <> nat ind
+binder 3408:3408 <> n:66
+R3420:3422 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3428:3428 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3419:3419 AutomatonModule <> a:65 var
+R3423:3425 mathcomp.ssreflect.seq <> seq abbrev
+R3427:3427 AutomatonModule <> a:65 var
+binder 3416:3416 <> f:67
+R3435:3437 mathcomp.ssreflect.seq <> seq abbrev
+R3439:3439 AutomatonModule <> a:65 var
+binder 3433:3433 <> s:68
+R3442:3444 mathcomp.ssreflect.seq <> seq abbrev
+R3446:3446 AutomatonModule <> a:65 var
+R3456:3456 AutomatonModule <> n:66 var
+R3469:3469 AutomatonModule <> s:68 var
+R3472:3472 Coq.Init.Datatypes <> S constr
+R3480:3484 AutomatonModule <> power def
+R3486:3486 AutomatonModule <> f:67 var
+R3490:3494 AutomatonModule <> nstep:69 def
+R3500:3500 AutomatonModule <> s:68 var
+R3498:3498 AutomatonModule <> f:67 var
+def 3520:3525 <> nfstep
+R3530:3535 mathcomp.ssreflect.eqtype Equality.Exports eqType abbrev
+binder 3528:3528 <> a:71
+R3544:3545 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3543:3543 AutomatonModule <> a:71 var
+R3546:3549 Coq.Init.Datatypes <> bool ind
+binder 3539:3540 <> fp:72
+R3556:3558 Coq.Init.Datatypes <> nat ind
+binder 3554:3554 <> n:73
+R3568:3570 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3576:3576 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3567:3567 AutomatonModule <> a:71 var
+R3571:3573 mathcomp.ssreflect.seq <> seq abbrev
+R3575:3575 AutomatonModule <> a:71 var
+binder 3564:3564 <> f:74
+R3583:3585 mathcomp.ssreflect.seq <> seq abbrev
+R3587:3587 AutomatonModule <> a:71 var
+binder 3581:3581 <> s:75
+R3590:3592 mathcomp.ssreflect.seq <> seq abbrev
+R3594:3594 AutomatonModule <> a:71 var
+R3604:3604 AutomatonModule <> n:73 var
+R3617:3620 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_']' not
+R3628:3633 mathcomp.ssreflect.seq <> filter def
+R3640:3644 AutomatonModule <> power def
+R3646:3646 AutomatonModule <> f:74 var
+R3649:3649 AutomatonModule <> s:75 var
+R3635:3636 AutomatonModule <> fp:72 var
+R3653:3653 Coq.Init.Datatypes <> S constr
+R3660:3665 mathcomp.ssreflect.seq <> filter def
+R3672:3676 AutomatonModule <> power def
+R3678:3678 AutomatonModule <> f:74 var
+R3682:3686 AutomatonModule <> nstep def
+R3692:3692 AutomatonModule <> s:75 var
+R3690:3690 AutomatonModule <> f:74 var
+R3667:3668 AutomatonModule <> fp:72 var
+def 3711:3723 <> delta_collect
+R3728:3732 AutomatonModule <> State def
+binder 3726:3726 <> s:77
+R3737:3739 Coq.Init.Datatypes <> nat ind
+binder 3735:3735 <> n:78
+R3744:3749 AutomatonModule <> States def
+binder 3742:3742 <> K:79
+R3754:3760 AutomatonModule <> Symbols def
+binder 3752:3752 <> V:80
+R3775:3776 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3770:3774 AutomatonModule <> State def
+R3783:3784 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3777:3782 AutomatonModule <> Symbol def
+R3785:3789 AutomatonModule <> State def
+binder 3764:3768 <> delta:81
+R3792:3795 Coq.Init.Datatypes <> bool ind
+R3809:3820 Coq.Strings.Ascii <> ascii_of_nat def
+R3822:3822 AutomatonModule <> n:78 var
+binder 3804:3804 <> a:83
+R3837:3837 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R3845:3850 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R3867:3867 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R3839:3843 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R3838:3838 AutomatonModule <> a:83 var
+R3844:3844 AutomatonModule <> V:80 var
+R3851:3851 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R3861:3865 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R3852:3856 AutomatonModule <> delta:81 var
+R3860:3860 AutomatonModule <> a:83 var
+R3858:3858 AutomatonModule <> s:77 var
+R3866:3866 AutomatonModule <> K:79 var
+binder 3831:3831 <> b:84
+R3879:3879 AutomatonModule <> n:78 var
+R3892:3892 AutomatonModule <> b:84 var
+R3895:3895 Coq.Init.Datatypes <> S constr
+R3904:3906 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R3935:3935 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R3903:3903 AutomatonModule <> b:84 var
+R3907:3919 AutomatonModule <> delta_collect:82 def
+R3930:3934 AutomatonModule <> delta:81 var
+R3928:3928 AutomatonModule <> V:80 var
+R3926:3926 AutomatonModule <> K:79 var
+R3921:3921 AutomatonModule <> s:77 var
+def 3951:3964 <> delta_collectK
+R3972:3977 AutomatonModule <> States def
+binder 3967:3967 <> K:86
+binder 3969:3970 <> K1:87
+R3982:3988 AutomatonModule <> Symbols def
+binder 3980:3980 <> V:88
+R4002:4003 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3997:4001 AutomatonModule <> State def
+R4010:4011 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4004:4009 AutomatonModule <> Symbol def
+R4012:4016 AutomatonModule <> State def
+binder 3991:3995 <> delta:89
+R4020:4023 Coq.Init.Datatypes <> bool ind
+R4034:4035 AutomatonModule <> K1:87 var
+R4043:4045 Coq.Init.Datatypes <> nil constr
+R4050:4053 Coq.Init.Datatypes <> true constr
+R4057:4058 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R4066:4066 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R4096:4099 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R4128:4128 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R4067:4079 AutomatonModule <> delta_collect def
+R4087:4087 AutomatonModule <> K:86 var
+R4089:4089 AutomatonModule <> V:88 var
+R4091:4095 AutomatonModule <> delta:89 var
+R4100:4113 AutomatonModule <> delta_collectK:90 def
+R4123:4127 AutomatonModule <> delta:89 var
+R4121:4121 AutomatonModule <> V:88 var
+R4115:4115 AutomatonModule <> K:86 var

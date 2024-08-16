@@ -1,0 +1,414 @@
+DIGEST 1bf666d179337bf42b7d9a500bb49b58
+FmySticker
+R29:41 mathcomp.ssreflect.all_ssreflect <> <> lib
+R59:63 Coq.Strings.Ascii <> <> lib
+R65:70 Coq.Strings.String <> <> lib
+ind 196:201 <> domino
+constr 222:225 <> null
+constr 237:242 <> Domino
+R210:216 mathcomp.ssreflect.fintype Finite.Exports finType abbrev
+binder 203:208 <> symbol:1
+R229:234 mySticker <> domino:2 ind
+R255:258 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R245:247 mathcomp.ssreflect.seq <> seq abbrev
+R249:254 mySticker <> symbol:1 var
+R269:272 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R259:261 mathcomp.ssreflect.seq <> seq abbrev
+R263:268 mySticker <> symbol:1 var
+R276:279 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R273:275 Coq.Init.Datatypes <> nat ind
+R283:286 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R280:282 Coq.Init.Datatypes <> nat ind
+R287:292 mySticker <> domino:2 ind
+scheme 196:201 <> domino_rect
+scheme 196:201 <> domino_ind
+scheme 196:201 <> domino_rec
+scheme 196:201 <> domino_sind
+def 395:404 <> eqb_domino
+R408:414 mathcomp.ssreflect.fintype Finite.Exports finType abbrev
+binder 406:406 <> s:4
+R424:429 mySticker <> domino ind
+R431:431 mySticker <> s:4 var
+binder 417:418 <> d1:5
+binder 420:421 <> d2:6
+R434:437 Coq.Init.Datatypes <> bool ind
+R451:452 mySticker <> d2:6 var
+R448:449 mySticker <> d1:5 var
+R460:463 mySticker <> null constr
+R465:468 mySticker <> null constr
+R473:476 Coq.Init.Datatypes <> true constr
+R479:484 mySticker <> Domino constr
+R498:503 mySticker <> Domino constr
+R550:552 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R559:559 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R540:542 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R549:549 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R522:522 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R529:532 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R539:539 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R525:526 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R535:536 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R545:546 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R555:556 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R569:573 Coq.Init.Datatypes <> false constr
+prf 586:595 <> eq_dominoP
+R599:605 mathcomp.ssreflect.fintype Finite.Exports finType abbrev
+binder 597:597 <> s:9
+R608:621 mathcomp.ssreflect.eqtype Equality axiom def
+R625:634 mySticker <> eqb_domino def
+R636:636 mySticker <> s:9 var
+R665:674 mySticker <> eqb_domino def
+R683:686 Coq.ssr.ssrbool <> iffP thm
+R688:690 Coq.ssr.ssrbool <> idP thm
+R665:674 mySticker <> eqb_domino def
+R665:674 mySticker <> eqb_domino def
+R683:686 Coq.ssr.ssrbool <> iffP thm
+R688:690 Coq.ssr.ssrbool <> idP thm
+R760:763 Coq.ssr.ssrbool <> andP thm
+R770:772 mathcomp.ssreflect.eqtype <> eqP thm
+R791:794 Coq.ssr.ssrbool <> andP thm
+R799:802 Coq.ssr.ssrbool <> andP thm
+R807:809 mathcomp.ssreflect.eqtype <> eqP thm
+R826:828 mathcomp.ssreflect.eqtype <> eqP thm
+R834:836 mathcomp.ssreflect.eqtype <> eqP thm
+R928:931 Coq.ssr.ssrbool <> andP thm
+R928:931 Coq.ssr.ssrbool <> andP thm
+R948:950 mathcomp.ssreflect.eqtype <> eqP thm
+R948:950 mathcomp.ssreflect.eqtype <> eqP thm
+R963:966 Coq.ssr.ssrbool <> andP thm
+R963:966 Coq.ssr.ssrbool <> andP thm
+R983:985 mathcomp.ssreflect.eqtype <> eqP thm
+R983:985 mathcomp.ssreflect.eqtype <> eqP thm
+R998:1001 Coq.ssr.ssrbool <> andP thm
+R998:1001 Coq.ssr.ssrbool <> andP thm
+R1017:1019 mathcomp.ssreflect.eqtype <> eqP thm
+R1029:1031 mathcomp.ssreflect.eqtype <> eqP thm
+R1017:1019 mathcomp.ssreflect.eqtype <> eqP thm
+R1029:1031 mathcomp.ssreflect.eqtype <> eqP thm
+def 1053:1066 <> domino_eqMixin
+R1075:1081 mathcomp.ssreflect.fintype Finite.Exports finType abbrev
+binder 1068:1073 <> symbol:10
+R1087:1093 mathcomp.ssreflect.eqtype Equality.Exports EqMixin abbrev
+R1097:1106 mySticker <> eq_dominoP thm
+R1108:1113 mySticker <> symbol:10 var
+def 1127:1139 <> domino_eqType
+R1148:1154 mathcomp.ssreflect.fintype Finite.Exports finType abbrev
+binder 1141:1146 <> symbol:11
+R1175:1180 mathcomp.ssreflect.eqtype Equality.Exports EqType abbrev
+R1186:1199 mySticker <> domino_eqMixin canonstruc
+R1201:1206 mySticker <> symbol:11 var
+def 1303:1304 <> mu
+R1313:1319 mathcomp.ssreflect.fintype Finite.Exports finType abbrev
+binder 1306:1311 <> symbol:12
+R1329:1334 mySticker <> domino ind
+R1336:1341 mySticker <> symbol:12 var
+binder 1322:1323 <> d1:13
+binder 1325:1326 <> d2:14
+R1345:1350 mySticker <> domino ind
+R1352:1357 mySticker <> symbol:12 var
+R1370:1371 mySticker <> d2:14 var
+R1367:1368 mySticker <> d1:13 var
+R1379:1384 mySticker <> Domino constr
+R1386:1388 Coq.Init.Datatypes <> nil constr
+R1397:1402 mySticker <> Domino constr
+R1404:1406 Coq.Init.Datatypes <> nil constr
+R1417:1420 mySticker <> null constr
+R1423:1428 mySticker <> Domino constr
+R1432:1434 Coq.Init.Datatypes <> nil constr
+R1441:1446 mySticker <> Domino constr
+R1448:1450 Coq.Init.Datatypes <> nil constr
+R1461:1464 mySticker <> null constr
+R1467:1472 mySticker <> Domino constr
+R1474:1476 Coq.Init.Datatypes <> nil constr
+R1485:1490 mySticker <> Domino constr
+R1494:1496 Coq.Init.Datatypes <> nil constr
+R1505:1508 mySticker <> null constr
+R1511:1516 mySticker <> Domino constr
+R1520:1522 Coq.Init.Datatypes <> nil constr
+R1529:1534 mySticker <> Domino constr
+R1538:1540 Coq.Init.Datatypes <> nil constr
+R1549:1552 mySticker <> null constr
+R1555:1560 mySticker <> Domino constr
+R1575:1580 mySticker <> Domino constr
+R1582:1584 Coq.Init.Datatypes <> nil constr
+R1596:1601 mySticker <> Domino constr
+R1609:1610 mathcomp.ssreflect.seq <> ::seq_scope:x_'++'_x not
+R1622:1627 mySticker <> Domino constr
+R1642:1647 mySticker <> Domino constr
+R1652:1654 Coq.Init.Datatypes <> nil constr
+R1663:1668 mySticker <> Domino constr
+R1673:1674 mathcomp.ssreflect.seq <> ::seq_scope:x_'++'_x not
+R1689:1694 mySticker <> Domino constr
+R1696:1698 Coq.Init.Datatypes <> nil constr
+R1708:1713 mySticker <> Domino constr
+R1732:1737 mySticker <> Domino constr
+R1776:1778 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'-'_x not
+R1769:1772 mathcomp.ssreflect.seq <> size def
+R1754:1757 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'-'_x not
+R1765:1765 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'-'_x not
+R1758:1761 mathcomp.ssreflect.seq <> size def
+R1745:1746 mathcomp.ssreflect.seq <> ::seq_scope:x_'++'_x not
+R1784:1789 mySticker <> Domino constr
+R1794:1796 Coq.Init.Datatypes <> nil constr
+R1803:1808 mySticker <> Domino constr
+R1827:1832 mySticker <> Domino constr
+R1864:1867 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'-'_x not
+R1875:1875 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'-'_x not
+R1868:1871 mathcomp.ssreflect.seq <> size def
+R1854:1856 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'-'_x not
+R1847:1850 mathcomp.ssreflect.seq <> size def
+R1837:1838 mathcomp.ssreflect.seq <> ::seq_scope:x_'++'_x not
+R1879:1884 mySticker <> Domino constr
+R1899:1904 mySticker <> Domino constr
+R1923:1925 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R1968:1977 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R2005:2010 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R1945:1948 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R1940:1942 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R1928:1931 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R1939:1939 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R1932:1935 mathcomp.ssreflect.seq <> size def
+R1963:1965 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R1951:1954 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R1962:1962 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R1955:1958 mathcomp.ssreflect.seq <> size def
+R1978:1983 mySticker <> Domino constr
+R1995:1996 mathcomp.ssreflect.seq <> ::seq_scope:x_'++'_x not
+R1987:1988 mathcomp.ssreflect.seq <> ::seq_scope:x_'++'_x not
+R2011:2014 mySticker <> null constr
+R2024:2027 mySticker <> null constr
+def 2135:2137 <> mu'
+R2141:2147 mathcomp.ssreflect.fintype Finite.Exports finType abbrev
+binder 2139:2139 <> s:17
+R2153:2158 mySticker <> domino ind
+R2160:2160 mySticker <> s:17 var
+binder 2150:2150 <> a:18
+R2174:2174 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2166:2171 mySticker <> domino ind
+R2173:2173 mySticker <> s:17 var
+R2176:2181 mySticker <> domino ind
+R2183:2183 mySticker <> s:17 var
+binder 2163:2163 <> d:19
+R2187:2192 mySticker <> domino ind
+R2194:2194 mySticker <> s:17 var
+R2213:2213 mySticker <> d:19 var
+binder 2203:2204 <> d1:20
+binder 2206:2207 <> d2:21
+R2218:2219 mySticker <> mu def
+R2231:2232 mySticker <> d2:21 var
+R2222:2223 mySticker <> mu def
+R2228:2228 mySticker <> a:18 var
+R2225:2226 mySticker <> d1:20 var
+def 2390:2391 <> wk
+R2395:2401 mathcomp.ssreflect.fintype Finite.Exports finType abbrev
+binder 2393:2393 <> s:22
+R2407:2409 mathcomp.ssreflect.seq <> seq abbrev
+R2413:2413 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2412:2412 mySticker <> s:22 var
+R2414:2414 mySticker <> s:22 var
+binder 2404:2405 <> rh:23
+R2421:2426 mySticker <> domino ind
+R2428:2428 mySticker <> s:22 var
+binder 2418:2418 <> d:24
+R2431:2434 Coq.Init.Datatypes <> bool ind
+R2445:2445 mySticker <> d:24 var
+R2453:2458 mySticker <> Domino constr
+R2473:2475 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R2492:2501 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R2530:2541 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R2482:2485 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R2476:2479 mathcomp.ssreflect.seq <> size def
+R2486:2489 mathcomp.ssreflect.seq <> size def
+R2502:2504 mathcomp.ssreflect.seq <> all def
+R2522:2524 mathcomp.ssreflect.seq <> zip def
+binder 2510:2510 <> p:26
+R2514:2517 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R2513:2513 mySticker <> p:26 var
+R2518:2519 mySticker <> rh:23 var
+R2542:2546 Coq.Init.Datatypes <> false constr
+R2554:2558 Coq.Init.Datatypes <> false constr
+rec 2675:2681 <> sticker
+proj 2712:2714 <> rho
+proj 2741:2745 <> start
+proj 2773:2778 <> extend
+R2690:2696 mathcomp.ssreflect.fintype Finite.Exports finType abbrev
+binder 2683:2688 <> symbol:27
+R2718:2720 mathcomp.ssreflect.seq <> seq abbrev
+R2729:2729 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2723:2728 mySticker <> symbol:27 var
+R2730:2735 mySticker <> symbol:27 var
+R2749:2751 mathcomp.ssreflect.seq <> seq abbrev
+R2755:2760 mySticker <> domino ind
+R2762:2767 mySticker <> symbol:27 var
+R2782:2784 mathcomp.ssreflect.seq <> seq abbrev
+R2801:2801 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2788:2793 mySticker <> domino ind
+R2795:2800 mySticker <> symbol:27 var
+R2803:2808 mySticker <> domino ind
+R2810:2815 mySticker <> symbol:27 var
+def 2906:2916 <> ss_generate
+R2925:2931 mathcomp.ssreflect.fintype Finite.Exports finType abbrev
+binder 2918:2923 <> symbol:32
+R2936:2938 Coq.Init.Datatypes <> nat ind
+binder 2934:2934 <> n:33
+R2946:2952 mySticker <> sticker rec
+R2954:2959 mySticker <> symbol:32 var
+binder 2941:2943 <> stk:34
+R2962:2964 mathcomp.ssreflect.seq <> seq abbrev
+R2966:2971 mySticker <> domino ind
+R2981:2981 mySticker <> n:33 var
+R2994:2998 mySticker <> start proj
+R3000:3002 mySticker <> stk:34 var
+R3005:3005 Coq.Init.Datatypes <> S constr
+R3023:3033 mySticker <> ss_generate:35 def
+R3038:3040 mySticker <> stk:34 var
+binder 3017:3018 <> A':37
+R3049:3050 mathcomp.ssreflect.seq <> ::seq_scope:x_'++'_x not
+R3047:3048 mySticker <> A':37 var
+R3051:3055 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R3063:3063 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R3065:3066 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R3069:3069 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R3071:3075 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R3086:3087 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+binder 3064:3064 <> a:38
+binder 3064:3064 <> a:39
+binder 3070:3070 <> d:40
+binder 3070:3070 <> d:41
+R3056:3058 mySticker <> mu' def
+R3062:3062 mySticker <> d:40 var
+R3060:3060 mySticker <> a:38 var
+R3076:3081 mySticker <> extend proj
+R3083:3085 mySticker <> stk:34 var
+R3067:3068 mySticker <> A':37 var
+def 3195:3211 <> ss_generate_prime
+R3215:3221 mathcomp.ssreflect.fintype Finite.Exports finType abbrev
+binder 3213:3213 <> s:42
+R3226:3228 Coq.Init.Datatypes <> nat ind
+binder 3224:3224 <> n:43
+R3236:3242 mySticker <> sticker rec
+R3244:3244 mySticker <> s:42 var
+binder 3231:3233 <> stk:44
+R3247:3249 mathcomp.ssreflect.seq <> seq abbrev
+R3251:3256 mySticker <> domino ind
+R3266:3266 mySticker <> n:43 var
+R3279:3283 mySticker <> start proj
+R3285:3287 mySticker <> stk:44 var
+R3290:3290 Coq.Init.Datatypes <> S constr
+R3310:3326 mySticker <> ss_generate_prime:45 def
+R3331:3333 mySticker <> stk:44 var
+binder 3304:3305 <> A':47
+R3352:3356 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R3358:3359 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R3362:3362 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R3377:3377 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+binder 3357:3357 <> a:48
+R3363:3364 mySticker <> wk def
+R3376:3376 mySticker <> a:48 var
+R3367:3369 mySticker <> rho proj
+R3371:3373 mySticker <> stk:44 var
+R3360:3361 mySticker <> A':47 var
+binder 3344:3347 <> A_wk:49
+R3397:3401 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R3403:3404 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R3407:3407 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R3425:3425 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+binder 3402:3402 <> a:50
+R3408:3410 Coq.ssr.ssrbool <> ::bool_scope:'~~'_x not
+R3411:3412 mySticker <> wk def
+R3424:3424 mySticker <> a:50 var
+R3415:3417 mySticker <> rho proj
+R3419:3421 mySticker <> stk:44 var
+R3405:3406 mySticker <> A':47 var
+binder 3388:3392 <> A_nwk:51
+R3436:3437 mathcomp.ssreflect.seq <> ::seq_scope:x_'++'_x not
+R3432:3435 mySticker <> A_wk:49 var
+R3438:3442 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R3450:3450 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R3452:3453 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R3459:3459 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R3461:3465 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R3476:3477 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+binder 3451:3451 <> a:52
+binder 3451:3451 <> a:53
+binder 3460:3460 <> d:54
+binder 3460:3460 <> d:55
+R3443:3445 mySticker <> mu' def
+R3449:3449 mySticker <> d:54 var
+R3447:3447 mySticker <> a:52 var
+R3466:3471 mySticker <> extend proj
+R3473:3475 mySticker <> stk:44 var
+R3454:3458 mySticker <> A_nwk:51 var
+def 3582:3594 <> ss_language_f
+R3598:3604 mathcomp.ssreflect.fintype Finite.Exports finType abbrev
+binder 3596:3596 <> s:56
+R3610:3615 mySticker <> domino ind
+R3617:3617 mySticker <> s:56 var
+binder 3607:3607 <> d:57
+R3620:3622 mathcomp.ssreflect.seq <> seq abbrev
+R3624:3624 mySticker <> s:56 var
+R3635:3635 mySticker <> d:57 var
+R3643:3648 mySticker <> Domino constr
+R3669:3671 Coq.Init.Datatypes <> nil constr
+def 3748:3758 <> ss_language
+R3762:3768 mathcomp.ssreflect.fintype Finite.Exports finType abbrev
+binder 3760:3760 <> s:59
+R3773:3775 Coq.Init.Datatypes <> nat ind
+binder 3771:3771 <> n:60
+R3783:3789 mySticker <> sticker rec
+R3791:3791 mySticker <> s:59 var
+binder 3778:3780 <> stk:61
+R3794:3796 mathcomp.ssreflect.seq <> seq abbrev
+R3799:3801 mathcomp.ssreflect.seq <> seq abbrev
+R3803:3803 mySticker <> s:59 var
+R3809:3813 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R3829:3831 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R3833:3836 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R3880:3880 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+binder 3832:3832 <> d:62
+binder 3832:3832 <> d:63
+R3814:3826 mySticker <> ss_language_f def
+R3828:3828 mySticker <> d:62 var
+R3837:3841 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R3843:3846 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R3864:3864 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R3879:3879 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+binder 3842:3842 <> d:64
+R3865:3866 mySticker <> wk def
+R3878:3878 mySticker <> d:64 var
+R3869:3871 mySticker <> rho proj
+R3873:3875 mySticker <> stk:61 var
+R3847:3857 mySticker <> ss_generate def
+R3861:3863 mySticker <> stk:61 var
+R3859:3859 mySticker <> n:60 var
+def 3922:3938 <> ss_language_prime
+R3942:3948 mathcomp.ssreflect.fintype Finite.Exports finType abbrev
+binder 3940:3940 <> s:65
+R3953:3955 Coq.Init.Datatypes <> nat ind
+binder 3951:3951 <> n:66
+R3963:3969 mySticker <> sticker rec
+R3971:3971 mySticker <> s:65 var
+binder 3958:3960 <> stk:67
+R3974:3976 mathcomp.ssreflect.seq <> seq abbrev
+R3979:3981 mathcomp.ssreflect.seq <> seq abbrev
+R3983:3983 mySticker <> s:65 var
+R3989:3993 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R4009:4011 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R4013:4016 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R4066:4066 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+binder 4012:4012 <> d:68
+binder 4012:4012 <> d:69
+R3994:4006 mySticker <> ss_language_f def
+R4008:4008 mySticker <> d:68 var
+R4017:4021 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R4023:4026 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R4050:4050 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R4065:4065 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+binder 4022:4022 <> d:70
+R4051:4052 mySticker <> wk def
+R4064:4064 mySticker <> d:70 var
+R4055:4057 mySticker <> rho proj
+R4059:4061 mySticker <> stk:67 var
+R4027:4043 mySticker <> ss_generate_prime def
+R4047:4049 mySticker <> stk:67 var
+R4045:4045 mySticker <> n:66 var

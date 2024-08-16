@@ -1,0 +1,438 @@
+DIGEST d6c001ad5763d73b782d5b7d25afa19e
+FStickerModule2
+R599:607 mathcomp.ssreflect.ssreflect <> <> lib
+R609:615 mathcomp.ssreflect.ssrbool <> <> lib
+R617:622 mathcomp.ssreflect.eqtype <> <> lib
+R624:629 mathcomp.ssreflect.ssrnat <> <> lib
+R631:633 mathcomp.ssreflect.seq <> <> lib
+R652:656 Coq.Strings.Ascii <> <> lib
+R658:661 Coq.Lists.List <> <> lib
+R663:668 Coq.Strings.String <> <> lib
+R687:701 AutomatonModule <> <> lib
+def 740:745 <> Domino
+R784:786 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R778:780 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R763:765 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R751:762 AutomatonModule <> SymbolString def
+R766:777 AutomatonModule <> SymbolString def
+R781:783 Coq.Init.Datatypes <> nat ind
+R787:789 Coq.Init.Datatypes <> nat ind
+def 804:806 <> Rho
+R811:814 Coq.Init.Datatypes <> list ind
+R823:825 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R817:822 AutomatonModule <> Symbol def
+R826:831 AutomatonModule <> Symbol def
+def 846:850 <> Lrset
+R855:858 Coq.Init.Datatypes <> list ind
+R867:869 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R861:866 AutomatonModule <> Symbol def
+R870:875 AutomatonModule <> Symbol def
+def 890:896 <> Sticker
+R934:936 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R920:922 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R914:916 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R903:906 Coq.Init.Datatypes <> list ind
+R908:913 AutomatonModule <> Symbol def
+R917:919 StickerModule2 <> Rho def
+R923:926 Coq.Init.Datatypes <> list ind
+R928:933 StickerModule2 <> Domino def
+R937:940 Coq.Init.Datatypes <> list ind
+R949:951 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R943:948 StickerModule2 <> Domino def
+R952:957 StickerModule2 <> Domino def
+def 1020:1027 <> lrcheck'
+R1034:1036 StickerModule2 <> Rho def
+binder 1030:1032 <> rho:1
+R1043:1048 Coq.Strings.String <> string ind
+binder 1039:1039 <> s:2
+binder 1041:1041 <> t:3
+R1051:1054 Coq.Init.Datatypes <> bool ind
+R1067:1067 StickerModule2 <> t:3 var
+R1065:1065 StickerModule2 <> s:2 var
+R1083:1086 Coq.Init.Datatypes <> true constr
+R1097:1100 Coq.Init.Datatypes <> true constr
+R1103:1108 Coq.Strings.String <> String constr
+R1116:1121 Coq.Strings.String <> String constr
+R1132:1132 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R1147:1150 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R1169:1169 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R1140:1143 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R1133:1133 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1136:1136 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1139:1139 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1144:1146 StickerModule2 <> rho:1 var
+R1151:1158 StickerModule2 <> lrcheck':4 def
+R1160:1162 StickerModule2 <> rho:1 var
+def 1187:1193 <> lrcheck
+R1200:1202 StickerModule2 <> Rho def
+binder 1196:1198 <> rho:7
+R1207:1212 StickerModule2 <> Domino def
+binder 1205:1205 <> d:8
+R1215:1218 Coq.Init.Datatypes <> bool ind
+R1242:1242 StickerModule2 <> d:8 var
+R1229:1229 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1231:1231 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1233:1233 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1235:1235 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1237:1237 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1257:1265 Coq.Strings.String <> substring def
+R1270:1275 Coq.Strings.String <> length def
+binder 1251:1252 <> s':10
+R1295:1303 Coq.Strings.String <> substring def
+R1308:1313 Coq.Strings.String <> length def
+binder 1289:1290 <> t':11
+R1323:1330 StickerModule2 <> lrcheck' def
+R1332:1334 StickerModule2 <> rho:7 var
+R1336:1337 StickerModule2 <> s':10 var
+R1339:1340 StickerModule2 <> t':11 var
+def 1355:1356 <> wk
+R1363:1365 StickerModule2 <> Rho def
+binder 1359:1361 <> rho:12
+R1370:1375 StickerModule2 <> Domino def
+binder 1368:1368 <> d:13
+R1380:1383 Coq.Init.Datatypes <> bool ind
+R1407:1407 StickerModule2 <> d:13 var
+R1394:1394 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1396:1396 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1398:1398 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1400:1400 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1402:1402 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1452:1454 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R1468:1468 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R1426:1428 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R1451:1451 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R1412:1412 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R1417:1420 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R1425:1425 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R1414:1415 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R1422:1423 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R1429:1429 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R1438:1441 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R1450:1450 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R1430:1435 Coq.Strings.String <> length def
+R1442:1447 Coq.Strings.String <> length def
+R1455:1461 StickerModule2 <> lrcheck def
+R1463:1465 StickerModule2 <> rho:12 var
+R1467:1467 StickerModule2 <> d:13 var
+def 1507:1508 <> mu
+R1515:1517 StickerModule2 <> Rho def
+binder 1511:1513 <> rho:15
+R1524:1529 StickerModule2 <> Domino def
+binder 1521:1522 <> d1:16
+R1536:1541 StickerModule2 <> Domino def
+binder 1533:1534 <> d2:17
+R1545:1548 Coq.Init.Datatypes <> list ind
+R1550:1555 StickerModule2 <> Domino def
+R1569:1570 StickerModule2 <> d2:17 var
+R1566:1567 StickerModule2 <> d1:16 var
+R1578:1578 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1581:1581 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1584:1584 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1586:1586 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1588:1588 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1590:1590 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1593:1593 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1596:1596 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1599:1599 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1602:1602 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1607:1612 Coq.Lists.List <> filter def
+R1628:1630 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R1700:1700 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R1631:1631 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1634:1634 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1641:1641 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1671:1671 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1699:1699 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1637:1638 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R1642:1644 Coq.Init.Peano <> max abbrev
+R1656:1659 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'-'_x not
+R1669:1669 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'-'_x not
+R1651:1653 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'-'_x not
+R1660:1665 Coq.Strings.String <> length def
+R1672:1674 Coq.Init.Peano <> max abbrev
+R1693:1695 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'-'_x not
+R1688:1690 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R1679:1684 Coq.Strings.String <> length def
+R1615:1621 StickerModule2 <> lrcheck def
+R1623:1625 StickerModule2 <> rho:15 var
+R1703:1703 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1706:1706 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1709:1709 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1711:1711 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1713:1713 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1715:1715 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1718:1718 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1721:1721 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1724:1724 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1727:1727 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1732:1737 Coq.Lists.List <> filter def
+R1753:1755 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R1827:1827 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R1756:1756 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1763:1763 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1766:1766 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1796:1796 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1826:1826 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1759:1760 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R1767:1769 Coq.Init.Peano <> max abbrev
+R1781:1784 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R1794:1794 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R1776:1778 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'-'_x not
+R1785:1790 Coq.Strings.String <> length def
+R1797:1799 Coq.Init.Peano <> max abbrev
+R1811:1814 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'-'_x not
+R1824:1824 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'-'_x not
+R1806:1808 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'-'_x not
+R1815:1820 Coq.Strings.String <> length def
+R1740:1746 StickerModule2 <> lrcheck def
+R1748:1750 StickerModule2 <> rho:15 var
+R1830:1830 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1833:1833 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1836:1836 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1839:1839 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1842:1842 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1844:1844 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1847:1847 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1850:1850 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1852:1852 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1854:1854 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1859:1864 Coq.Lists.List <> filter def
+R1880:1882 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R1900:1900 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R1883:1883 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1886:1886 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1893:1893 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1896:1896 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1899:1899 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1889:1890 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R1867:1873 StickerModule2 <> lrcheck def
+R1875:1877 StickerModule2 <> rho:15 var
+R1903:1903 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1906:1906 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1909:1909 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1912:1912 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1915:1915 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1917:1917 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1920:1920 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1923:1923 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1925:1925 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1927:1927 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1932:1937 Coq.Lists.List <> filter def
+R1953:1955 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R1973:1973 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R1956:1956 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1963:1963 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1966:1966 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1969:1969 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1972:1972 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1959:1960 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R1940:1946 StickerModule2 <> lrcheck def
+R1948:1950 StickerModule2 <> rho:15 var
+R1976:1976 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1979:1979 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1982:1982 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1985:1985 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1988:1988 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1990:1990 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1993:1993 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1996:1996 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1999:1999 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2002:2002 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2009:2011 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R2062:2072 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R2131:2138 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R2012:2012 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R2034:2039 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R2061:2061 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R2020:2023 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R2033:2033 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R2015:2017 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R2024:2029 Coq.Strings.String <> length def
+R2047:2050 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R2060:2060 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R2042:2044 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R2051:2056 Coq.Strings.String <> length def
+R2073:2078 Coq.Lists.List <> filter def
+R2094:2097 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R2130:2130 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R2098:2099 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2108:2111 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2120:2122 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2125:2126 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2129:2129 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2102:2105 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R2114:2117 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R2081:2087 StickerModule2 <> lrcheck def
+R2089:2091 StickerModule2 <> rho:15 var
+R2139:2142 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_']' not
+def 2162:2164 <> mu'
+R2171:2173 StickerModule2 <> Rho def
+binder 2167:2169 <> rho:20
+R2186:2186 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2180:2185 StickerModule2 <> Domino def
+R2187:2192 StickerModule2 <> Domino def
+binder 2177:2178 <> rr:21
+R2198:2203 StickerModule2 <> Domino def
+binder 2196:2196 <> d:22
+R2208:2211 Coq.Init.Datatypes <> list ind
+R2213:2218 StickerModule2 <> Domino def
+R2238:2239 StickerModule2 <> rr:21 var
+R2229:2229 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2231:2231 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2233:2233 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2244:2250 mathcomp.ssreflect.seq <> flatten def
+R2252:2256 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R2268:2268 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R2271:2274 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R2285:2285 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+binder 2269:2270 <> d':24
+binder 2269:2270 <> d':25
+R2257:2258 StickerModule2 <> mu def
+R2260:2262 StickerModule2 <> rho:20 var
+R2264:2265 StickerModule2 <> d':24 var
+R2275:2276 StickerModule2 <> mu def
+R2278:2280 StickerModule2 <> rho:20 var
+R2284:2284 StickerModule2 <> d:22 var
+def 2298:2308 <> ss_generate
+R2313:2315 Coq.Init.Datatypes <> nat ind
+binder 2311:2311 <> n:26
+R2323:2329 StickerModule2 <> Sticker def
+binder 2319:2321 <> stk:27
+R2334:2337 Coq.Init.Datatypes <> list ind
+R2339:2344 StickerModule2 <> Domino def
+R2370:2372 StickerModule2 <> stk:27 var
+R2355:2355 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2357:2357 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2361:2361 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2363:2363 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2365:2365 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2383:2383 StickerModule2 <> n:26 var
+R2399:2399 Coq.Init.Datatypes <> S constr
+R2418:2428 StickerModule2 <> ss_generate:28 def
+R2433:2435 StickerModule2 <> stk:27 var
+binder 2411:2413 <> dmn:31
+R2451:2453 mathcomp.ssreflect.seq <> ::seq_scope:x_'++'_x not
+R2495:2495 mathcomp.ssreflect.seq <> ::seq_scope:x_'++'_x not
+R2442:2446 mathcomp.ssreflect.seq <> undup def
+R2448:2450 StickerModule2 <> dmn:31 var
+R2454:2460 mathcomp.ssreflect.seq <> flatten def
+R2462:2466 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R2479:2479 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R2482:2485 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R2487:2487 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R2489:2490 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R2494:2494 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+binder 2480:2481 <> rr:32
+binder 2480:2481 <> rr:33
+binder 2488:2488 <> d:34
+binder 2488:2488 <> d:35
+R2467:2469 StickerModule2 <> mu' def
+R2475:2476 StickerModule2 <> rr:32 var
+R2478:2478 StickerModule2 <> d:34 var
+R2491:2493 StickerModule2 <> dmn:31 var
+def 2512:2528 <> ss_generate_prime
+R2533:2535 Coq.Init.Datatypes <> nat ind
+binder 2531:2531 <> n:36
+R2542:2548 StickerModule2 <> Sticker def
+binder 2538:2540 <> stk:37
+R2551:2554 Coq.Init.Datatypes <> list ind
+R2556:2561 StickerModule2 <> Domino def
+R2587:2589 StickerModule2 <> stk:37 var
+R2572:2572 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2574:2574 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2578:2578 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2580:2580 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2582:2582 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2600:2600 StickerModule2 <> n:36 var
+R2616:2616 Coq.Init.Datatypes <> S constr
+R2635:2651 StickerModule2 <> ss_generate_prime:38 def
+R2656:2658 StickerModule2 <> stk:37 var
+binder 2628:2630 <> dmn:41
+R2674:2676 mathcomp.ssreflect.seq <> ::seq_scope:x_'++'_x not
+R2739:2739 mathcomp.ssreflect.seq <> ::seq_scope:x_'++'_x not
+R2665:2669 mathcomp.ssreflect.seq <> undup def
+R2671:2673 StickerModule2 <> dmn:41 var
+R2677:2683 mathcomp.ssreflect.seq <> flatten def
+R2685:2689 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R2702:2702 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R2705:2706 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R2708:2708 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R2710:2713 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R2738:2738 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+binder 2703:2704 <> rr:42
+binder 2703:2704 <> rr:43
+binder 2709:2709 <> d:44
+binder 2709:2709 <> d:45
+R2690:2692 StickerModule2 <> mu' def
+R2698:2699 StickerModule2 <> rr:42 var
+R2701:2701 StickerModule2 <> d:44 var
+R2714:2718 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R2720:2721 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R2725:2725 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R2737:2737 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+binder 2719:2719 <> d:46
+R2726:2728 Coq.ssr.ssrbool <> ::bool_scope:'~~'_x not
+R2729:2730 StickerModule2 <> wk def
+R2736:2736 StickerModule2 <> d:46 var
+R2722:2724 StickerModule2 <> dmn:41 var
+def 2758:2770 <> ss_language_f
+R2775:2780 StickerModule2 <> Domino def
+binder 2773:2773 <> d:47
+R2785:2796 AutomatonModule <> SymbolString def
+R2820:2820 StickerModule2 <> d:47 var
+R2807:2807 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2809:2809 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2811:2811 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2813:2813 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2815:2815 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+def 2840:2850 <> ss_language
+R2855:2857 Coq.Init.Datatypes <> nat ind
+binder 2853:2853 <> n:49
+R2865:2871 StickerModule2 <> Sticker def
+binder 2861:2863 <> stk:50
+R2876:2879 Coq.Init.Datatypes <> list ind
+R2881:2892 AutomatonModule <> SymbolString def
+R2918:2920 StickerModule2 <> stk:50 var
+R2903:2903 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2905:2905 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2909:2909 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2911:2911 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2913:2913 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2925:2927 Coq.Lists.List <> map def
+R2944:2949 Coq.Lists.List <> filter def
+R2961:2971 StickerModule2 <> ss_generate def
+R2973:2973 StickerModule2 <> n:49 var
+R2975:2977 StickerModule2 <> stk:50 var
+R2952:2953 StickerModule2 <> wk def
+R2929:2941 StickerModule2 <> ss_language_f def
+def 2994:3010 <> ss_language_prime
+R3015:3017 Coq.Init.Datatypes <> nat ind
+binder 3013:3013 <> n:52
+R3024:3030 StickerModule2 <> Sticker def
+binder 3020:3022 <> stk:53
+R3033:3036 Coq.Init.Datatypes <> list ind
+R3038:3049 AutomatonModule <> SymbolString def
+R3075:3077 StickerModule2 <> stk:53 var
+R3060:3060 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3062:3062 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3066:3066 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3068:3068 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3070:3070 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3082:3086 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R3102:3104 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R3106:3109 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R3153:3153 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+binder 3105:3105 <> d:55
+binder 3105:3105 <> d:56
+R3087:3099 StickerModule2 <> ss_language_f def
+R3101:3101 StickerModule2 <> d:55 var
+R3110:3114 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R3116:3119 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R3143:3143 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R3152:3152 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+binder 3115:3115 <> d:57
+R3144:3145 StickerModule2 <> wk def
+R3151:3151 StickerModule2 <> d:57 var
+R3120:3136 StickerModule2 <> ss_generate_prime def
+R3138:3138 StickerModule2 <> n:52 var
+R3140:3142 StickerModule2 <> stk:53 var

@@ -1,0 +1,1544 @@
+DIGEST e9550b94d9751c06d14a6a6d7b70a156
+FmyTheorems
+R29:41 mathcomp.ssreflect.all_ssreflect <> <> lib
+R59:62 Coq.Bool.Bool <> <> lib
+R64:68 Coq.Strings.Ascii <> <> lib
+R70:75 Coq.Strings.String <> <> lib
+R77:81 Coq.Arith.Arith <> <> lib
+R83:97 AutomatonModule <> <> lib
+R99:104 Coq.funind.Recdef <> <> lib
+prf 114:118 <> lesub
+R125:127 Coq.Init.Datatypes <> nat ind
+binder 121:121 <> m:1
+binder 123:123 <> n:2
+R136:141 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R151:151 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R131:134 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'<='_x not
+R130:130 myTheorems <> m:1 var
+R135:135 myTheorems <> n:2 var
+R147:149 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R143:145 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'-'_x not
+R142:142 myTheorems <> m:1 var
+R146:146 myTheorems <> n:2 var
+R199:203 mathcomp.ssreflect.ssrnat <> subn0 thm
+R174:183 mathcomp.ssreflect.ssrnat <> subnBl_leq thm
+R199:203 mathcomp.ssreflect.ssrnat <> subn0 thm
+R199:203 mathcomp.ssreflect.ssrnat <> subn0 thm
+R239:243 mathcomp.ssreflect.ssrnat <> subn0 thm
+R239:243 mathcomp.ssreflect.ssrnat <> subn0 thm
+R239:243 mathcomp.ssreflect.ssrnat <> subn0 thm
+R300:304 mathcomp.ssreflect.ssrnat <> subSS thm
+R300:304 mathcomp.ssreflect.ssrnat <> subSS thm
+R300:304 mathcomp.ssreflect.ssrnat <> subSS thm
+prf 327:332 <> appnil
+R337:342 mathcomp.ssreflect.eqtype Equality.Exports eqType abbrev
+binder 335:335 <> e:3
+R347:350 Coq.Init.Datatypes <> list ind
+R352:352 myTheorems <> e:3 var
+binder 345:345 <> l:4
+R356:358 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R355:355 myTheorems <> l:4 var
+R360:361 mathcomp.ssreflect.seq <> ::seq_scope:x_'++'_x not
+R359:359 myTheorems <> l:4 var
+R362:364 Coq.Init.Datatypes <> nil constr
+prf 434:441 <> in_undup
+R446:451 mathcomp.ssreflect.eqtype Equality.Exports eqType abbrev
+binder 444:444 <> e:5
+R456:459 Coq.Init.Datatypes <> list ind
+R461:461 myTheorems <> e:5 var
+binder 454:454 <> l:6
+R466:466 myTheorems <> e:5 var
+binder 464:464 <> a:7
+R469:469 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R485:489 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R497:497 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R471:476 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R484:484 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R470:470 myTheorems <> a:7 var
+R477:481 mathcomp.ssreflect.seq <> undup def
+R483:483 myTheorems <> l:6 var
+R491:495 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R490:490 myTheorems <> a:7 var
+R496:496 myTheorems <> l:6 var
+R534:539 Coq.ssr.ssrbool <> in_mem def
+R577:583 mathcomp.ssreflect.seq <> mem_seq def
+R622:623 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R658:660 mathcomp.ssreflect.eqtype <> eqP thm
+R577:583 mathcomp.ssreflect.seq <> mem_seq def
+R622:623 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R658:660 mathcomp.ssreflect.eqtype <> eqP thm
+R658:660 mathcomp.ssreflect.eqtype <> eqP thm
+prf 692:702 <> filter_cons
+binder 704:704 <> T:8
+R718:721 Coq.ssr.ssrbool <> pred def
+R723:723 myTheorems <> T:8 var
+binder 714:714 <> p:9
+R728:728 myTheorems <> T:8 var
+binder 726:726 <> a:10
+R733:735 mathcomp.ssreflect.seq <> seq abbrev
+R737:737 myTheorems <> T:8 var
+binder 731:731 <> s:11
+R762:767 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R741:745 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R747:750 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R755:757 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R761:761 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+binder 746:746 <> x:12
+R758:758 myTheorems <> p:9 var
+R760:760 myTheorems <> x:12 var
+R752:753 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R751:751 myTheorems <> a:10 var
+R754:754 myTheorems <> s:11 var
+R768:770 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R774:779 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R797:802 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R771:771 myTheorems <> p:9 var
+R773:773 myTheorems <> a:10 var
+R781:782 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R780:780 myTheorems <> a:10 var
+R783:787 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R789:790 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R792:792 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R796:796 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+binder 788:788 <> x:13
+R793:793 myTheorems <> p:9 var
+R795:795 myTheorems <> x:13 var
+R791:791 myTheorems <> s:11 var
+R803:807 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R809:810 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R812:812 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+R816:816 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'<-'_x_'|'_x_']' not
+binder 808:808 <> x:14
+R813:813 myTheorems <> p:9 var
+R815:815 myTheorems <> x:14 var
+R811:811 myTheorems <> s:11 var
+prf 844:855 <> bool_eqsplit
+R862:865 Coq.Init.Datatypes <> bool ind
+binder 858:858 <> a:15
+binder 860:860 <> b:16
+R868:868 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R872:876 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R882:882 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R870:870 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R869:869 myTheorems <> a:15 var
+R871:871 myTheorems <> b:16 var
+R878:880 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R877:877 myTheorems <> a:15 var
+R881:881 myTheorems <> b:16 var
+R934:937 Coq.Init.Datatypes <> true constr
+prf 1026:1031 <> map_f'
+R1043:1048 mathcomp.ssreflect.eqtype Equality.Exports eqType abbrev
+binder 1034:1035 <> t1:17
+binder 1037:1038 <> t2:18
+binder 1040:1041 <> t3:19
+R1055:1056 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1053:1054 myTheorems <> t1:17 var
+R1059:1060 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1057:1058 myTheorems <> t2:18 var
+R1061:1062 myTheorems <> t3:19 var
+binder 1051:1051 <> f:20
+R1068:1071 Coq.Init.Datatypes <> list ind
+R1073:1074 myTheorems <> t1:17 var
+binder 1065:1066 <> l1:21
+R1080:1083 Coq.Init.Datatypes <> list ind
+R1085:1086 myTheorems <> t2:18 var
+binder 1077:1078 <> l2:22
+R1092:1093 myTheorems <> t1:17 var
+binder 1089:1090 <> x1:23
+R1099:1100 myTheorems <> t2:18 var
+binder 1096:1097 <> x2:24
+R1112:1113 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1106:1109 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R1104:1105 myTheorems <> x1:23 var
+R1110:1111 myTheorems <> l1:21 var
+R1122:1123 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1116:1119 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R1114:1115 myTheorems <> x2:24 var
+R1120:1121 myTheorems <> l2:22 var
+R1131:1135 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R1124:1124 myTheorems <> f:20 var
+R1129:1130 myTheorems <> x2:24 var
+R1126:1127 myTheorems <> x1:23 var
+R1136:1140 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R1146:1146 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R1148:1149 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R1152:1152 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R1154:1155 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R1158:1158 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+binder 1147:1147 <> x:25
+binder 1147:1147 <> x:26
+binder 1153:1153 <> y:27
+binder 1153:1153 <> y:28
+R1141:1141 myTheorems <> f:20 var
+R1145:1145 myTheorems <> y:27 var
+R1143:1143 myTheorems <> x:25 var
+R1156:1157 myTheorems <> l2:22 var
+R1150:1151 myTheorems <> l1:21 var
+R1229:1235 mathcomp.ssreflect.seq <> in_cons thm
+R1246:1252 mathcomp.ssreflect.seq <> mem_cat thm
+R1265:1266 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R1280:1282 mathcomp.ssreflect.eqtype <> eqP thm
+R1322:1326 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R1327:1331 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R1337:1339 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R1341:1344 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R1346:1347 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R1349:1352 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R1355:1355 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+binder 1340:1340 <> x:29
+binder 1340:1340 <> x:30
+binder 1348:1348 <> y:31
+binder 1348:1348 <> y:32
+R1334:1334 myTheorems <> x:29 var
+R1336:1336 myTheorems <> y:31 var
+R1371:1380 Coq.Bool.Bool <> orb_true_r thm
+R1390:1400 Coq.Bool.Bool <> orb_false_r thm
+R1408:1412 mathcomp.ssreflect.seq <> map_f thm
+R1431:1435 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R1436:1440 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R1446:1448 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R1450:1453 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R1456:1456 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+binder 1449:1449 <> y:33
+binder 1449:1449 <> y:34
+R1445:1445 myTheorems <> y:33 var
+R1472:1481 Coq.Bool.Bool <> orb_true_l thm
+R1494:1504 Coq.Bool.Bool <> orb_false_l thm
+R1229:1235 mathcomp.ssreflect.seq <> in_cons thm
+R1229:1235 mathcomp.ssreflect.seq <> in_cons thm
+R1246:1252 mathcomp.ssreflect.seq <> mem_cat thm
+R1246:1252 mathcomp.ssreflect.seq <> mem_cat thm
+R1265:1266 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R1265:1266 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R1280:1282 mathcomp.ssreflect.eqtype <> eqP thm
+R1280:1282 mathcomp.ssreflect.eqtype <> eqP thm
+R1322:1326 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R1327:1331 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R1337:1339 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R1341:1344 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R1346:1347 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R1349:1352 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R1355:1355 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+binder 1340:1340 <> x:35
+binder 1340:1340 <> x:36
+binder 1348:1348 <> y:37
+binder 1348:1348 <> y:38
+R1334:1334 myTheorems <> x:35 var
+R1336:1336 myTheorems <> y:37 var
+R1322:1326 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R1327:1331 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R1337:1339 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R1341:1344 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R1346:1347 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R1349:1352 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R1355:1355 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+binder 1340:1340 <> x:39
+binder 1340:1340 <> x:40
+binder 1348:1348 <> y:41
+binder 1348:1348 <> y:42
+R1334:1334 myTheorems <> x:39 var
+R1336:1336 myTheorems <> y:41 var
+R1371:1380 Coq.Bool.Bool <> orb_true_r thm
+R1371:1380 Coq.Bool.Bool <> orb_true_r thm
+R1390:1400 Coq.Bool.Bool <> orb_false_r thm
+R1390:1400 Coq.Bool.Bool <> orb_false_r thm
+R1408:1412 mathcomp.ssreflect.seq <> map_f thm
+R1431:1435 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R1436:1440 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R1446:1448 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R1450:1453 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R1456:1456 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+binder 1449:1449 <> y:43
+binder 1449:1449 <> y:44
+R1445:1445 myTheorems <> y:43 var
+R1431:1435 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R1436:1440 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R1446:1448 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R1450:1453 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R1456:1456 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+binder 1449:1449 <> y:45
+binder 1449:1449 <> y:46
+R1445:1445 myTheorems <> y:45 var
+R1472:1481 Coq.Bool.Bool <> orb_true_l thm
+R1472:1481 Coq.Bool.Bool <> orb_true_l thm
+R1494:1504 Coq.Bool.Bool <> orb_false_l thm
+R1494:1504 Coq.Bool.Bool <> orb_false_l thm
+R1494:1504 Coq.Bool.Bool <> orb_false_l thm
+R1494:1504 Coq.Bool.Bool <> orb_false_l thm
+prf 1519:1526 <> map_f_eq
+R1534:1539 mathcomp.ssreflect.eqtype Equality.Exports eqType abbrev
+binder 1528:1529 <> t1:47
+binder 1531:1532 <> t2:48
+R1546:1547 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1544:1545 myTheorems <> t1:47 var
+R1548:1549 myTheorems <> t2:48 var
+binder 1542:1542 <> f:49
+R1554:1557 Coq.Init.Datatypes <> list ind
+R1559:1560 myTheorems <> t1:47 var
+binder 1552:1552 <> l:50
+R1565:1566 myTheorems <> t1:47 var
+binder 1563:1563 <> x:51
+R1570:1570 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1602:1606 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1582:1583 myTheorems <> t1:47 var
+binder 1578:1578 <> x:52
+binder 1580:1580 <> y:53
+R1593:1596 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1588:1589 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1585:1585 myTheorems <> f:49 var
+R1587:1587 myTheorems <> x:52 var
+R1590:1590 myTheorems <> f:49 var
+R1592:1592 myTheorems <> y:53 var
+R1598:1600 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1597:1597 myTheorems <> x:52 var
+R1601:1601 myTheorems <> y:53 var
+R1613:1616 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1639:1639 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1608:1611 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R1607:1607 myTheorems <> x:51 var
+R1612:1612 myTheorems <> l:50 var
+R1620:1624 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R1617:1617 myTheorems <> f:49 var
+R1619:1619 myTheorems <> x:51 var
+R1625:1629 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R1633:1633 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R1635:1636 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R1638:1638 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+binder 1634:1634 <> i:54
+binder 1634:1634 <> i:55
+R1630:1630 myTheorems <> f:49 var
+R1632:1632 myTheorems <> i:54 var
+R1637:1637 myTheorems <> l:50 var
+R1701:1707 mathcomp.ssreflect.seq <> in_cons thm
+R1701:1707 mathcomp.ssreflect.seq <> in_cons thm
+R1701:1707 mathcomp.ssreflect.seq <> in_cons thm
+R1701:1707 mathcomp.ssreflect.seq <> in_cons thm
+R1701:1707 mathcomp.ssreflect.seq <> in_cons thm
+R1720:1724 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R1740:1749 Coq.Bool.Bool <> orb_true_r thm
+R1759:1769 Coq.Bool.Bool <> orb_false_r thm
+R1720:1724 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R1720:1724 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R1740:1749 Coq.Bool.Bool <> orb_true_r thm
+R1740:1749 Coq.Bool.Bool <> orb_true_r thm
+R1740:1749 Coq.Bool.Bool <> orb_true_r thm
+R1740:1749 Coq.Bool.Bool <> orb_true_r thm
+R1759:1769 Coq.Bool.Bool <> orb_false_r thm
+R1759:1769 Coq.Bool.Bool <> orb_false_r thm
+R1759:1769 Coq.Bool.Bool <> orb_false_r thm
+R1759:1769 Coq.Bool.Bool <> orb_false_r thm
+R1784:1785 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R1784:1785 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R1797:1799 mathcomp.ssreflect.eqtype <> eqP thm
+R1815:1817 mathcomp.ssreflect.eqtype <> eqP thm
+R1815:1817 mathcomp.ssreflect.eqtype <> eqP thm
+R1832:1833 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R1832:1833 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R1832:1833 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R1847:1849 mathcomp.ssreflect.eqtype <> eqP thm
+R1847:1849 mathcomp.ssreflect.eqtype <> eqP thm
+R1847:1849 mathcomp.ssreflect.eqtype <> eqP thm
+R1864:1866 mathcomp.ssreflect.eqtype <> eqP thm
+prf 1886:1894 <> map_f'_eq
+R1905:1910 mathcomp.ssreflect.eqtype Equality.Exports eqType abbrev
+binder 1896:1897 <> t1:56
+binder 1899:1900 <> t2:57
+binder 1902:1903 <> t3:58
+R1917:1918 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1915:1916 myTheorems <> t1:56 var
+R1921:1922 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1919:1920 myTheorems <> t2:57 var
+R1923:1924 myTheorems <> t3:58 var
+binder 1913:1913 <> f:59
+R1930:1933 Coq.Init.Datatypes <> list ind
+R1935:1936 myTheorems <> t1:56 var
+binder 1927:1928 <> l1:60
+R1942:1945 Coq.Init.Datatypes <> list ind
+R1947:1948 myTheorems <> t2:57 var
+binder 1939:1940 <> l2:61
+R1954:1955 myTheorems <> t1:56 var
+binder 1951:1952 <> x1:62
+R1962:1963 myTheorems <> t2:57 var
+binder 1959:1960 <> x2:63
+R1966:1966 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2028:2033 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1981:1982 myTheorems <> t1:56 var
+binder 1975:1976 <> x1:64
+binder 1978:1979 <> x2:65
+R1991:1992 myTheorems <> t2:57 var
+binder 1985:1986 <> y1:66
+binder 1988:1989 <> y2:67
+R2012:2015 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2002:2004 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1995:1995 myTheorems <> f:59 var
+R2000:2001 myTheorems <> y1:66 var
+R1997:1998 myTheorems <> x1:64 var
+R2005:2005 myTheorems <> f:59 var
+R2010:2011 myTheorems <> y2:67 var
+R2007:2008 myTheorems <> x2:65 var
+R2021:2022 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R2018:2018 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2016:2017 myTheorems <> x1:64 var
+R2019:2020 myTheorems <> x2:65 var
+R2025:2025 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2023:2024 myTheorems <> y1:66 var
+R2026:2027 myTheorems <> y2:67 var
+R2056:2057 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2093:2093 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2034:2034 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R2043:2046 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R2055:2055 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R2037:2040 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R2035:2036 myTheorems <> x1:62 var
+R2041:2042 myTheorems <> l1:60 var
+R2049:2052 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R2047:2048 myTheorems <> x2:63 var
+R2053:2054 myTheorems <> l2:61 var
+R2065:2069 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R2058:2058 myTheorems <> f:59 var
+R2063:2064 myTheorems <> x2:63 var
+R2060:2061 myTheorems <> x1:62 var
+R2070:2074 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R2080:2080 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R2082:2083 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R2086:2086 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R2088:2089 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+R2092:2092 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_','_x_'<-'_x_']' not
+binder 2081:2081 <> x:68
+binder 2081:2081 <> x:69
+binder 2087:2087 <> y:70
+binder 2087:2087 <> y:71
+R2075:2075 myTheorems <> f:59 var
+R2079:2079 myTheorems <> y:70 var
+R2077:2077 myTheorems <> x:68 var
+R2090:2091 myTheorems <> l2:61 var
+R2084:2085 myTheorems <> l1:60 var
+R2156:2162 mathcomp.ssreflect.seq <> in_cons thm
+R2164:2170 mathcomp.ssreflect.seq <> mem_cat thm
+R2156:2162 mathcomp.ssreflect.seq <> in_cons thm
+R2156:2162 mathcomp.ssreflect.seq <> in_cons thm
+R2164:2170 mathcomp.ssreflect.seq <> mem_cat thm
+R2164:2170 mathcomp.ssreflect.seq <> mem_cat thm
+R2194:2195 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R2194:2195 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R2194:2195 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R2215:2217 mathcomp.ssreflect.eqtype <> eqP thm
+R2224:2231 myTheorems <> map_f_eq thm
+R2215:2217 mathcomp.ssreflect.eqtype <> eqP thm
+R2215:2217 mathcomp.ssreflect.eqtype <> eqP thm
+R2224:2231 myTheorems <> map_f_eq thm
+R2224:2231 myTheorems <> map_f_eq thm
+R2254:2257 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R2270:2273 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R2254:2257 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R2254:2257 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R2270:2273 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R2270:2273 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R2270:2273 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R2270:2273 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R2312:2312 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R2321:2326 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R2336:2336 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R2315:2319 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R2329:2333 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R2351:2360 Coq.Bool.Bool <> orb_true_r thm
+R2370:2380 Coq.Bool.Bool <> orb_false_r thm
+R2312:2312 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R2321:2326 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R2336:2336 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R2315:2319 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R2329:2333 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R2312:2312 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R2321:2326 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R2336:2336 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R2315:2319 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R2329:2333 Coq.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R2351:2360 Coq.Bool.Bool <> orb_true_r thm
+R2351:2360 Coq.Bool.Bool <> orb_true_r thm
+R2370:2380 Coq.Bool.Bool <> orb_false_r thm
+R2370:2380 Coq.Bool.Bool <> orb_false_r thm
+R2429:2435 mathcomp.ssreflect.seq <> in_cons thm
+R2440:2450 Coq.Bool.Bool <> orb_false_r thm
+R2429:2435 mathcomp.ssreflect.seq <> in_cons thm
+R2429:2435 mathcomp.ssreflect.seq <> in_cons thm
+R2440:2450 Coq.Bool.Bool <> orb_false_r thm
+R2440:2450 Coq.Bool.Bool <> orb_false_r thm
+R2468:2471 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R2468:2471 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R2485:2487 mathcomp.ssreflect.eqtype <> eqP thm
+R2522:2524 mathcomp.ssreflect.eqtype <> eqP thm
+prf 2539:2548 <> map_length
+binder 2551:2552 <> t1:72
+binder 2554:2555 <> t2:73
+R2562:2563 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2560:2561 myTheorems <> t1:72 var
+R2564:2565 myTheorems <> t2:73 var
+binder 2558:2558 <> f:74
+R2570:2573 Coq.Init.Datatypes <> list ind
+R2575:2576 myTheorems <> t1:72 var
+binder 2568:2568 <> l:75
+R2606:2608 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2580:2590 Coq.Lists.List <> length abbrev
+R2592:2596 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R2600:2600 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R2602:2603 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R2605:2605 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+binder 2601:2601 <> x:76
+binder 2601:2601 <> x:77
+R2597:2597 myTheorems <> f:74 var
+R2599:2599 myTheorems <> x:76 var
+R2604:2604 myTheorems <> l:75 var
+R2609:2619 Coq.Lists.List <> length abbrev
+R2621:2621 myTheorems <> l:75 var
+binder 2693:2693 <> t:78
+R2703:2705 Coq.Init.Datatypes <> nat ind
+binder 2701:2701 <> n:79
+R2710:2712 mathcomp.ssreflect.seq <> seq abbrev
+R2714:2714 myTheorems <> t:78 var
+binder 2708:2708 <> l:80
+R2733:2735 mathcomp.ssreflect.seq <> seq abbrev
+R2737:2739 mathcomp.ssreflect.seq <> seq abbrev
+R2741:2741 myTheorems <> t:78 var
+R2755:2755 myTheorems <> l:80 var
+R2753:2753 myTheorems <> n:79 var
+R2770:2772 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R2774:2774 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R2773:2773 myTheorems <> l:80 var
+R2779:2781 Coq.Init.Datatypes <> nil constr
+R2786:2788 Coq.Init.Datatypes <> nil constr
+R2796:2796 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R2805:2808 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R2828:2828 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R2797:2800 mathcomp.ssreflect.seq <> take def
+R2804:2804 myTheorems <> l:80 var
+R2802:2802 myTheorems <> n:79 var
+R2809:2814 myTheorems <> divide:81 def
+R2819:2822 mathcomp.ssreflect.seq <> drop def
+R2826:2826 myTheorems <> l:80 var
+R2824:2824 myTheorems <> n:79 var
+R2816:2816 myTheorems <> n:79 var
+binder 2693:2693 <> t:84
+binder 2701:2701 <> n:85
+binder 2708:2708 <> l:86
+binder 2693:2693 <> t:87
+binder 2701:2701 <> n:88
+binder 2708:2708 <> l:89
+binder 2693:2693 <> t:91
+binder 2701:2701 <> n:92
+binder 2708:2708 <> l:93
+R2755:2755 myTheorems <> l:93 var
+R2753:2753 myTheorems <> n:92 var
+R2770:2772 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R2774:2774 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R2773:2773 myTheorems <> l:93 var
+R2779:2781 Coq.Init.Datatypes <> nil constr
+R2786:2788 Coq.Init.Datatypes <> nil constr
+R2796:2796 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R2805:2808 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R2828:2828 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R2797:2800 mathcomp.ssreflect.seq <> take def
+R2804:2804 myTheorems <> l:93 var
+R2802:2802 myTheorems <> n:92 var
+R2809:2814 myTheorems <> divide:90 def
+R2819:2822 mathcomp.ssreflect.seq <> drop def
+R2826:2826 myTheorems <> l:93 var
+R2824:2824 myTheorems <> n:92 var
+R2816:2816 myTheorems <> n:92 var
+binder 2693:2693 <> t:96
+binder 2701:2701 <> n:97
+binder 2708:2708 <> l:98
+binder 2693:2693 <> t:99
+binder 2701:2701 <> n:100
+binder 2708:2708 <> l:101
+R2755:2755 myTheorems <> l:101 var
+R2753:2753 myTheorems <> n:100 var
+R2770:2772 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R2774:2774 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R2773:2773 myTheorems <> l:101 var
+R2779:2781 Coq.Init.Datatypes <> nil constr
+R2786:2788 Coq.Init.Datatypes <> nil constr
+R2796:2796 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R2805:2808 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R2828:2828 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R2797:2800 mathcomp.ssreflect.seq <> take def
+R2804:2804 myTheorems <> l:101 var
+R2802:2802 myTheorems <> n:100 var
+R2809:2814 myTheorems <> divide:90 def
+R2819:2822 mathcomp.ssreflect.seq <> drop def
+R2826:2826 myTheorems <> l:101 var
+R2824:2824 myTheorems <> n:100 var
+R2816:2816 myTheorems <> n:100 var
+R2725:2728 mathcomp.ssreflect.seq <> size def
+R2881:2893 mathcomp.ssreflect.seq <> cat_take_drop thm
+R2904:2905 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R2897:2899 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.+1' not
+R2881:2893 mathcomp.ssreflect.seq <> cat_take_drop thm
+R2904:2905 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R2897:2899 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.+1' not
+R2881:2893 mathcomp.ssreflect.seq <> cat_take_drop thm
+R2904:2905 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R2897:2899 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.+1' not
+R2920:2927 mathcomp.ssreflect.seq <> size_cat thm
+R2920:2927 mathcomp.ssreflect.seq <> size_cat thm
+R2920:2927 mathcomp.ssreflect.seq <> size_cat thm
+R2945:2949 mathcomp.ssreflect.ssrnat <> addSn thm
+R2945:2949 mathcomp.ssreflect.ssrnat <> addSn thm
+R2945:2949 mathcomp.ssreflect.ssrnat <> addSn thm
+R2958:2960 mathcomp.ssreflect.ssrnat <> leP thm
+R2962:2969 mathcomp.ssreflect.ssrnat <> leq_addl thm
+R2958:2960 mathcomp.ssreflect.ssrnat <> leP thm
+R2962:2969 mathcomp.ssreflect.ssrnat <> leq_addl thm
+def 3018:3029 <> dividestring
+R3034:3036 Coq.Init.Datatypes <> nat ind
+binder 3032:3032 <> n:127
+R3041:3046 Coq.Strings.String <> string ind
+binder 3039:3039 <> s:128
+R3049:3052 Coq.Init.Datatypes <> list ind
+R3054:3059 Coq.Strings.String <> string ind
+R3072:3072 myTheorems <> s:128 var
+R3070:3070 myTheorems <> n:127 var
+R3088:3090 Coq.Init.Datatypes <> nil constr
+R3100:3102 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R3104:3104 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R3103:3103 myTheorems <> s:128 var
+R3125:3127 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R3149:3158 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R3171:3182 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R3144:3147 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R3128:3128 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R3137:3142 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R3129:3134 Coq.Strings.String <> length def
+R3136:3136 myTheorems <> s:128 var
+R3143:3143 myTheorems <> n:127 var
+R3159:3159 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R3168:3169 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R3160:3165 Coq.Strings.String <> length def
+R3167:3167 myTheorems <> s:128 var
+R3170:3170 myTheorems <> n:127 var
+R3195:3197 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R3183:3183 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R3192:3193 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R3184:3189 Coq.Strings.String <> length def
+R3191:3191 myTheorems <> s:128 var
+R3194:3194 myTheorems <> n:127 var
+binder 3118:3118 <> m:131
+R3203:3207 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R3227:3227 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R3229:3232 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R3245:3245 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+binder 3228:3228 <> i:132
+binder 3228:3228 <> i:133
+R3208:3216 Coq.Strings.String <> substring def
+R3220:3220 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'*'_x not
+R3219:3219 myTheorems <> i:132 var
+R3221:3221 myTheorems <> n:127 var
+R3224:3224 myTheorems <> n:127 var
+R3226:3226 myTheorems <> s:128 var
+R3233:3240 Coq.Lists.List <> seq def
+R3244:3244 myTheorems <> m:131 var
+prf 3259:3267 <> appendEmp
+R3272:3277 Coq.Strings.String <> string ind
+binder 3270:3270 <> s:134
+R3285:3285 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3281:3282 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R3280:3280 myTheorems <> s:134 var
+R3286:3286 myTheorems <> s:134 var
+prf 3349:3359 <> substringeq
+R3364:3369 Coq.Strings.String <> string ind
+binder 3362:3362 <> s:135
+R3396:3398 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3372:3380 Coq.Strings.String <> substring def
+R3385:3390 Coq.Strings.String <> length def
+R3392:3392 myTheorems <> s:135 var
+R3395:3395 myTheorems <> s:135 var
+R3399:3399 myTheorems <> s:135 var
+prf 3462:3472 <> substringn0
+R3477:3479 Coq.Init.Datatypes <> nat ind
+binder 3475:3475 <> n:136
+R3484:3489 Coq.Strings.String <> string ind
+binder 3482:3482 <> s:137
+R3507:3509 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3492:3500 Coq.Strings.String <> substring def
+R3502:3502 myTheorems <> n:136 var
+R3506:3506 myTheorems <> s:137 var
+prf 3570:3584 <> substringlemma1
+R3589:3591 Coq.Init.Datatypes <> nat ind
+binder 3587:3587 <> n:138
+R3596:3601 Coq.Strings.String <> string ind
+binder 3594:3594 <> s:139
+R3652:3654 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3620:3623 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R3605:3613 Coq.Strings.String <> substring def
+R3617:3617 myTheorems <> n:138 var
+R3619:3619 myTheorems <> s:139 var
+R3624:3632 Coq.Strings.String <> substring def
+R3634:3634 myTheorems <> n:138 var
+R3645:3647 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'-'_x not
+R3637:3642 Coq.Strings.String <> length def
+R3644:3644 myTheorems <> s:139 var
+R3648:3648 myTheorems <> n:138 var
+R3651:3651 myTheorems <> s:139 var
+R3655:3655 myTheorems <> s:139 var
+R3700:3710 myTheorems <> substringn0 thm
+R3720:3724 mathcomp.ssreflect.ssrnat <> subn0 thm
+R3734:3744 myTheorems <> substringeq thm
+R3794:3798 mathcomp.ssreflect.ssrnat <> subSS thm
+R3700:3710 myTheorems <> substringn0 thm
+R3700:3710 myTheorems <> substringn0 thm
+R3720:3724 mathcomp.ssreflect.ssrnat <> subn0 thm
+R3720:3724 mathcomp.ssreflect.ssrnat <> subn0 thm
+R3734:3744 myTheorems <> substringeq thm
+R3734:3744 myTheorems <> substringeq thm
+R3794:3798 mathcomp.ssreflect.ssrnat <> subSS thm
+R3794:3798 mathcomp.ssreflect.ssrnat <> subSS thm
+prf 3821:3835 <> substringlemma2
+R3842:3844 Coq.Init.Datatypes <> nat ind
+binder 3838:3838 <> m:140
+binder 3840:3840 <> n:141
+R3849:3854 Coq.Strings.String <> string ind
+binder 3847:3847 <> s:142
+R3870:3873 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3860:3861 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'<='_x not
+R3858:3858 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R3857:3857 myTheorems <> m:140 var
+R3859:3859 myTheorems <> n:141 var
+R3862:3867 Coq.Strings.String <> length def
+R3869:3869 myTheorems <> s:142 var
+R3898:3900 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3874:3879 Coq.Strings.String <> length def
+R3882:3890 Coq.Strings.String <> substring def
+R3892:3892 myTheorems <> m:140 var
+R3894:3894 myTheorems <> n:141 var
+R3896:3896 myTheorems <> s:142 var
+R3901:3901 myTheorems <> n:141 var
+R4034:4044 myTheorems <> substringn0 thm
+R4164:4168 mathcomp.ssreflect.ssrnat <> add0n thm
+R4235:4239 mathcomp.ssreflect.ssrnat <> addSn thm
+R3943:3945 Coq.Init.Datatypes <> nat ind
+binder 3941:3941 <> n:143
+R3950:3955 Coq.Strings.String <> string ind
+binder 3948:3948 <> s:144
+R3972:3975 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3960:3963 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'<='_x not
+R3959:3959 myTheorems <> n:143 var
+R3964:3969 Coq.Strings.String <> length def
+R3971:3971 myTheorems <> s:144 var
+R4000:4002 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3976:3981 Coq.Strings.String <> length def
+R3984:3992 Coq.Strings.String <> substring def
+R3996:3996 myTheorems <> n:143 var
+R3998:3998 myTheorems <> s:144 var
+R4003:4003 myTheorems <> n:143 var
+R4034:4044 myTheorems <> substringn0 thm
+R4034:4044 myTheorems <> substringn0 thm
+R4093:4097 mathcomp.ssreflect.ssrnat <> ltnSE thm
+R4164:4168 mathcomp.ssreflect.ssrnat <> add0n thm
+R4164:4168 mathcomp.ssreflect.ssrnat <> add0n thm
+R4235:4239 mathcomp.ssreflect.ssrnat <> addSn thm
+R4235:4239 mathcomp.ssreflect.ssrnat <> addSn thm
+R4246:4250 mathcomp.ssreflect.ssrnat <> ltnSE thm
+prf 4274:4288 <> substringlemma3
+R4295:4300 Coq.Strings.String <> string ind
+binder 4291:4291 <> s:145
+binder 4293:4293 <> t:146
+R4332:4334 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4303:4311 Coq.Strings.String <> substring def
+R4316:4321 Coq.Strings.String <> length def
+R4323:4323 myTheorems <> s:145 var
+R4328:4329 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R4327:4327 myTheorems <> s:145 var
+R4330:4330 myTheorems <> t:146 var
+R4335:4335 myTheorems <> s:145 var
+R4359:4369 myTheorems <> substringn0 thm
+R4359:4369 myTheorems <> substringn0 thm
+prf 4415:4429 <> substringlemma4
+R4436:4438 Coq.Init.Datatypes <> nat ind
+binder 4432:4432 <> m:147
+binder 4434:4434 <> n:148
+R4445:4450 Coq.Strings.String <> string ind
+binder 4441:4441 <> s:149
+binder 4443:4443 <> t:150
+R4487:4489 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4454:4462 Coq.Strings.String <> substring def
+R4473:4475 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R4465:4470 Coq.Strings.String <> length def
+R4472:4472 myTheorems <> s:149 var
+R4476:4476 myTheorems <> m:147 var
+R4479:4479 myTheorems <> n:148 var
+R4483:4484 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R4482:4482 myTheorems <> s:149 var
+R4485:4485 myTheorems <> t:150 var
+R4490:4498 Coq.Strings.String <> substring def
+R4500:4500 myTheorems <> m:147 var
+R4502:4502 myTheorems <> n:148 var
+R4504:4504 myTheorems <> t:150 var
+R4554:4558 mathcomp.ssreflect.ssrnat <> add0n thm
+R4554:4558 mathcomp.ssreflect.ssrnat <> add0n thm
+R4554:4558 mathcomp.ssreflect.ssrnat <> add0n thm
+prf 4602:4616 <> substringlemma5
+R4621:4623 Coq.Init.Datatypes <> nat ind
+binder 4619:4619 <> n:151
+R4630:4635 Coq.Strings.String <> string ind
+binder 4626:4626 <> s:152
+binder 4628:4628 <> t:153
+R4672:4674 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4639:4647 Coq.Strings.String <> substring def
+R4660:4662 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R4652:4657 Coq.Strings.String <> length def
+R4659:4659 myTheorems <> s:152 var
+R4663:4663 myTheorems <> n:151 var
+R4668:4669 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R4667:4667 myTheorems <> s:152 var
+R4670:4670 myTheorems <> t:153 var
+R4676:4677 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R4675:4675 myTheorems <> s:152 var
+R4678:4686 Coq.Strings.String <> substring def
+R4690:4690 myTheorems <> n:151 var
+R4692:4692 myTheorems <> t:153 var
+prf 4759:4775 <> dividestringlemma
+R4780:4782 Coq.Init.Datatypes <> nat ind
+binder 4778:4778 <> n:154
+R4787:4792 Coq.Strings.String <> string ind
+binder 4785:4785 <> s:155
+R4824:4826 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4796:4801 Coq.Strings.String <> concat def
+R4807:4818 myTheorems <> dividestring def
+R4820:4820 myTheorems <> n:154 var
+R4822:4822 myTheorems <> s:155 var
+R4827:4827 myTheorems <> s:155 var
+R4865:4866 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4862:4864 Coq.Init.Datatypes <> nat ind
+R4867:4872 Coq.Strings.String <> string ind
+binder 4860:4860 <> f:156
+R4879:4881 Coq.Init.Datatypes <> nat ind
+binder 4875:4875 <> m:157
+binder 4877:4877 <> n:158
+R4915:4915 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4885:4889 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R4893:4893 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R4895:4898 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R4914:4914 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+binder 4894:4894 <> i:159
+binder 4894:4894 <> i:160
+R4890:4890 myTheorems <> f:156 var
+R4892:4892 myTheorems <> i:159 var
+R4899:4906 Coq.Lists.List <> seq def
+R4911:4913 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.+1' not
+R4910:4910 myTheorems <> n:158 var
+R4908:4908 myTheorems <> m:157 var
+R4916:4916 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R4920:4922 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R4917:4917 myTheorems <> f:156 var
+R4919:4919 myTheorems <> m:157 var
+R4923:4927 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R4935:4935 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R4937:4940 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R4953:4953 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+binder 4936:4936 <> i:161
+binder 4936:4936 <> i:162
+R4928:4928 myTheorems <> f:156 var
+R4932:4932 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R4933:4933 myTheorems <> i:161 var
+R4941:4948 Coq.Lists.List <> seq def
+R4952:4952 myTheorems <> n:158 var
+R4950:4950 myTheorems <> m:157 var
+R5081:5083 Coq.Init.Datatypes <> nat ind
+binder 5077:5077 <> a:163
+binder 5079:5079 <> b:164
+R5088:5093 Coq.Strings.String <> string ind
+binder 5086:5086 <> s:165
+R5101:5104 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5097:5099 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'<'_x not
+R5096:5096 myTheorems <> b:164 var
+R5121:5126 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5113:5115 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5105:5110 Coq.Strings.String <> length def
+R5112:5112 myTheorems <> s:165 var
+R5119:5119 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R5117:5117 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'*'_x not
+R5116:5116 myTheorems <> a:163 var
+R5120:5120 myTheorems <> b:164 var
+R5155:5157 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5127:5132 Coq.Strings.String <> concat def
+R5138:5149 myTheorems <> dividestring def
+R5153:5153 myTheorems <> s:165 var
+R5158:5158 myTheorems <> s:165 var
+R5229:5244 Coq.Arith.PeanoNat Nat.Div0 div_mod thm
+R5259:5263 mathcomp.ssreflect.ssrnat <> plusE thm
+R5274:5278 mathcomp.ssreflect.ssrnat <> multE thm
+R5291:5295 mathcomp.ssreflect.ssrnat <> mulnC thm
+R5180:5182 Coq.Init.Datatypes <> nat ind
+binder 5178:5178 <> m:166
+R5186:5189 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5205:5205 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5185:5185 myTheorems <> m:166 var
+R5190:5190 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R5196:5197 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R5194:5194 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'*'_x not
+R5192:5192 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R5191:5191 myTheorems <> m:166 var
+R5199:5203 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R5198:5198 myTheorems <> m:166 var
+R5229:5244 Coq.Arith.PeanoNat Nat.Div0 div_mod thm
+R5229:5244 Coq.Arith.PeanoNat Nat.Div0 div_mod thm
+R5259:5263 mathcomp.ssreflect.ssrnat <> plusE thm
+R5259:5263 mathcomp.ssreflect.ssrnat <> plusE thm
+R5274:5278 mathcomp.ssreflect.ssrnat <> multE thm
+R5274:5278 mathcomp.ssreflect.ssrnat <> multE thm
+R5291:5295 mathcomp.ssreflect.ssrnat <> mulnC thm
+R5291:5295 mathcomp.ssreflect.ssrnat <> mulnC thm
+R5309:5314 Coq.Strings.String <> length def
+R5309:5314 Coq.Strings.String <> length def
+R5309:5314 Coq.Strings.String <> length def
+R5332:5336 mathcomp.ssreflect.ssrnat <> leq0n thm
+R5339:5344 Coq.Strings.String <> length def
+R5332:5336 mathcomp.ssreflect.ssrnat <> leq0n thm
+R5339:5344 Coq.Strings.String <> length def
+R5332:5336 mathcomp.ssreflect.ssrnat <> leq0n thm
+R5339:5344 Coq.Strings.String <> length def
+R5355:5357 mathcomp.ssreflect.ssrnat <> leP thm
+R5370:5382 Coq.Arith.PeanoNat Nat lt_0_succ thm
+R5385:5387 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.-1' not
+R5370:5382 Coq.Arith.PeanoNat Nat lt_0_succ thm
+R5385:5387 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.-1' not
+R5370:5382 Coq.Arith.PeanoNat Nat lt_0_succ thm
+R5385:5387 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.-1' not
+R5428:5444 Coq.Arith.PeanoNat Nat mod_bound_pos thm
+R5447:5452 Coq.Strings.String <> length def
+R5428:5444 Coq.Arith.PeanoNat Nat mod_bound_pos thm
+R5447:5452 Coq.Strings.String <> length def
+R5428:5444 Coq.Arith.PeanoNat Nat mod_bound_pos thm
+R5447:5452 Coq.Strings.String <> length def
+R5501:5503 mathcomp.ssreflect.ssrnat <> ltP thm
+R5538:5538 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R5530:5535 Coq.Strings.String <> length def
+R5551:5555 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R5543:5548 Coq.Strings.String <> length def
+R5538:5538 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R5530:5535 Coq.Strings.String <> length def
+R5551:5555 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R5543:5548 Coq.Strings.String <> length def
+R5538:5538 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R5530:5535 Coq.Strings.String <> length def
+R5551:5555 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R5543:5548 Coq.Strings.String <> length def
+R5619:5623 mathcomp.ssreflect.ssrnat <> mul0n thm
+R5633:5637 mathcomp.ssreflect.ssrnat <> add0n thm
+R5711:5722 myTheorems <> dividestring def
+R5775:5787 Coq.Arith.PeanoNat Nat mod_small def
+R5790:5795 Coq.Strings.String <> length def
+R5882:5894 Coq.Arith.PeanoNat Nat div_small def
+R5897:5902 Coq.Strings.String <> length def
+R5926:5930 mathcomp.ssreflect.ssrnat <> mul0n thm
+R5619:5623 mathcomp.ssreflect.ssrnat <> mul0n thm
+R5619:5623 mathcomp.ssreflect.ssrnat <> mul0n thm
+R5633:5637 mathcomp.ssreflect.ssrnat <> add0n thm
+R5633:5637 mathcomp.ssreflect.ssrnat <> add0n thm
+R5711:5722 myTheorems <> dividestring def
+R5711:5722 myTheorems <> dividestring def
+R5736:5738 mathcomp.ssreflect.ssrnat <> ltP thm
+R5775:5787 Coq.Arith.PeanoNat Nat mod_small def
+R5790:5795 Coq.Strings.String <> length def
+R5775:5787 Coq.Arith.PeanoNat Nat mod_small def
+R5790:5795 Coq.Strings.String <> length def
+R5828:5830 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5823:5826 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R5815:5820 Coq.Strings.String <> length def
+R5831:5835 Coq.Init.Datatypes <> false constr
+R5882:5894 Coq.Arith.PeanoNat Nat div_small def
+R5897:5902 Coq.Strings.String <> length def
+R5882:5894 Coq.Arith.PeanoNat Nat div_small def
+R5897:5902 Coq.Strings.String <> length def
+R5926:5930 mathcomp.ssreflect.ssrnat <> mul0n thm
+R5926:5930 mathcomp.ssreflect.ssrnat <> mul0n thm
+R5944:5946 mathcomp.ssreflect.ssrnat <> ltP thm
+R5974:5976 Coq.Init.Datatypes <> nat ind
+binder 5972:5972 <> n:167
+R5981:5986 Coq.Strings.String <> string ind
+binder 5979:5979 <> s:168
+R5999:6000 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5997:5997 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'<'_x not
+R5989:5994 Coq.Strings.String <> length def
+R5996:5996 myTheorems <> s:168 var
+R5998:5998 myTheorems <> n:167 var
+R6016:6016 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6001:6009 Coq.Strings.String <> substring def
+R6013:6013 myTheorems <> n:167 var
+R6015:6015 myTheorems <> s:168 var
+R6017:6017 myTheorems <> s:168 var
+R6087:6091 mathcomp.ssreflect.ssrnat <> ltnSE thm
+R6158:6162 mathcomp.ssreflect.ssrnat <> mulSn thm
+R6170:6184 myTheorems <> substringlemma1 thm
+R6158:6162 mathcomp.ssreflect.ssrnat <> mulSn thm
+R6158:6162 mathcomp.ssreflect.ssrnat <> mulSn thm
+R6170:6184 myTheorems <> substringlemma1 thm
+R6170:6184 myTheorems <> substringlemma1 thm
+R6243:6247 mathcomp.ssreflect.ssrnat <> addnA thm
+R6255:6262 mathcomp.ssreflect.ssrnat <> leq_addr thm
+R6209:6212 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'<='_x not
+R6213:6218 Coq.Strings.String <> length def
+R6243:6247 mathcomp.ssreflect.ssrnat <> addnA thm
+R6243:6247 mathcomp.ssreflect.ssrnat <> addnA thm
+R6255:6262 mathcomp.ssreflect.ssrnat <> leq_addr thm
+R6419:6423 mathcomp.ssreflect.ssrnat <> addSn thm
+R6316:6321 Coq.Strings.String <> string ind
+binder 6310:6311 <> s1:169
+binder 6313:6314 <> s2:170
+R6339:6339 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6324:6329 Coq.Strings.String <> length def
+R6334:6335 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R6332:6333 myTheorems <> s1:169 var
+R6336:6337 myTheorems <> s2:170 var
+R6349:6351 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R6340:6345 Coq.Strings.String <> length def
+R6347:6348 myTheorems <> s1:169 var
+R6352:6357 Coq.Strings.String <> length def
+R6359:6360 myTheorems <> s2:170 var
+R6419:6423 mathcomp.ssreflect.ssrnat <> addSn thm
+R6419:6423 mathcomp.ssreflect.ssrnat <> addSn thm
+R6457:6471 myTheorems <> substringlemma2 thm
+R6457:6471 myTheorems <> substringlemma2 thm
+R6457:6471 myTheorems <> substringlemma2 thm
+R6577:6581 mathcomp.ssreflect.ssrnat <> addSn thm
+R6514:6516 Coq.Init.Datatypes <> nat ind
+binder 6508:6508 <> m:171
+binder 6510:6510 <> n:172
+binder 6512:6512 <> p:173
+R6527:6528 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6522:6523 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6520:6520 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R6519:6519 myTheorems <> p:173 var
+R6521:6521 myTheorems <> n:172 var
+R6525:6525 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R6524:6524 myTheorems <> p:173 var
+R6526:6526 myTheorems <> m:171 var
+R6530:6530 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6529:6529 myTheorems <> n:172 var
+R6531:6531 myTheorems <> m:171 var
+R6577:6581 mathcomp.ssreflect.ssrnat <> addSn thm
+R6577:6581 mathcomp.ssreflect.ssrnat <> addSn thm
+R6577:6581 mathcomp.ssreflect.ssrnat <> addSn thm
+R6577:6581 mathcomp.ssreflect.ssrnat <> addSn thm
+R6588:6599 Coq.Arith.PeanoNat Nat succ_inj thm
+R6621:6625 mathcomp.ssreflect.ssrnat <> addnA thm
+R6621:6625 mathcomp.ssreflect.ssrnat <> addnA thm
+R6621:6625 mathcomp.ssreflect.ssrnat <> addnA thm
+R6670:6675 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6654:6665 myTheorems <> dividestring def
+R6676:6676 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R6692:6695 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R6741:6741 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R6677:6685 Coq.Strings.String <> substring def
+R6696:6707 myTheorems <> dividestring def
+R6712:6720 Coq.Strings.String <> substring def
+R6733:6735 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'-'_x not
+R6725:6730 Coq.Strings.String <> length def
+R6782:6787 Coq.Strings.String <> string ind
+binder 6780:6780 <> s:174
+R6792:6795 Coq.Init.Datatypes <> list ind
+R6797:6802 Coq.Strings.String <> string ind
+binder 6790:6790 <> l:175
+R6822:6824 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6806:6811 Coq.Strings.String <> concat def
+R6818:6819 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R6817:6817 myTheorems <> s:174 var
+R6820:6820 myTheorems <> l:175 var
+R6826:6828 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R6840:6840 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R6825:6825 myTheorems <> s:174 var
+R6829:6834 Coq.Strings.String <> concat def
+R6839:6839 myTheorems <> l:175 var
+R6878:6886 Coq.Strings.String <> substring def
+R6899:6901 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'-'_x not
+R6891:6896 Coq.Strings.String <> length def
+R6878:6886 Coq.Strings.String <> substring def
+R6899:6901 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'-'_x not
+R6891:6896 Coq.Strings.String <> length def
+R6878:6886 Coq.Strings.String <> substring def
+R6899:6901 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'-'_x not
+R6891:6896 Coq.Strings.String <> length def
+R6986:6997 myTheorems <> dividestring def
+R6986:6997 myTheorems <> dividestring def
+R6986:6997 myTheorems <> dividestring def
+R7122:7126 mathcomp.ssreflect.ssrnat <> mulSn thm
+R7122:7126 mathcomp.ssreflect.ssrnat <> mulSn thm
+R7122:7126 mathcomp.ssreflect.ssrnat <> mulSn thm
+R7190:7194 mathcomp.ssreflect.ssrnat <> addnC thm
+R7205:7209 mathcomp.ssreflect.ssrnat <> plusE thm
+R7219:7234 Coq.Arith.PeanoNat Nat.Div0 mod_add thm
+R7267:7279 Coq.Arith.PeanoNat Nat mod_small def
+R7148:7150 Coq.Init.Datatypes <> nat ind
+binder 7146:7146 <> a:176
+R7166:7168 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7153:7153 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R7159:7164 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R7157:7157 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R7155:7155 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'*'_x not
+R7154:7154 myTheorems <> a:176 var
+R7190:7194 mathcomp.ssreflect.ssrnat <> addnC thm
+R7190:7194 mathcomp.ssreflect.ssrnat <> addnC thm
+R7205:7209 mathcomp.ssreflect.ssrnat <> plusE thm
+R7205:7209 mathcomp.ssreflect.ssrnat <> plusE thm
+R7219:7234 Coq.Arith.PeanoNat Nat.Div0 mod_add thm
+R7219:7234 Coq.Arith.PeanoNat Nat.Div0 mod_add thm
+R7248:7250 mathcomp.ssreflect.ssrnat <> ltP thm
+R7267:7279 Coq.Arith.PeanoNat Nat mod_small def
+R7267:7279 Coq.Arith.PeanoNat Nat mod_small def
+R7361:7373 Coq.Arith.PeanoNat Nat div_add_l def
+R7423:7435 Coq.Arith.PeanoNat Nat div_small def
+R7446:7450 mathcomp.ssreflect.ssrnat <> plusE thm
+R7460:7464 mathcomp.ssreflect.ssrnat <> addn0 thm
+R7322:7324 Coq.Init.Datatypes <> nat ind
+binder 7320:7320 <> a:177
+R7336:7338 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7327:7327 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R7333:7334 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R7331:7331 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R7329:7329 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'*'_x not
+R7328:7328 myTheorems <> a:177 var
+R7339:7339 myTheorems <> a:177 var
+R7361:7373 Coq.Arith.PeanoNat Nat div_add_l def
+R7361:7373 Coq.Arith.PeanoNat Nat div_add_l def
+R7404:7406 mathcomp.ssreflect.ssrnat <> ltP thm
+R7423:7435 Coq.Arith.PeanoNat Nat div_small def
+R7423:7435 Coq.Arith.PeanoNat Nat div_small def
+R7446:7450 mathcomp.ssreflect.ssrnat <> plusE thm
+R7446:7450 mathcomp.ssreflect.ssrnat <> plusE thm
+R7460:7464 mathcomp.ssreflect.ssrnat <> addn0 thm
+R7460:7464 mathcomp.ssreflect.ssrnat <> addn0 thm
+R7501:7509 Coq.Strings.String <> substring def
+R7522:7524 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'-'_x not
+R7514:7519 Coq.Strings.String <> length def
+R7501:7509 Coq.Strings.String <> substring def
+R7522:7524 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'-'_x not
+R7514:7519 Coq.Strings.String <> length def
+R7501:7509 Coq.Strings.String <> substring def
+R7522:7524 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'-'_x not
+R7514:7519 Coq.Strings.String <> length def
+R7612:7612 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'*'_x not
+R7626:7630 mathcomp.ssreflect.ssrnat <> add0n thm
+R7584:7586 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7581:7582 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R7587:7590 Coq.Init.Datatypes <> true constr
+R7612:7612 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'*'_x not
+R7626:7630 mathcomp.ssreflect.ssrnat <> add0n thm
+R7626:7630 mathcomp.ssreflect.ssrnat <> add0n thm
+R7686:7686 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7760:7764 mathcomp.ssreflect.ssrnat <> mul0n thm
+R7760:7764 mathcomp.ssreflect.ssrnat <> mul0n thm
+R7760:7764 mathcomp.ssreflect.ssrnat <> mul0n thm
+R7806:7808 Coq.Init.Datatypes <> nat ind
+binder 7804:7804 <> a:178
+R7863:7865 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7810:7814 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R7836:7841 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R7843:7846 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R7862:7862 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+binder 7842:7842 <> i:179
+binder 7842:7842 <> i:180
+R7815:7823 Coq.Strings.String <> substring def
+R7827:7829 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'*'_x not
+R7826:7826 myTheorems <> i:179 var
+R7847:7854 Coq.Lists.List <> seq def
+R7859:7861 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.+1' not
+R7858:7858 myTheorems <> a:178 var
+R7881:7884 mathcomp.ssreflect.seq <> ::seq_scope:x_'::'_x not
+R7866:7874 Coq.Strings.String <> substring def
+R7885:7889 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R7940:7948 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R7950:7953 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+R7966:7966 mathcomp.ssreflect.seq <> ::seq_scope:'['_'seq'_x_'|'_x_'<-'_x_']' not
+binder 7949:7949 <> i:181
+binder 7949:7949 <> i:182
+R7890:7898 Coq.Strings.String <> substring def
+R7902:7904 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'*'_x not
+R7901:7901 myTheorems <> i:181 var
+R7911:7919 Coq.Strings.String <> substring def
+R7932:7934 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'-'_x not
+R7924:7929 Coq.Strings.String <> length def
+R7954:7961 Coq.Lists.List <> seq def
+R7965:7965 myTheorems <> a:178 var
+R7980:7981 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R8015:8015 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R7980:7981 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R8015:8015 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R8015:8015 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R8058:8062 mathcomp.ssreflect.ssrnat <> mul0n thm
+R8058:8062 mathcomp.ssreflect.ssrnat <> mul0n thm
+R8058:8062 mathcomp.ssreflect.ssrnat <> mul0n thm
+R8124:8126 Coq.Init.Datatypes <> nat ind
+binder 8120:8120 <> n:183
+binder 8122:8122 <> m:184
+R8143:8145 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R8128:8135 Coq.Lists.List <> seq def
+R8140:8142 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.+1' not
+R8139:8139 myTheorems <> n:183 var
+R8137:8137 myTheorems <> m:184 var
+R8146:8148 Coq.Init.Datatypes <> app def
+R8165:8167 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R8171:8171 mathcomp.ssreflect.seq <> ::seq_scope:'['_'::'_x_']' not
+R8169:8169 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R8168:8168 myTheorems <> m:184 var
+R8170:8170 myTheorems <> n:183 var
+R8151:8158 Coq.Lists.List <> seq def
+R8162:8162 myTheorems <> n:183 var
+R8160:8160 myTheorems <> m:184 var
+R8198:8202 mathcomp.ssreflect.ssrnat <> addn0 thm
+R8198:8202 mathcomp.ssreflect.ssrnat <> addn0 thm
+R8198:8202 mathcomp.ssreflect.ssrnat <> addn0 thm
+R8256:8258 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.+1' not
+R8256:8258 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.+1' not
+R8256:8258 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.+1' not
+R8270:8274 mathcomp.ssreflect.ssrnat <> addSn thm
+R8270:8274 mathcomp.ssreflect.ssrnat <> addSn thm
+R8270:8274 mathcomp.ssreflect.ssrnat <> addSn thm
+R8288:8292 mathcomp.ssreflect.ssrnat <> addnS thm
+R8288:8292 mathcomp.ssreflect.ssrnat <> addnS thm
+R8288:8292 mathcomp.ssreflect.ssrnat <> addnS thm
+R8315:8321 mathcomp.ssreflect.seq <> map_cat thm
+R8315:8321 mathcomp.ssreflect.seq <> map_cat thm
+R8315:8321 mathcomp.ssreflect.seq <> map_cat thm
+R8315:8321 mathcomp.ssreflect.seq <> map_cat thm
+R8315:8321 mathcomp.ssreflect.seq <> map_cat thm
+R8364:8368 mathcomp.ssreflect.ssrnat <> add0n thm
+R8364:8368 mathcomp.ssreflect.ssrnat <> add0n thm
+R8364:8368 mathcomp.ssreflect.ssrnat <> add0n thm
+R8395:8399 mathcomp.ssreflect.ssrnat <> mulnC thm
+R8395:8399 mathcomp.ssreflect.ssrnat <> mulnC thm
+R8395:8399 mathcomp.ssreflect.ssrnat <> mulnC thm
+R8410:8415 mathcomp.ssreflect.ssrnat <> mulnDr thm
+R8410:8415 mathcomp.ssreflect.ssrnat <> mulnDr thm
+R8410:8415 mathcomp.ssreflect.ssrnat <> mulnDr thm
+R8426:8430 mathcomp.ssreflect.ssrnat <> muln1 thm
+R8426:8430 mathcomp.ssreflect.ssrnat <> muln1 thm
+R8426:8430 mathcomp.ssreflect.ssrnat <> muln1 thm
+R8441:8445 mathcomp.ssreflect.ssrnat <> mulnC thm
+R8441:8445 mathcomp.ssreflect.ssrnat <> mulnC thm
+R8441:8445 mathcomp.ssreflect.ssrnat <> mulnC thm
+R8469:8473 mathcomp.ssreflect.ssrnat <> add0n thm
+R8469:8473 mathcomp.ssreflect.ssrnat <> add0n thm
+R8469:8473 mathcomp.ssreflect.ssrnat <> add0n thm
+R8495:8509 myTheorems <> substringlemma2 thm
+R8495:8509 myTheorems <> substringlemma2 thm
+R8495:8509 myTheorems <> substringlemma2 thm
+R8528:8542 myTheorems <> substringlemma4 thm
+R8528:8542 myTheorems <> substringlemma4 thm
+R8560:8560 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+prf 8570:8587 <> dividestringlength
+R8592:8594 Coq.Init.Datatypes <> nat ind
+binder 8590:8590 <> n:185
+R8599:8604 Coq.Strings.String <> string ind
+binder 8597:8597 <> s:186
+R8638:8641 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R8608:8618 Coq.Lists.List <> length abbrev
+R8621:8632 myTheorems <> dividestring def
+R8634:8634 myTheorems <> n:185 var
+R8636:8636 myTheorems <> s:186 var
+R8642:8644 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R8664:8669 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R8680:8685 Coq.ssr.ssreflect <> ::boolean_if_scope:'if'_x_'then'_x_'else'_x not
+R8659:8662 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R8653:8657 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R8645:8650 Coq.Strings.String <> length def
+R8652:8652 myTheorems <> s:186 var
+R8658:8658 myTheorems <> n:185 var
+R8678:8678 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R8670:8675 Coq.Strings.String <> length def
+R8677:8677 myTheorems <> s:186 var
+R8679:8679 myTheorems <> n:185 var
+R8696:8698 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R8694:8694 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R8686:8691 Coq.Strings.String <> length def
+R8693:8693 myTheorems <> s:186 var
+R8695:8695 myTheorems <> n:185 var
+R8710:8721 myTheorems <> dividestring def
+R8710:8721 myTheorems <> dividestring def
+R8710:8721 myTheorems <> dividestring def
+R8773:8788 Coq.Arith.PeanoNat Nat.Div0 mod_0_l thm
+R8803:8803 Coq.ssr.ssreflect <> ::core_scope:x_':'_x not
+R8805:8806 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R8773:8788 Coq.Arith.PeanoNat Nat.Div0 mod_0_l thm
+R8773:8788 Coq.Arith.PeanoNat Nat.Div0 mod_0_l thm
+R8803:8803 Coq.ssr.ssreflect <> ::core_scope:x_':'_x not
+R8805:8806 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R8803:8803 Coq.ssr.ssreflect <> ::core_scope:x_':'_x not
+R8805:8806 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R8843:8852 myTheorems <> map_length thm
+R8843:8852 myTheorems <> map_length thm
+R8843:8852 myTheorems <> map_length thm
+R8874:8876 Coq.Init.Datatypes <> nat ind
+binder 8870:8870 <> m:187
+binder 8872:8872 <> n:188
+R8904:8906 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R8878:8888 Coq.Lists.List <> length abbrev
+R8891:8898 Coq.Lists.List <> seq def
+R8902:8902 myTheorems <> n:188 var
+R8900:8900 myTheorems <> m:187 var
+R8907:8907 myTheorems <> n:188 var
+R8959:8962 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R8950:8954 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R8931:8936 Coq.Strings.String <> length def
+R8939:8944 Coq.Strings.String <> String constr
+R8956:8958 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.+1' not
+R8959:8962 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R8950:8954 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R8931:8936 Coq.Strings.String <> length def
+R8939:8944 Coq.Strings.String <> String constr
+R8956:8958 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.+1' not
+R8959:8962 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R8950:8954 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R8931:8936 Coq.Strings.String <> length def
+R8939:8944 Coq.Strings.String <> String constr
+R8956:8958 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.+1' not
+prf 9046:9064 <> dividestringlength2
+R9069:9071 Coq.Init.Datatypes <> nat ind
+binder 9067:9067 <> n:189
+R9076:9081 Coq.Strings.String <> string ind
+binder 9074:9074 <> s:190
+R9116:9119 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'<='_x not
+R9086:9096 Coq.Lists.List <> length abbrev
+R9099:9110 myTheorems <> dividestring def
+R9112:9112 myTheorems <> n:189 var
+R9114:9114 myTheorems <> s:190 var
+R9120:9125 Coq.Strings.String <> length def
+R9127:9127 myTheorems <> s:190 var
+R9145:9162 myTheorems <> dividestringlength thm
+R9145:9162 myTheorems <> dividestringlength thm
+R9145:9162 myTheorems <> dividestringlength thm
+R9230:9233 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R9221:9225 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R9213:9218 Coq.Strings.String <> length def
+R9227:9229 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.+1' not
+R9230:9233 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R9221:9225 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R9213:9218 Coq.Strings.String <> length def
+R9227:9229 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.+1' not
+R9230:9233 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R9221:9225 Coq.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R9213:9218 Coq.Strings.String <> length def
+R9227:9229 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.+1' not
+R9245:9247 mathcomp.ssreflect.ssrnat <> leP thm
+R9249:9275 Coq.Arith.PeanoNat Nat.Div0 div_le_upper_bound thm
+R9245:9247 mathcomp.ssreflect.ssrnat <> leP thm
+R9249:9275 Coq.Arith.PeanoNat Nat.Div0 div_le_upper_bound thm
+R9286:9290 mathcomp.ssreflect.ssrnat <> multE thm
+R9286:9290 mathcomp.ssreflect.ssrnat <> multE thm
+R9286:9290 mathcomp.ssreflect.ssrnat <> multE thm
+R9301:9305 mathcomp.ssreflect.ssrnat <> mulSn thm
+R9301:9305 mathcomp.ssreflect.ssrnat <> mulSn thm
+R9301:9305 mathcomp.ssreflect.ssrnat <> mulSn thm
+R9314:9316 mathcomp.ssreflect.ssrnat <> leP thm
+R9318:9325 mathcomp.ssreflect.ssrnat <> leq_addr thm
+R9314:9316 mathcomp.ssreflect.ssrnat <> leP thm
+R9318:9325 mathcomp.ssreflect.ssrnat <> leq_addr thm
+R9360:9370 Coq.Arith.PeanoNat Nat mod_1_r def
+R9360:9370 Coq.Arith.PeanoNat Nat mod_1_r def
+R9360:9370 Coq.Arith.PeanoNat Nat mod_1_r def
+R9401:9416 Coq.Arith.PeanoNat Nat.Div0 mod_0_l thm
+R9401:9416 Coq.Arith.PeanoNat Nat.Div0 mod_0_l thm
+R9401:9416 Coq.Arith.PeanoNat Nat.Div0 mod_0_l thm
+R9441:9445 mathcomp.ssreflect.ssrnat <> addn1 thm
+R9441:9445 mathcomp.ssreflect.ssrnat <> addn1 thm
+R9441:9445 mathcomp.ssreflect.ssrnat <> addn1 thm
+R9454:9456 mathcomp.ssreflect.ssrnat <> ltP thm
+R9458:9484 Coq.Arith.PeanoNat Nat.Div0 div_lt_upper_bound thm
+R9454:9456 mathcomp.ssreflect.ssrnat <> ltP thm
+R9458:9484 Coq.Arith.PeanoNat Nat.Div0 div_lt_upper_bound thm
+R9493:9495 mathcomp.ssreflect.ssrnat <> ltP thm
+R9493:9495 mathcomp.ssreflect.ssrnat <> ltP thm
+R9506:9510 mathcomp.ssreflect.ssrnat <> multE thm
+R9506:9510 mathcomp.ssreflect.ssrnat <> multE thm
+R9506:9510 mathcomp.ssreflect.ssrnat <> multE thm
+R9521:9525 mathcomp.ssreflect.ssrnat <> mulSn thm
+R9521:9525 mathcomp.ssreflect.ssrnat <> mulSn thm
+R9521:9525 mathcomp.ssreflect.ssrnat <> mulSn thm
+R9521:9525 mathcomp.ssreflect.ssrnat <> mulSn thm
+R9521:9525 mathcomp.ssreflect.ssrnat <> mulSn thm
+R9540:9540 Coq.ssr.ssreflect <> ::core_scope:x_':'_x not
+R9560:9562 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R9541:9546 Coq.Strings.String <> length def
+R9549:9554 Coq.Strings.String <> String constr
+R9563:9563 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.+1' not
+R9572:9575 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.+1' not
+R9564:9569 Coq.Strings.String <> length def
+R9540:9540 Coq.ssr.ssreflect <> ::core_scope:x_':'_x not
+R9560:9562 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R9541:9546 Coq.Strings.String <> length def
+R9549:9554 Coq.Strings.String <> String constr
+R9563:9563 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.+1' not
+R9572:9575 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.+1' not
+R9564:9569 Coq.Strings.String <> length def
+R9540:9540 Coq.ssr.ssreflect <> ::core_scope:x_':'_x not
+R9560:9562 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R9541:9546 Coq.Strings.String <> length def
+R9549:9554 Coq.Strings.String <> String constr
+R9563:9563 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.+1' not
+R9572:9575 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'.+1' not
+R9564:9569 Coq.Strings.String <> length def
+R9595:9599 mathcomp.ssreflect.ssrnat <> addSn thm
+R9595:9599 mathcomp.ssreflect.ssrnat <> addSn thm
+R9595:9599 mathcomp.ssreflect.ssrnat <> addSn thm
+R9610:9614 mathcomp.ssreflect.ssrnat <> addnS thm
+R9610:9614 mathcomp.ssreflect.ssrnat <> addnS thm
+R9610:9614 mathcomp.ssreflect.ssrnat <> addnS thm
+R9623:9630 mathcomp.ssreflect.ssrnat <> leq_addr thm
+R9623:9630 mathcomp.ssreflect.ssrnat <> leq_addr thm
+prf 9647:9658 <> stringlength
+R9665:9670 Coq.Strings.String <> string ind
+binder 9661:9661 <> s:191
+binder 9663:9663 <> t:192
+R9686:9686 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R9673:9678 Coq.Strings.String <> length def
+R9682:9683 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R9681:9681 myTheorems <> s:191 var
+R9684:9684 myTheorems <> t:192 var
+R9695:9697 mathcomp.ssreflect.ssrnat <> ::nat_scope:x_'+'_x not
+R9687:9692 Coq.Strings.String <> length def
+R9694:9694 myTheorems <> s:191 var
+R9698:9703 Coq.Strings.String <> length def
+R9705:9705 myTheorems <> t:192 var
+R9753:9757 mathcomp.ssreflect.ssrnat <> addSn thm
+R9753:9757 mathcomp.ssreflect.ssrnat <> addSn thm
+R9753:9757 mathcomp.ssreflect.ssrnat <> addSn thm
+prf 9780:9788 <> appstring
+R9797:9802 Coq.Strings.String <> string ind
+binder 9791:9791 <> s:193
+binder 9793:9793 <> t:194
+binder 9795:9795 <> u:195
+R9812:9812 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R9806:9807 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R9805:9805 myTheorems <> s:193 var
+R9809:9810 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R9808:9808 myTheorems <> t:194 var
+R9811:9811 myTheorems <> u:195 var
+R9813:9813 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R9818:9820 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R9815:9816 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R9814:9814 myTheorems <> s:193 var
+R9817:9817 myTheorems <> t:194 var
+R9821:9821 myTheorems <> u:195 var
+prf 9882:9891 <> append_eqr
+R9900:9905 Coq.Strings.String <> string ind
+binder 9894:9894 <> s:196
+binder 9896:9896 <> t:197
+binder 9898:9898 <> u:198
+R9918:9919 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R9924:9924 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R9912:9913 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R9909:9910 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R9908:9908 myTheorems <> s:196 var
+R9911:9911 myTheorems <> t:197 var
+R9915:9916 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R9914:9914 myTheorems <> s:196 var
+R9917:9917 myTheorems <> u:198 var
+R9921:9922 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R9920:9920 myTheorems <> t:197 var
+R9923:9923 myTheorems <> u:198 var
+R9940:9951 myTheorems <> bool_eqsplit thm
+R9940:9951 myTheorems <> bool_eqsplit thm
+R9966:9968 mathcomp.ssreflect.eqtype <> eqP thm
+R10023:10025 mathcomp.ssreflect.eqtype <> eqP thm
+R10031:10033 mathcomp.ssreflect.eqtype <> eqP thm
+prf 10048:10057 <> append_eql
+R10066:10071 Coq.Strings.String <> string ind
+binder 10060:10060 <> s:199
+binder 10062:10062 <> t:200
+binder 10064:10064 <> u:201
+R10084:10085 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R10090:10090 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R10078:10079 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R10075:10076 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R10074:10074 myTheorems <> s:199 var
+R10077:10077 myTheorems <> t:200 var
+R10081:10082 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R10080:10080 myTheorems <> u:201 var
+R10083:10083 myTheorems <> t:200 var
+R10087:10088 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R10086:10086 myTheorems <> s:199 var
+R10089:10089 myTheorems <> u:201 var
+R10106:10117 myTheorems <> bool_eqsplit thm
+R10106:10117 myTheorems <> bool_eqsplit thm
+R10132:10134 mathcomp.ssreflect.eqtype <> eqP thm
+R10173:10178 Coq.Strings.String <> string ind
+binder 10169:10169 <> s:202
+binder 10171:10171 <> t:203
+R10186:10187 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R10184:10184 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R10181:10182 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R10180:10180 myTheorems <> s:202 var
+R10183:10183 myTheorems <> t:203 var
+R10185:10185 myTheorems <> t:203 var
+R10189:10189 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R10188:10188 myTheorems <> s:202 var
+R10235:10235 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R10220:10225 Coq.Strings.String <> length def
+R10230:10231 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R10236:10241 Coq.Strings.String <> length def
+R10270:10281 myTheorems <> stringlength thm
+R10270:10281 myTheorems <> stringlength thm
+R10270:10281 myTheorems <> stringlength thm
+R10290:10295 Coq.Strings.String <> length def
+R10290:10295 Coq.Strings.String <> length def
+R10310:10314 mathcomp.ssreflect.ssrnat <> addn0 thm
+R10310:10314 mathcomp.ssreflect.ssrnat <> addn0 thm
+R10310:10314 mathcomp.ssreflect.ssrnat <> addn0 thm
+R10348:10352 mathcomp.ssreflect.ssrnat <> addnS thm
+R10348:10352 mathcomp.ssreflect.ssrnat <> addnS thm
+R10348:10352 mathcomp.ssreflect.ssrnat <> addnS thm
+R10389:10394 Coq.Strings.String <> string ind
+binder 10383:10383 <> s:204
+binder 10385:10385 <> t:205
+R10404:10407 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R10397:10399 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R10396:10396 myTheorems <> t:205 var
+R10401:10402 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R10400:10400 myTheorems <> s:204 var
+R10403:10403 myTheorems <> t:205 var
+R10410:10412 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R10413:10413 myTheorems <> s:204 var
+R10444:10444 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R10440:10441 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R10510:10512 mathcomp.ssreflect.eqtype <> eqP thm
+R10517:10519 mathcomp.ssreflect.eqtype <> eqP thm
+R10552:10552 Coq.ssr.ssreflect <> ::core_scope:x_':'_x not
+R10558:10558 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R10555:10556 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R10552:10552 Coq.ssr.ssreflect <> ::core_scope:x_':'_x not
+R10558:10558 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R10555:10556 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R10552:10552 Coq.ssr.ssreflect <> ::core_scope:x_':'_x not
+R10558:10558 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R10555:10556 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R10579:10581 mathcomp.ssreflect.eqtype <> eqP thm
+R10585:10587 mathcomp.ssreflect.eqtype <> eqP thm
+R10619:10621 mathcomp.ssreflect.eqtype <> eqP thm
+R10631:10633 mathcomp.ssreflect.eqtype <> eqP thm
+R10638:10640 mathcomp.ssreflect.eqtype <> eqP thm
+prf 10680:10690 <> append_eqlr
+R10701:10706 Coq.Strings.String <> string ind
+binder 10693:10693 <> s:206
+binder 10695:10695 <> t:207
+binder 10697:10697 <> u:208
+binder 10699:10699 <> v:209
+R10725:10726 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R10731:10731 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R10716:10717 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R10710:10711 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R10709:10709 myTheorems <> s:206 var
+R10713:10714 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R10712:10712 myTheorems <> u:208 var
+R10715:10715 myTheorems <> t:207 var
+R10719:10720 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R10718:10718 myTheorems <> s:206 var
+R10722:10723 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R10721:10721 myTheorems <> v:209 var
+R10724:10724 myTheorems <> t:207 var
+R10728:10729 mathcomp.ssreflect.eqtype <> ::bool_scope:x_'=='_x not
+R10727:10727 myTheorems <> u:208 var
+R10730:10730 myTheorems <> v:209 var
+R10752:10761 myTheorems <> append_eqr thm
+R10771:10780 myTheorems <> append_eql thm
+R10752:10761 myTheorems <> append_eqr thm
+R10752:10761 myTheorems <> append_eqr thm
+R10771:10780 myTheorems <> append_eql thm
+R10771:10780 myTheorems <> append_eql thm
