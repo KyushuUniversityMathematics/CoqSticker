@@ -1,43 +1,62 @@
 From mathcomp Require Import all_ssreflect.
 
-Require Import Ascii String Bool ListSet Arith.
-Require Import AutomatonModule StickerModule2 myTheorems.
+Require Import myAutomaton mySticker myTheorems Arith.
 
-Fixpoint language (n:nat)(V:list Symbol):list SymbolString :=
-(*n文字の文字列を生成
-Ex:language 2 [::"a"%char;"b"%char] -> [::"aa";"ab";"ba;";"bb"]*)
+Fixpoint language(n:nat)(symbol:finType):seq (seq symbol):=
 match n with
-|0 => [::""]
-|S n' => flatten [seq (map (String v) (language n' V))| v <- V]
+|0 => [::nil]
+|S n' => [seq s::l|l<-language n' symbol,s<-enum symbol]
 end.
-Fixpoint language' (n:nat)(V:list Symbol):list SymbolString :=
+
+Fixpoint language' (n:nat)(symbol:finType):seq (seq symbol):=
 (*1文字以上n文字以下の文字列を生成
 Ex:language 2 [::"a"%char;"b"%char] -> [::"a";"b";"aa";"ab";"ba;";"bb"]*)
 match n with
 |0 => [::]
-|S n' => app (language' n' V) (language n V)
+|S n' => app (language' n' symbol) (language n symbol)
 end.
 
-Fixpoint l_index {e:eqType}(a:e)(l:list e):nat :=
-match l with
-|nil => 0 - 1
-|h::l' =>
-  if a == h then
-    0
-  else
-    S (l_index a l')
-end.
-Definition startDomino (n:nat)(s:string):Domino :=
-(s,substring 0 (length s - n) s,0,0).
+Lemma add_subABB(m n:nat):m+n-n=m.
+Proof.
+elim:n.
+by rewrite addn0 subn0.
+move=>n H.
+by rewrite addnS subSS.
+Qed.
+Lemma add_subABA(m n:nat):n+m-n=m.
+Proof.
+elim:n.
+by rewrite add0n subn0.
+move=>n H.
+by rewrite addSn subSS.
+Qed.
+
+Definition startDomino{state symbol:finType}(M:@automaton state symbol)
+(s:seq symbol):domino :=
+Domino s(take(size s-(index(dstar(delta M)(init M)s)(enum state)+1)) s) 0 0.
+Definition extentionDomino{state symbol:finType}(M:@automaton state symbol)
+(s t:seq symbol):(@domino symbol)*(@domino symbol):=
+let s0 := nth (init M) (enum state) (size t - 1) in
+let n := index (dstar (delta M) s0 s) (enum state) + 1 in
+(Domino nil nil 0 0,Domino s (t++(take (size s - n) s)) 0 (size t)).
+Definition stopDomino{symbol:finType}(s t:seq symbol):
+(@domino symbol)*(@domino symbol) :=
+(Domino nil nil 0 0,Domino s (t++s) 0 (size t)).
+
+(*Definition startDomino{symbol:finType}(n:nat)(s:seq symbol):domino :=
+Domino s (take (size s - n) s) 0 0.
+(*
 Definition startDomino_inverse (d:Domino):nat*string:=
 let '(s,t,_,_) := d in
 (length s - length t,s).
 Lemma startDominoCollect (n:nat)(s:string):
 n<=length s->startDomino_inverse (startDomino n s) = (n,s).
 Proof. move=>H;apply/pair_equal_spec;split;[|done];rewrite substringlemma2;
-[by rewrite subKn|rewrite add0n;apply/leq_subr]. Qed.
-Definition extentionDomino (n:nat)(s t:string):Domino*Domino :=
-(("","",0,0),(s,t++(substring 0 (length s - n) s),0,length t)).
+[by rewrite subKn|rewrite add0n;apply/leq_subr]. Qed.*)
+Definition extentionDomino{symbol:finType}(n:nat)(s t:seq symbol):
+(@domino symbol)*(@domino symbol):=
+(Domino nil nil 0 0,Domino s (t++(take (size s - n) s)) 0 (size t)).
+(*
 Definition extentionDomino_inverse (D:Domino*Domino):nat*string*string:=
 let '((_,_,_,_),(s,t,_,n)) := D in
 (length s + n - length t,s,substring 0 n t).
@@ -60,10 +79,12 @@ simpl.
 apply substringn0.
 move=>a t H1.
 simpl.
-by f_equal. Qed.
-Definition stopDomino (s t:string):Domino*Domino :=
-(("","",0,0),(s,t++s,0,length t)).
-Definition stopDomino_inverce (D:Domino*Domino):string*string :=
+by f_equal. Qed.*)
+Definition stopDomino{symbol:finType}(s t:seq symbol):
+  (@domino symbol)*(@domino symbol) :=
+(Domino nil nil 0 0,Domino s (t++s) 0 (size t)).
+
+(*Definition stopDomino_inverce (D:Domino*Domino):string*string :=
 let '((_,_,_,_),(s,t,_,n)) := D in
 (s,substring 0 n t).
 Lemma stopDominoCollect (s t:string):
@@ -74,86 +95,969 @@ elim:t.
 apply substringn0.
 move=>a t H.
 simpl.
-by f_equal. Qed.
-Definition dstar_num (n:nat)(s:string)(M:Automaton):nat :=
-let ' (K,V,delta,s0,F) := M in
-let k := nth 999 K (n - 1) in
-l_index (dstar delta k s) K + 1.
+by f_equal. Qed.*)*)
 
-Fixpoint createDomino (l:list string)(state:State)(M:Automaton):list Domino :=
-let ' (K,V,delta,s0,F) := M in
-match l with
-|nil => nil
-|s::l' =>
-  let state_num := l_index (dstar delta state s) K in
-  (s,substring 0 ((length s)- state_num - 1) s,0,0)::(createDomino l' state M)
-end.
-Fixpoint convert_D (l1 l2:list string)(M:Automaton):list (Domino*Domino) :=
-let ' (K,V,delta,s0,F) := M in
-match l2 with
-|nil => nil
-|s::l2' =>
-  let state := List.nth (length s - 1) K s0 in
-  app (map 
-    (fun d =>let ' (l,r,x,y) := d in (("","",0,0),(l,s++r,x,y+(length s))))
-    (createDomino l1 state M))
-  (convert_D l1 l2' M)
-end.
-Fixpoint convert_D' (l1 l2:list string)(M:Automaton):list (Domino*Domino) :=
-let ' (K,V,delta,s0,F) := M in
-match l2 with
-|nil => nil
-|s::l2' =>
-  let state := List.nth (length s - 1) K s0 in
-  let X := accepts (K,V,delta,state,F) l1 in
-  app [seq (("","",0,0),(x,s++x,0,length s))|x <- X] (convert_D' l1 l2' M)
-end.
+(*Definition dstar_num{state symbol:finType}(n:nat)(s:seq symbol)
+(M:@automaton state symbol):nat :=
+index (dstar (delta M) (nth (init M) (enum state) (n-1)) s) (enum state) + 1.*)
+Definition Aut_to_Stk{state symbol:finType}(M:@automaton state symbol):sticker:=
+let k := #|state| in
+let l := language (k+1) symbol in
+let A1 := [seq Domino l' l' 0 0|l'<- 
+            [seq str<-(language'(k+1)symbol)|accept M str]] in
+let A2 := [seq startDomino M s|s <- l] in
+let l' := language' k symbol in
+let D1 := [seq extentionDomino M s t|s<-l,t<-l'] in
+let D2 := [seq stopDomino s t|t <- l',
+  s <-[seq str<-language'(k+1)symbol|
+    dstar(delta M)(nth(init M)(enum state)(size t-1))str\in (final M)]] in
+Sticker symbol (zip(enum symbol)(enum symbol)) (A1++A2) (D1++D2).
 
-Definition Aut_to_Stk (M:Automaton):Sticker :=
-let ' (K,V,delta,s0,F) := M in
-if (s0\in K)&&(nil==[seq f<-F|(fun x=>x\notin K) f]) then
-let k := List.length K in
-let l := language (k+1) V in
-let A1 := [seq (l',l',0,0)|l' <- accepts M (language' (k+1) V)] in
-let A2 := [seq startDomino (l_index (dstar delta s0 s) K + 1) s|s <- l] in
-let A := app A1 A2 in
-let l' := language' k V in
-let D1 := [seq extentionDomino (dstar_num (length t) s M) s t|s<-l,t<-l'] in
-let D2 := [seq stopDomino s t|
-  t <- l',s <- (accepts (K,V,delta,nth 999 K (length t - 1),F)
-    (language' (k+1) V))] in
-let D := app D1 D2 in
-let rho := [seq (v,v)|v <- V] in
-(V,rho,A,D)
-else (nil,nil,nil,nil).
-Definition m1_d : State->Symbol->State :=
-fun q x =>
-match q with
-  | 0 =>
-    match x with
-      | "a"%char => 0
-      | "b"%char => 1
-      | _ => 999
-    end
-  | 1 => 
-    match x with
-      | "a"%char => 1
-      | "b"%char => 0
-      | _ => 999
-    end
-  | _ => 999
-end.
-Compute dstar m1_d 1 "b".
-Definition m1: Automaton:=
-([::0;1],[::"a"%char;"b"%char],m1_d, 0,[::1]).
-Definition s1 := Aut_to_Stk m1.
-Compute accepts m1 (language' 3 [:: "a"%char;"b"%char]).
-Compute s1.
-Compute ss_language 1 s1.
-Definition ss_accept_prime (stk:Sticker) (a:SymbolString):bool:=
-let ' (V,_,_,_) := stk in
-(Vword a V)&&(a \in (ss_language_prime (length a) stk)).
+Lemma lang_gen{state symbol:finType}(M:@automaton state symbol)(s:seq symbol)
+(n:nat):(s\in (ss_language_prime n (Aut_to_Stk M))) 
+ = ((Domino s s 0 0)\in ss_generate_prime n (Aut_to_Stk M)).
+Proof.
+simpl.
+apply/bool_eqsplit.
+split.
+rewrite/ss_language_prime.
+elim(ss_generate_prime n (Aut_to_Stk M)).
+done.
+move=>a l H {n}.
+simpl.
+case H1:(wk (zip (enum symbol) (enum symbol)) a);
+[simpl|move/H=>{}H;apply/orP;by right].
+rewrite!in_cons.
+move/orP.
+case;[move/eqP=>{}H;apply/orP;left;apply/eqP|move/H=>{}H;apply/orP;by right].
+move:H1 H {l state M}.
+case:a.
+done.
+move=>l r x y.
+case:x;case:y;[|done|done|done].
+simpl.
+case_eq(size l == size r);[move/eqP|done].
+move=>H H1 H2.
+f_equal.
+done.
+rewrite H2=>{H2}.
+move:{s}r H H1.
+elim:l.
+by case.
+move=>a l H.
+case.
+done.
+move=>b r.
+simpl.
+move=>[H1].
+move/andP=>[H2].
+have{}H2:a=b.
+move:H2.
+elim:(enum symbol).
+done.
+move=>d e H2.
+simpl.
+rewrite in_cons.
+move/orP.
+case;[move/eqP=>[];congruence|apply/H2].
+rewrite-H2=>{}H2.
+f_equal.
+by apply/H.
 
+rewrite{3}(_:s=ss_language_f (Domino s s 0 0));[move=>H|done].
+apply/map_f.
+rewrite mem_filter.
+apply/andP.
+split;[|done].
+simpl=>{state M n H}.
+rewrite(_:size s == size s=true);[|by elim:s].
+elim:s.
+done.
+move=>a s H.
+simpl.
+apply/andP.
+split;[move=>{s H}|done].
+have:a\in (enum symbol).
+apply/mem_enum.
+elim:(enum symbol).
+done.
+move=>h l H.
+simpl.
+rewrite!in_cons.
+move/orP.
+case.
+move/eqP=>{}H.
+apply/orP;left;apply/eqP;by f_equal.
+move/H=>{}H;apply/orP;by right.
+Qed.
+
+Lemma languagelemma{V:finType}(s:seq V):s\in (language (size s) V).
+Proof. by elim:s;[|move=>a l H;simpl;apply/map_f';[|apply/mem_enum]]. Qed.
+Lemma language'lemma{f:finType}(s:seq f)(n:nat):
+s<>nil -> size s <= n -> s \in language' n f.
+Proof.
+move=>H/subnKC=>H1.
+rewrite-H1=>{H1}.
+elim:(n - size s).
+rewrite addn0.
+rewrite/language'.
+case_eq(size s).
+move:H.
+by case s.
+move=>n0 H1.
+rewrite mem_cat.
+apply/orP.
+right.
+rewrite-H1.
+apply/languagelemma.
+move=>{H}n H.
+rewrite addnS.
+simpl.
+rewrite mem_cat.
+apply/orP.
+by left.
+Qed.
+
+Lemma fin_index{f:finType}(a:f):index a (enum f) < #|f|.
+Proof.
+rewrite cardE.
+have:a\in (enum f).
+apply/mem_enum.
+elim:(enum f).
+done.
+move=>f0 ef H.
+rewrite in_cons.
+move/orP.
+case.
+simpl.
+move/eqP=>af0.
+rewrite-af0=>{f0 af0}.
+rewrite (_:a==a=true);[done|by apply/eqP].
+move/H=>{}H.
+simpl.
+by case:(f0 == a).
+Qed.
+Lemma add00(m n:nat):m+n=0<->m=0/\n=0.
+Proof.
+split;[|move=>[m0 n0];by rewrite n0 addn0].
+case:m;[by rewrite add0n|move=>m;by rewrite addSn].
+Qed.
+Lemma mu'lemma{state symbol:finType}(M:@automaton state symbol)
+(s t:seq symbol):#|state|+1<=size s -> size t = #|state|+1 ->
+mu' (startDomino M s)(extentionDomino M t (
+  drop (size s - (index(dstar(delta M)(init M)s)(enum state)+1)) s
+    ))=startDomino M (s++t).
+Proof.
+simpl.
+case s':s;[by rewrite addn1|rewrite-s'].
+case t':t;[by rewrite addn1|rewrite-t'].
+remember (index(dstar(delta M)(init M)s)(enum state)+1) as n.
+rewrite-Heqn.
+move=>lens lent.
+have lens':n<=#|state|.
+rewrite Heqn!addn1.
+apply/fin_index.
+have{}lens':n<size s.
+apply/(leq_ltn_trans lens').
+by rewrite-addn1.
+
+case s'':(take(size s-n)s);[|rewrite-s'' subn0].
+have:size(take(size s-n)s)=0.
+by rewrite s''.
+rewrite size_take ltn_subrL 
+(_:(0 < n) && (0 < size s)=true);[|by rewrite Heqn s' addn1].
+move/lesub/leq_gtF.
+by rewrite lens'.
+
+simpl.
+rewrite s'-s' s''-s'' t'-t'.
+remember (index(dstar(delta M)(nth(init M)(enum state)
+  (size (drop (size s - n) s) - 1))t)(enum state)+1) as m.
+have lent':m<size t.
+rewrite Heqm lent!addn1 ltnS.
+apply/fin_index.
+rewrite-Heqm.
+case t'':((drop (size s - n) s) ++ take (size t - m) t);[|rewrite-t''=>{t''}].
+have:size((drop (size s - n) s) ++ take (size t - m) t)=0.
+by rewrite t''.
+rewrite size_cat size_take ltn_subrL (_:(0 < m) && (0 < size t)=true);
+[|by rewrite Heqm lent!addn1].
+move/add00=>[_].
+move/lesub/leq_gtF.
+by rewrite lent'.
+
+rewrite!add0n addn0-size_cat catA cat_take_drop (_:size s==size s=true);
+[|by apply/eqP].
+rewrite/startDomino dstarLemma.
+move:Heqm.
+rewrite size_drop (_:size s - (size s - n)=n);[|apply/subKn/ltnW/lens'].
+rewrite Heqn!addn1 subn1-pred_Sn nth_index=>{n Heqn lens' s''};
+[|apply/mem_enum]=>Heqm.
+rewrite-Heqm take_cat size_cat (_:size s + size t - m < size s=false)=>{Heqm}.
+f_equal;f_equal;f_equal.
+by rewrite-(addBnAC _ (ltnW lent'))(add_subABB (size t - m) (size s)).
+rewrite-addnBA.
+apply/leq_gtF/leq_addr.
+apply/ltnW/lent'.
+Qed.
+
+
+Lemma mu'lemma2{state symbol:finType}(M:@automaton state symbol)
+(s t:seq symbol): #|state|+1<=size s -> t <> nil ->
+mu' (startDomino M s)(stopDomino t 
+  (drop (size s - (index(dstar(delta M)(init M)s)(enum state)+1)) s)
+    ) = Domino (s++t)(s++t) 0 0.
+Proof.
+simpl.
+case s':s;[by rewrite addn1|rewrite-s'].
+case t':t;[by rewrite addn1|rewrite-t'].
+remember (index(dstar(delta M)(init M)s)(enum state)+1) as n.
+rewrite-Heqn.
+move=>lens lent.
+have lens':n<=#|state|.
+rewrite Heqn!addn1.
+apply/fin_index.
+have{}lens':n<size s.
+apply/(leq_ltn_trans lens').
+by rewrite-addn1.
+
+case s'':(take (size s - n) s);[|rewrite-s'' subn0].
+have:size(take (size s - n) s)=0.
+by rewrite s''.
+rewrite size_take ltn_subrL 
+(_:(0 < n) && (0 < size s)=true);[|by rewrite Heqn s' addn1].
+move/lesub/leq_gtF.
+by rewrite lens'.
+
+simpl.
+rewrite s'-s' s''-s'' t'-t'.
+case t'':(drop (size s - n) s ++ t).
+have:size(drop (size s - n) s ++ t)=0.
+by rewrite t''.
+rewrite size_cat.
+rewrite t'.
+simpl.
+by rewrite addnS.
+rewrite!add0n addn0-t''-size_cat catA cat_take_drop (_:size s==size s=true);
+[done|by apply/eqP].
+Qed.
+
+
+Lemma startDomino_gen_prime{state symbol:finType}(M:@automaton state symbol)
+(s:seq symbol)(n:nat):size s = n.+1*(#|state|+1) ->
+startDomino M s\in ss_generate_prime n (Aut_to_Stk M).
+Proof.
+move:s.
+elim:n.
+rewrite mul1n=>s lens.
+simpl.
+rewrite mem_cat-lens.
+apply/orP.
+right.
+apply/map_f/languagelemma.
+
+move=>n H s.
+rewrite-{2}(cat_take_drop (n.+1* (#|state| + 1)) s).
+remember (take (n.+1 * (#|state| + 1)) s) as t.
+remember (drop (n.+1 * (#|state| + 1)) s) as u.
+move=>lens.
+have lent:size t = n.+1 * (#|state| + 1).
+rewrite Heqt size_take.
+suff H1:n.+1 * (#|state| + 1) < size s.
+by rewrite H1.
+rewrite lens (mulSn n.+1) addn1 addSn ltnS.
+apply/leq_addl.
+have lenu:size u = (#|state| + 1).
+by rewrite Hequ size_drop lens mulSn add_subABB.
+
+move:(H _ lent)=>{}H.
+
+rewrite-(mu'lemma M t u).
+have H1:(ss_generate_prime n.+1 (Aut_to_Stk M)=
+  [seq d<- ss_generate_prime n (Aut_to_Stk M)|wk (rho (Aut_to_Stk M)) d] ++
+    [seq mu' a d|a<-
+     [seq d<-ss_generate_prime n (Aut_to_Stk M)|~~wk (rho (Aut_to_Stk M)) d],
+       d<-(extend (Aut_to_Stk M))]).
+done.
+rewrite H1.
+rewrite mem_cat.
+apply/orP.
+right.
+apply/map_f'.
+rewrite mem_filter.
+apply/andP.
+split;[|done].
+simpl.
+rewrite size_take ltn_subrL
+(_:(0<index(dstar(delta M)(init M)t)(enum state) + 1) && (0 < size t)=true).
+case H2:(size t==size t-(index(dstar(delta M)(init M) t) (enum state) + 1)).
+have:size t > size t - (index (dstar (delta M) (init M) t) (enum state) + 1).
+rewrite ltn_subrL.
+apply/andP.
+split;[|rewrite lent];by rewrite addn1.
+by rewrite-(eqP H2) ltnn.
+done.
+apply/andP.
+split;[|rewrite lent];by rewrite addn1.
+
+simpl.
+rewrite mem_cat.
+apply/orP.
+left.
+apply/map_f'.
+rewrite-lenu.
+apply/languagelemma.
+
+remember(drop(size t-(index(dstar(delta M)(init M)t)(enum state)+1))t) as v.
+rewrite-Heqv.
+
+have lenv:size v<=#|state|.
+rewrite Heqv size_drop subnA.
+rewrite subnn add0n addn1.
+apply/fin_index.
+rewrite lent mulSn addn1.
+apply/ltn_addr/ltn_addr.
+apply/fin_index.
+done.
+have lenv':0<size v.
+rewrite Heqv size_drop subnA.
+by rewrite subnn add0n addn1.
+rewrite lent mulSn addn1.
+apply/ltn_addr/ltn_addr.
+apply/fin_index.
+done.
+apply/language'lemma.
+move:lenv'.
+by case v.
+done.
+rewrite lent mulSn.
+apply/leq_addr.
+done.
+Qed.
+
+
+Lemma size_take_ne{T:Type}(n:nat)(s:seq T):s<>nil->
+  size s <> size (take (size s - n.+1) s).
+Proof.
+rewrite/not=>H.
+rewrite size_take ltn_subrL(_:(0 < n.+1) && (0 < size s)).
+move:H.
+case:s.
+done.
+simpl.
+move=>_ l _.
+rewrite subSS=>H.
+have{}H:size l - n = (size l).+1.
+by rewrite H.
+move:(sub_ord_proof (size l) n).
+by rewrite-H ltnn.
+simpl.
+move:H.
+by case:s.
+Qed.
+Lemma take_ne{T:Type}(n:nat)(s:seq T):s<>nil->s <> take (size s - n.+1) s.
+Proof.
+move/(size_take_ne n).
+rewrite/not=>H H1.
+apply/H.
+by rewrite-H1.
+Qed.
+Lemma filter_nil{e:eqType}(l:seq e)(P:e->bool):
+[seq a<-[seq b <- l|P b]|~~P a]=nil.
+Proof. by elim:l;[|move=>a l H;simpl;case H1:(P a);[rewrite/=H1|]]. Qed.
+
+Lemma startDomino_gen_prime2{state symbol:finType}(M:@automaton state symbol)
+(n:nat):[seq startDomino M s|s <- language (n.+1*(#|state|+1)) symbol] =i
+  [seq d<-ss_generate_prime n (Aut_to_Stk M)|~~wk (rho (Aut_to_Stk M)) d].
+Proof.
+elim:n.
+rewrite/=filter_cat.
+have H:[seq d <- [seq Domino l' l' 0 0| l' <- language' (#|state| + 1) symbol
+           & accept M l']| ~~ wk (zip (enum symbol) (enum symbol)) d]=nil.
+elim:(language'(#|state|+1)symbol).
+done.
+move=>a l H.
+simpl.
+case:(accept M a).
+rewrite/=H(_:size a==size a).
+rewrite(_:all(in_mem^~(mem(zip (enum symbol) (enum symbol)))) (zip a a))/=.
+done.
+elim:a.
+done.
+move=>a l0{}H.
+rewrite/=H Bool.andb_true_r.
+have:(a\in(enum symbol)).
+apply/mem_enum.
+elim:(enum symbol).
+done.
+move=>a0 l1{}H.
+rewrite/=!in_cons.
+move/orP.
+case.
+move/eqP=>aa0.
+apply/orP.
+left.
+apply/eqP.
+by f_equal.
+move/H=>{}H.
+apply/orP.
+by right.
+by apply/eqP.
+done.
+rewrite H cat0s.
+
+have{}H:[seq d <- [seq startDomino M s | s <- language (#|state| + 1) symbol]
+        | ~~ wk (zip (enum symbol) (enum symbol)) d]=
+  [seq startDomino M s | s <- language (#|state| + 1) symbol].
+rewrite addn1/=.
+elim:(language #|state| symbol).
+done.
+move=>a l{}H.
+rewrite/=!map_cat!filter_cat.
+have H1:[seq d <- [seq startDomino M s | s <- [seq s :: a | s <- enum symbol]]
+   | ~~ wk (zip (enum symbol) (enum symbol)) d]=
+  [seq startDomino M s | s <- [seq s :: a | s <- enum symbol]].
+remember (wk (zip (enum symbol) (enum symbol))) as w.
+elim:(enum symbol).
+done.
+rewrite Heqw=>{w Heqw}.
+move=>a0 l0 H1.
+rewrite/=(_:~~wk (zip (enum symbol) (enum symbol)) (startDomino M (a0 :: a))).
+by f_equal.
+rewrite/startDomino/wk(_:size (a0 :: a) == size (take (size (a0 :: a) -
+        (index (dstar (delta M) (init M) (a0 :: a)) (enum state) + 1))
+       (a0 :: a))=false).
+done.
+rewrite addn1.
+by apply/eqP/size_take_ne.
+rewrite H1.
+by f_equal.
+by rewrite H mul1n.
+
+move=>n H.
+rewrite/=filter_cat filter_nil cat0s.
+Search (_=i_).
+rewrite map_cat.
+
+elim:a.
+map_id
+simpl.
+done.
+move=>a0 l0 H1.
+rewrite/=(_:(size a).+1 == size (take((size a).+1 -
+          (index (dstar (delta M) (delta M (init M) a0) a) (enum state) + 1))
+         (a0 :: a))=false)/=.
+f_equal.
+rewrite filter_cons.
+simpl.
+ (_:size a == size
+  (take(size a-(index(dstar(delta M) (init M) a) (enum state)+1)) a)=false)/=.
+by f_equal.
+rewrite addn1.
+apply/eqP/size_take_ne.
+
+suff H:[seq startDomino M s | s <- language (1 * (#|state| + 1)) symbol] =i
+  [seq d <- [seq startDomino M s | s <- language (#|state| + 1) symbol]
+        | ~~ wk (zip (enum symbol) (enum symbol)) d].
+Search (_=i_).
+
+Lemma stopaccept{state symbol:finType}(M:@automaton state symbol)
+(s t:seq symbol):s<>nil->size s <= #|state| + 1 -> t<>nil->size t<=#|state| -> 
+dstar (delta M)(nth (init M) (enum state) (size t - 1))s\in final M->
+stopDomino s t\in extend (Aut_to_Stk M).
+Proof.
+move=>snil lens tnil lent H.
+rewrite/=mem_cat.
+apply/orP.
+right.
+have:t\in language'#|state| symbol.
+by apply/language'lemma.
+elim:(language' #|state| symbol).
+done.
+move=>a l H1.
+simpl.
+rewrite in_cons mem_cat.
+move/orP.
+case.
+move/eqP=>ta.
+apply/orP.
+left.
+rewrite-ta=>{a ta}.
+apply/map_f.
+rewrite mem_filter.
+apply/andP.
+split.
+done.
+by apply/language'lemma.
+move/H1=>{}H1.
+apply/orP.
+by right.
+Qed.
+
+Lemma onestep_prime{symbol:finType}(n:nat)(stk:@sticker symbol):
+ss_generate_prime n.+1 stk = [seq d<-ss_generate_prime n stk|wk (rho stk)d] ++ 
+[seq mu' a d|a<-[seq a'<-ss_generate_prime n stk|~~wk (rho stk)a']
+  ,d<-(extend stk)].
+Proof. done. Qed.
+
+
+
+(*
+Lemma dominolength{state symbol:finType}(n:nat)(M:@automaton state symbol):
+all (fun d=>size (ss_language_f d) == n.+1*(#|state|+1))
+  [seq d<-ss_generate_prime n (Aut_to_Stk M)|~~wk (rho (Aut_to_Stk M)) d].
+Proof.
+elim:n.
+admit.
+move=>n H.
+rewrite onestep_prime filter_cat all_cat.
+apply/andP.
+split.
+by rewrite filter_nil.
+Search filter.
+simpl.
+rewrite filter_all.
+d\in ss_generate_prime n (Aut_to_Stk M) -> ~~wk (rho (Aut_to_Stk M)) d ->
+size (ss_language_f d)=n.+1*(#|state|+1).
+Proof.
+elim:n.
+rewrite/=mem_cat.
+move/orP.
+case.
+elim:(language' (#|state| + 1) symbol).
+done.
+move=>a l H.
+simpl.
+case:(accept M a).
+rewrite/= in_cons.
+move/orP.
+case.
+move/eqP=>d'.
+rewrite d'/=(_:size a == size a)=>{d'}.
+rewrite/negb(_:all (in_mem^~(mem(zip(enum symbol) (enum symbol)))) (zip a a)).
+done.
+elim:a.
+done.
+move=>a l0 H1.
+simpl.
+apply/andP.
+split;[|done].
+have:a\in(enum symbol).
+apply/mem_enum.
+elim:(enum symbol).
+done.
+move=>a0 l1 H2.
+rewrite/=!in_cons.
+move/orP.
+case.
+move/eqP=>H3.
+apply/orP.
+left.
+apply/eqP.
+by f_equal.
+move/H2=>{}H2.
+apply/orP.
+by right.
+by apply/eqP.
+done.
+done.
+
+move=>H H1.
+move:H.
+destruct d.
+elim:(language (#|state| + 1) symbol).
+done.
+move=>a l H.
+rewrite/=in_cons.
+move/orP.
+case.
+by move/eqP.
+by move/H.
+rewrite/=/startDomino.
+Search all.
+move/map_f.
+remember (language (#|state|+1) symbol).
+rewrite-Heql.
+move:l Heql.
+elim:(language (#|state| + 1) symbol).
+move=>l H.
+by rewrite H.
+move=>a l H.
+case.
+done.
+move=>a0 l0.
+move:(H l0)=>{}H[a0a l0l].
+move:(H l0l)=>{}H.
+rewrite/=in_cons.
+move/orP.
+case.
+move/eqP.
+rewrite in_cons=>H1.
+have H2:a\in language(#|state|+1) symbol.
+move:H1.
+case:(language (#|state| + 1) symbol).
+done.
+move=>a0 l0 [aa0 _].
+rewrite in_cons.
+apply/orP.
+left.
+by apply/eqP.
+by split.
+move/orP.
+
+move/H1.
+case.
+
+
+elim:(#|state| + 1).
+rewrite muln0.
+move=>H H1.
+move:H.
+elim:n.
+rewrite/=mem_cat.
+move/orP.
+case.
+elim:
+move/map_f.
+destruct d.
+simpl.
+rewrite mem_filter.
+all (fun p=>(size (ss_language_f p))==n.+1*(#|state|+1))
+[seq d<-ss_generate_prime n (Aut_to_Stk M)|~~wk (rho (Aut_to_Stk M)) d].
+Proof.
+elim:n.
+rewrite/=filter_cat all_cat.
+apply/andP.
+split.
+rewrite filter_map.
+elim:[seq str <- language' (#|state| + 1) symbol | accept M str].
+done.
+move=>a l.
+rewrite-!filter_map=>H.
+rewrite map_cons filter_cons
+(_:wk (zip (enum symbol) (enum symbol)) (Domino a a 0 0))/=.
+done.
+rewrite(_:size a==size a);[|by apply/eqP].
+apply/all_filterP.
+elim:a.
+done.
+move=>a a' H1.
+rewrite/=(_:(a, a) \in zip (enum symbol) (enum symbol)).
+by f_equal.
+have:a\in (enum symbol).
+apply/mem_enum.
+elim:(enum symbol).
+done.
+move=>b e H2.
+rewrite/=!in_cons.
+move/orP.
+case.
+move/eqP=>ab.
+apply/orP.
+left.
+apply/eqP.
+by f_equal.
+move/H2=>{}H2.
+apply/orP.
+by right.
+
+have:[seq d <- [seq startDomino M s | s <- language (#|state| + 1) symbol]
+     | ~~ wk (zip (enum symbol) (enum symbol)) d]
+        =[seq startDomino M s | s <- language (#|state| + 1) symbol].
+rewrite filter_map.
+f_equal.
+elim:(language (#|state| + 1) symbol).
+done.
+move=>a l H.
+rewrite map_cons filter_cons
+  (_:~~ wk (zip (enum symbol) (enum symbol)) (startDomino M a)).
+by f_equal.
+rewrite/=(_:size a ==  size
+    (take(size a-(index(dstar(delta M)(init M) a) (enum state) + 1)) a)=false).
+done.
+rewrite size_take.
+
+rewrite mul1n all_filter.
+
+Search all.
+
+
+Search (_\in _).
+case_eq (language (#|state| + 1) symbol)
+
+done.
+move=>H1.
+rewrite map_cons filter_cons.
+have: ~~ wk (zip (enum symbol) (enum symbol)) (startDomino M _a_)=true.
+simpl.
+move:l Heql.
+fix H 1.
+rewrite-Heql.
+elim l.
+done.
+move=>a l0 H.
+rewrite 
+
+
+
+elim (language (#|state| + 1) symbol) as [|a l].
+done.
+move=>H1.
+rewrite map_cons filter_cons
+(_:wk (zip (enum symbol) (enum symbol)) (startDomino M a))/=.
+done.
+rewrite size_take ltn_subrL addn1.
+Search (_-_<_).
+rewrite:(_:size a == size
+   (take (size a - (index (dstar (delta M) (init M) a) (enum state) + 1)) a)=false).
+
+Search filter.
+
+simpl.
+rewrite filter_map.
+simpl.
+
+Search filter.
+rewrite filter_map.
+
+elim:[seq startDomino M s | s <- language (#|state| + 1) symbol].
+done.
+move=>a l H.
+simpl.
+
+apply/all_filterP.
+
+Search filter.
+
+
+
+Search ([seq _ <- _|_]).
+simpl.
+rewrite filter_cat.
+simpl.
+ filter_map.
+Search filter_map.*)
+
+
+
+
+Theorem REG_RSL{state symbol:finType}(M:@automaton state symbol)(s:seq symbol)
+(n:nat):s <> nil -> exists m:nat , m <= n ->
+accept M s = (s\in(ss_language_prime n (Aut_to_Stk M))).
+Proof.
+move=>scons.
+apply ex_intro with ((size s - 1)/(#|state|+1)).
+remember ((size s-1)/(#|state|+1)) as n.
+rewrite lang_gen.
+move:Heqn.
+case:n.
+simpl.
+rewrite addn1.
+move:(Nat.neq_succ_0 #|state|)=>H.
+
+move/Nat.eq_sym_iff/(Nat.div_small_iff _ _ H)/ltP.
+rewrite-(ltn_add2r 1)!addn1 subn1 prednK.
+move/(language'lemma _ _ scons).
+rewrite-addn1 mem_cat=>{}H.
+have H1:(Domino s s 0 0
+     \in [seq startDomino M s0 | s0 <- language (#|state| + 1) symbol])=false.
+move:H.
+elim:(language (#|state| + 1) symbol).
+done.
+move=>a l H/H=>{}H.
+rewrite/=in_cons H Bool.orb_false_r/startDomino.
+case_eq(Domino s s 0 0 ==
+ Domino a
+   (take (size a - (index (dstar (delta M) (init M) a) (enum state) + 1)) a) 0
+   0);[move/eqP=>[sa];rewrite-sa=>H1|done].
+have:size s = size(
+     take (size s - (index (dstar (delta M) (init M) s) (enum state) + 1)) s).
+by rewrite-H1.
+have{}H1:(0<index(dstar(delta M) (init M) s) (enum state) + 1) && (0 < size s).
+rewrite addn1/=.
+move:scons.
+by case s.
+rewrite size_take ltn_subrL H1=>H2.
+move:H1.
+rewrite-ltn_subrL.
+by rewrite-H2 ltnn.
+
+rewrite H1 Bool.orb_false_r-map_f_eq.
+rewrite mem_filter.
+by case:(accept M s).
+by move=>x y[].
+move:scons.
+by case s.
+
+move=>n H.
+have{H}lens:size s = n.+1*(#|state| + 1)+(size s - 1) mod (#|state|+1) +1.
+rewrite H.
+apply/Nat.pred_inj.
+move:scons.
+by case s.
+by rewrite addn1.
+by rewrite addn1-pred_Sn-subn1 mulnC-multE-plusE-Nat.div_mod_eq.
+have H:n.+1 * (#|state| + 1) < size s.
+by rewrite lens!addn1 ltnS leq_addr.
+
+rewrite onestep_prime mem_cat-(cat_take_drop (n.+1 * (#|state| + 1)) s).
+remember (take (n.+1 * (#|state| + 1)) s) as t.
+remember (drop (n.+1 * (#|state| + 1)) s) as u.
+have lent:size t = n.+1*(#|state|+1).
+by rewrite Heqt size_take H.
+have lenu:size u=(size s - 1) mod (#|state| + 1) + 1.
+by rewrite Hequ size_drop{1}lens-addnA add_subABA.
+have lenu':size u <= (#|state|+1).
+rewrite lenu!addn1.
+by apply/ltP/Nat.mod_upper_bound.
+
+rewrite-(mu'lemma2 M).
+apply/bool_eqsplit.
+split.
+move=>acc.
+apply/orP.
+right.
+
+
+apply/map_f'.
+rewrite mem_filter.
+apply/andP.
+split.
+simpl.
+case H1:(size t ==
+  size
+    (take (size t - (index (dstar (delta M) (init M) t) (enum state) + 1)) t)).
+move:H1.
+move/eqP.
+have H1:(size t-(index(dstar(delta M) (init M) t) (enum state) + 1) < size t).
+rewrite ltn_subrL.
+apply/andP.
+split.
+by rewrite addn1.
+by rewrite lent addn1 mulSn addSn.
+rewrite size_take H1=>H2.
+move:H1.
+by rewrite-H2 ltnn.
+done.
+
+by apply/startDomino_gen_prime.
+apply/stopaccept.
+case_eq(u==nil);move/eqP;[move=>unil|done].
+move:lenu.
+by rewrite unil addn1.
+done.
+case_eq(drop(size t-(index(dstar(delta M)(init M) t)(enum state)+1))t==nil);
+move/eqP;[move=>H1|done].
+have:size(drop(size t-(index(dstar(delta M)(init M)t)(enum state) + 1)) t)=0.
+by rewrite H1.
+rewrite size_drop subKn.
+by rewrite addn1.
+rewrite lent mulSn!addn1 addSn-addnS.
+apply/ltn_addr/fin_index.
+rewrite size_drop subKn addn1.
+apply/fin_index.
+rewrite lent mulSn!addn1 addSn-addnS.
+apply/ltn_addr/fin_index.
+
+rewrite size_drop subKn.
+rewrite addn1 subn1 nth_index.
+move:acc.
+by rewrite/accept dstarLemma.
+apply/mem_enum.
+rewrite lent mulSn!addn1 addSn-addnS.
+apply/ltn_addr/fin_index.
+
+move/orP.
+case.
+rewrite mem_filter.
+move/andP.
+case=>_.
+rewrite/wk.
+simpl.
+rewrite onestep_prime mem_cat.
+move/orP.
+case.
+Search map.
+Search (_<=_+_).
+
+
+Search(_-(_-_)).
+
+rewrite Hequ.
+move:lenu.
+rewrite addn1.
+by case u.
+Search (_<_=false).
+rewrite addn1 subnS Heqt size_take.
+Search (_-_<_).
+
+rewrite size_take.
+
+case H1:(size t-(index(dstar(delta M) (init M) t) (enum state) + 1) < size t).
+move=>H2.
+move:H1.
+by rewrite-H2 ltnn.
+Search(_<=_=false).
+move/eqP.
+Search (_<_=false).
+move/eqP.
+rewrite onestep_prime.
+apply/map_f.
+
+
+simpl.
+
+move:H.
+rewrite subn1.
+Search (_.+1<=_.+1).
+ (#|state|+1)(size s - 1)).
+move/leP.
+rewrite multE H.
+Search (_*_)%coq_nat.
+move:Nat.div_mod_eq.
+Search (_/_).
+move:n s {scons}.
+elim.
+move/(ltnn (size s)).
+Search (_<_=false).
+
+
+Search (_.+1<=_.+1).
+rewrite subnS.
+Search (_.+1<=_.+1).
+subnS
+Search size_take.
+rewrite-{1}(cat_take_drop (size s - n.+1) s).
+done.
+
+
+rewrite!addn1.
+move/(map_f (fun p=>Domino p p 0 0)).
+rewrite mem_cat.
+Search 
+have{}H:s\in language (#|state|+1) symbol.
+
+rewrite/Aut_to_Stk.
+simpl.
+rewrite mem_cat.
+
+
+
+Search (_/_=0).
+have{}H:size
+elim:n.
+case:n.
+split.
+move=>acc.
+
+rewrite lang_gen.
+suff H:s\in ss_language_prime 1 (Aut_to_Stk M).
+rewrite H.
+case.
+destruct exists.
+suff H:
+rewrite/Aut_to_Stk.
+rewrite/exists.
 
 Lemma ss_generatelemma (m n:nat)(stk:Sticker)(d:Domino):
   m <= n -> d \in (ss_generate_prime m stk)-> d \in (ss_generate_prime n stk).
