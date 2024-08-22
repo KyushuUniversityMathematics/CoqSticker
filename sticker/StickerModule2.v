@@ -1,6 +1,118 @@
 From mathcomp Require Import all_ssreflect.
+Require Import Arith.
+
+Definition Rho(symbol:finType):=seq(symbol*symbol).
+Structure wk{symbol:finType}{rho:Rho symbol} := Wk{
+  str : seq (symbol*symbol);
+  nilP : str <> nil;
+  rhoP : all(fun p=>p\in rho)str
+}.
+Close Scope nat_scope.
+Definition stickyend{symbol:finType} := bool*seq symbol.
+Inductive domino{symbol:finType}{rho:Rho symbol}:=
+|LR : @stickyend symbol->@wk symbol rho->@stickyend symbol->domino
+|fragment : @stickyend symbol -> domino.
+
+(*Definition wk_eqb{symbol:finType}{rho:Rho symbol}(x y:@wk symbol rho):bool:=
+str x == str y.
+Lemma eq_nilP{symbol:finType}
+Lemma eq_wkP{symbol:finType}{rho:Rho symbol}:
+Equality.axiom (@wk_eqb symbol rho).
+Proof.
+move=>a b;rewrite/wk_eqb;apply/(iffP idP);[|move=>ab;by rewrite ab].
+move/eqP=>H.
+Print wk.
+rewrite H.
+rewrite/=.
+move/eqP=>s01.
+rewrite s01.
+
+
+
+Lemma wk_eq_dec{f:finType}{rho:Rho f}(x y:@wk f rho):{x=y}+{x<>y}.
+destruct x,y.
+Lemma end_eq_dec{symbol:finType}(x y:@stickyend symbol):{x=y}+{x<>y}.
+Proof. by decide equality;[decide equality;case_eq(a1==s);move/eqP;
+[left|right]|apply/Bool.bool_dec]. Qed.
+Lemma domino_eq_dec{symbol:finType}{rho:Rho symbol}(x y:@domino symbol rho):
+{x=y}+{x<>y}.
+Proof.
+decide equality.
+apply/end_eq_dec.
+
+Definition eqb_domino{symbol:finType}{rho:Rho symbol}(x y:@domino symbol rho):=
+match x,y with
+|LR 
+|*)
+
+Lemma cons_nil{t:Type}(a:t)(l:seq t):a::l<>nil. Proof. done. Qed.
+Definition mu_end{symbol:finType}(rho:Rho symbol)(x y:seq symbol):=
+match zip x y with
+|nil => None
+|a::l=> match Bool.bool_dec(all(fun p=>p\in rho)(a::l)) true with
+  |left H => Some{|str:=a::l;nilP:=cons_nil a l;rhoP := H|}
+  |right _=> None
+  end
+end.
+Lemma cat00{t:Type}(x y:seq t):x++y=nil<->x=nil/\y=nil.
+Proof. by split;[case:x;case:y|case=>x' y';rewrite x' y']. Qed.
+Lemma mu_nilP{symbol:finType}{rho:Rho symbol}(x y:@wk symbol rho):
+str x++str y<>nil.
+Proof. rewrite cat00;case=>x'_;by move:(nilP x). Qed.
+Lemma mu_rhoP{symbol:finType}{rho:Rho symbol}(x y:@wk symbol rho):
+all(fun p=>p\in rho)(str x++str y).
+Proof. rewrite all_cat;apply/andP;by move:(rhoP x)(rhoP y). Qed.
+Definition mu_wk{symbol:finType}{rho:Rho symbol}(x y:@wk symbol rho):=
+Wk symbol rho (str x ++ str y)(mu_nilP x y)(mu_rhoP x y).
+
+
+Definition mu{symbol:finType}{rho:Rho symbol}(x y:@domino symbol rho):=
+match x,y with
+|LR l1 s1 (b1,r1),LR (b2,l2) s2 r2 =>
+  match b1,b2 with
+  |true,true => None
+  |true,false =>
+    if size r1 == size l2 then
+      mu_end rho r1 l2
+    else
+      None
+  |false,true =>
+    if size r1 == size l2 then
+      mu_end rho l2 r1
+    else
+      None
+  |false,false => None
+  end
+|_,_=>None
+end.
+Definition mu'{symbol:finType}{rho:Rho symbol}(x)
+Definition mu_end{symbol:finType}(rho:Rho symbol)(x y:seq symbol):=
+if all(fun p=>p\in rho)(zip x y)
+  then Wk symbol rho (zip x y)()
+
+
+
+Definition domino{symbol:finType}{rho:Rho symbol} :=
+@stickyend symbol*@wk symbol rho*@stickyend symbol.
+Definition mu{symbol:finType}{rho:Rho symbol}(x y:option(@domino symbol rho))
+:=true.
+Inductive domino{symbol:finType}{rho:Rho symbol}:=
+|wk' : @wk symbol rho -> domino
+|lwk_ : @stickyend symbol -> @wk symbol rho -> domino
+|_wkr : @wk symbol rho -> @stickyend symbol -> domino.
+|lekr : 
+Lemma rhoPA{symbol:finType}{rho:Rho symbol}(x y z:@wk symbol rho):
+
+Lemma mu_wk_a{symbol:finType}{rho:Rho symbol}(x y z:@wk symbol rho):
+mu_wk(mu_wk x y)z=mu_wk x (mu_wk y z).
+Proof.
+destruct x, y, z.
+rewrite/mu_wk/=.
+Search (_++_++_).
+f_equal.
 
 (*ドミノの定義　nullはエラー型で、通常のドミノは二本のリストと2つのnatで表現*)
+
 Inductive domino{symbol:finType}:=
 |null : domino
 |Domino :seq symbol -> seq symbol -> nat -> nat -> domino.
