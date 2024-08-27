@@ -5,6 +5,8 @@ Inductive domino{symbol:finType}:=
 |null : domino
 |Domino :seq symbol -> seq symbol -> nat -> nat -> domino.
 
+
+
 (*ドミノにeqTypeを付ける。ドミノに==の関数を適用できるように*)
 Definition eqb_domino{s:finType}(d1 d2:@domino s):bool :=
 match d1,d2 with
