@@ -136,7 +136,7 @@ substring 0 (length s + n) (s++t) = s++substring 0 n t.
 Proof. by elim:s;[|move=>a s H;simpl;rewrite H]. Qed.
 
 
-
+(*
 
 Lemma dividestringlemma (n:nat)(s:string):
 concat "" (dividestring n s) = s.
@@ -360,7 +360,7 @@ by move/eqP=>[]=>ab/eqP/H2/eqP=>su;rewrite ab;rewrite su.
 Qed.
 Lemma append_eqlr (s t u v:string):s++u++t==s++v++t=(u==v).
 Proof. by rewrite append_eqr;rewrite append_eql. Qed.
-
+*)
 
 
 

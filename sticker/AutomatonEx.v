@@ -1,5 +1,5 @@
 From mathcomp Require Import all_ssreflect.
-Require Import myAutomaton.
+Require Import AutomatonModule.
 
 (*列挙型の定義*)
 Inductive Z2 := zero|one.
