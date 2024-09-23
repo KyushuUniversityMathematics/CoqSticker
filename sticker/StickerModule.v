@@ -1,17 +1,24 @@
 From mathcomp Require Import all_ssreflect.
-Require Import Arith ProofIrrelevance.
+(*ProofIrrelevanceは同じ言明ならば異なる証明も同じとみなす*)
+Require Import myLemma ProofIrrelevance.
 
+(*対象関係の定義*)
 Definition Rho(symbol:finType):=seq(symbol*symbol).
+
+(*二本鎖部分の構造体を定義
+文字列情報を持ち、空で無いこと、対象関係を満たしていることを要求する*)
 Structure wk{symbol:finType}{rho:Rho symbol} := Wk{
   str : seq (symbol*symbol);
   nilP : str <> nil;
   rhoP : all(fun p=>p\in rho)str
 }.
+(*粘着末端の定義　上側鎖かどうかと文字列の情報を持ち、文字が空でないことを要求する*)
 Structure stickyend{symbol:finType}:= Se{
   is_upper : bool;
   end_str : seq symbol;
   end_nilP : end_str <> nil
 }.
+(*ドミノを定義　二本鎖部分と粘着末端、もしくは空白部の組み合わせからなる*)
 Inductive domino{symbol:finType}{rho:Rho symbol}:=
 |null : domino
 |Simplex : @stickyend symbol -> domino
@@ -20,6 +27,8 @@ Inductive domino{symbol:finType}{rho:Rho symbol}:=
 |R : @wk symbol rho -> @stickyend symbol -> domino
 |LR : @stickyend symbol -> @wk symbol rho -> @stickyend symbol -> domino.
 
+(*#########################################################################*)
+(*ドミノにeqType属性を付与する*)
 Definition wk_eqb{symbol:finType}{rho:Rho symbol}(x y:@wk symbol rho):bool:=
 str x == str y.
 Lemma eq_wkP{symbol:finType}{rho:Rho symbol}:
@@ -37,7 +46,6 @@ Qed.
 Canonical wk_eqMixin{f:finType}{rho:Rho f} := EqMixin (@eq_wkP f rho).
 Canonical wk_eqType{symbol:finType}{rho:Rho symbol} := 
   Eval hnf in EqType _ (@wk_eqMixin symbol rho).
-
 Definition end_eqb{symbol:finType}(x y:@stickyend symbol):bool:=
 match x,y with
 |Se true s1 _,Se true s2 _ => s1==s2
@@ -56,7 +64,6 @@ case:y;case=>H _;by apply/eqP.
 Qed.
 Canonical end_eqMixin{symbol:finType} := EqMixin (@eq_endP symbol).
 Canonical end_eqType{f:finType}:= Eval hnf in EqType _ (@end_eqMixin f).
-
 Lemma domino_eq_dec{symbol:finType}{rho:Rho symbol}(x y:@domino symbol rho):
 {x=y}+{x<>y}.
 Proof.
@@ -71,7 +78,6 @@ case_eq(s0==s2);move/eqP=>H;by [left|right].
 case_eq(w==w0);move/eqP=>H;by [left|right].
 case_eq(s==s1);move/eqP=>H;by [left|right].
 Qed.
-
 Definition domino_eqb{symbol:finType}{rho:Rho symbol}(x y:@domino symbol rho):=
 match domino_eq_dec x y with |left _=> true|_=> false end.
 Lemma eq_dominoP{symbol:finType}{rho:Rho symbol}:
@@ -81,9 +87,12 @@ by case:(domino_eq_dec a b). Qed.
 Canonical domino_eqMixin{f:finType}{rho:Rho f} := EqMixin (@eq_dominoP f rho).
 Canonical domino_eqType{symbol:finType}{rho:Rho symbol} := 
   Eval hnf in EqType _ (@domino_eqMixin symbol rho).
+(*##########################################################################*)
 
+
+(*粘着末端同士の粘着を定義　特定の条件を満たしたときのみwk(二本鎖構造)となる*)
+(*DNAで言うとアニーリングに対応*)
 Lemma cons_nilP{t:Type}(a:t)(l:seq t):a::l<>nil. Proof. done. Qed.
-
 Definition mu_end{symbol:finType}(rho:Rho symbol)(x y:seq symbol):option wk:=
 match zip x y with
 |nil => None
@@ -93,6 +102,7 @@ match zip x y with
   end
 end.
 
+(*wk同士の結合を定義　DNAでのライゲーションが近い*)
 Lemma cat00{t:Type}(x y:seq t):x++y=nil<->x=nil/\y=nil.
 Proof. by split;[case:x;case:y|case=>x' y';rewrite x' y']. Qed.
 Lemma mu_nilP{symbol:finType}{rho:Rho symbol}(x y:@wk symbol rho):
@@ -103,11 +113,9 @@ all(fun p=>p\in rho)(str x++str y).
 Proof. rewrite all_cat;apply/andP;by move:(rhoP x)(rhoP y). Qed.
 Definition mu_wk{symbol:finType}{rho:Rho symbol}(x y:@wk symbol rho):=
 {|str := (str x ++ str y);nilP := (mu_nilP x y);rhoP := (mu_rhoP x y)|}.
-
-Lemma mu_wkA{symbol:finType}{rho:Rho symbol}:associative (@mu_wk symbol rho).
-move=>x y z;apply/eqP;rewrite/mu_wk/=/eq_op/=/wk_eqb/=catA;by apply/eqP. Qed.
 Notation "x # y" := (mu_wk x y)(at level 1,left associativity).
 
+(*ドミノの粘着演算を定義　粘着しない組み合わせはNoneを返す*)
 Definition mu{symbol:finType}{rho:Rho symbol}(x y:@domino symbol rho):=
 match x,y with
 |null,_ => Some y
@@ -194,12 +202,7 @@ match mu d1 x with
 |Some d => mu d d2
 |None => None
 end.
-Fixpoint filter_option{T:Type}(s:seq (option T)):seq T:=
-match s with
-|nil => nil
-|Some t::s' => t::(filter_option s')
-|None::s' => filter_option s'
-end.
+
 
 Definition st_correct{symbol:finType}{rho:Rho symbol}(x:@domino symbol rho):=
 match x with
@@ -226,7 +229,7 @@ match n with
   let A' := ss_generate_prime n' stk in
   let A_wk := [seq a <- A'|is_wk a] in
   let A_nwk := [seq a <- A'|~~ is_wk a] in
-  A_wk++filter_option[seq mu' a d|a<-A_nwk,d <- (extend stk)]
+  undup(A_wk++filter_option[seq mu' a d|a<-A_nwk,d <- (extend stk)])
 end.
 Definition decode{symbol:finType}{rho:Rho symbol}(d:@domino symbol rho):=
 match d with|WK (Wk w _ _) => unzip1 w|_ => nil end.
@@ -267,6 +270,11 @@ zip (a::s) (a::s) <> nil.
 Proof. done. Qed.
 Definition mkwkzip{symbol:finType}(a:symbol)(s:seq symbol):wk :=
 {|str:=zip(a::s)(a::s);nilP:=cons_zip_nilP a s;rhoP:=zip_rhoP(a::s)|}.
+Definition mkWK{symbol:finType}(s:seq symbol):option domino:=
+match s with
+|nil => None
+|a::s' => Some(WK(mkwkzip a s'))
+end.
 
 
 
