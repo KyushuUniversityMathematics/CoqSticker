@@ -4,8 +4,8 @@
 .tex.pdf:
 	latexmk -pdfdvi $<
 
-sources = AutomatonEx.v AutomatonModule.v myLemma.v StickerModule.v
-intermediates = AutomatonEx.tex AutomatonModule.tex myLemma.tex StickerModule.tex
+sources = AutomatonEx.v AutomatonModule.v myLemma.v StickerModule.v ../REG_RSL.v
+intermediates = AutomatonEx.tex AutomatonModule.tex myLemma.tex StickerModule.tex REG_RSL.tex
 
 all: $(intermediates) CoqSticker.tex
 	coqdoc -latex -utf8 --bodyonly $<
