@@ -2,6 +2,7 @@ From mathcomp Require Import all_ssreflect.
 
 Require Import AutomatonModule StickerModule myLemma.
 
+(*オートマトンが受理する非空文字列に対して、対応する二本鎖ドミノを生成する*)
 Definition wkaccept{state symbol:finType}(M:@automaton state symbol)
 (s:seq symbol):option domino :=
 match s with
@@ -12,6 +13,9 @@ match s with
     None
 |_ => None
 end.
+
+(*右上に粘着末端を持つドミノを生成する。上側鎖が文字列情報を持ち、
+粘着末端の長さはδ*(s0,x)に対応 (x:上側鎖の文字列 s0:オートマトンの開始状態 δ*:遷移関数)*)
 Definition startDomino{state symbol:finType}(M:@automaton state symbol)
 (s:seq symbol):domino :=
 let n := (index(dstar(delta M)(init M)s)(enum state) + 1) in
@@ -22,6 +26,9 @@ match w,r with
 |a::w',b::r' => R(mkwkzip a w')(mkend true b r')
 |_,_ => null
 end.
+
+(*左下と右上に粘着末端を持つドミノを生成する。
+右粘着末端の長さはδ*(s,x)に対応 (x:上側鎖の文字列　s:左粘着末端の長さに対応する状態)*)
 Definition extentionDomino{state symbol:finType}(M:@automaton state symbol)
 (s t:seq symbol):domino*domino:=
 let s0 := nth (init M) (enum state) (size t - 1) in
@@ -32,6 +39,9 @@ match t,w,r with
 |a::t',b::w',c::r'=>(null,LR(mkend false a t')(mkwkzip b w')(mkend true c r'))
 |_,_,_ => (null:@domino symbol (zip(enum symbol)(enum symbol)),null)
 end.
+
+(*左下に粘着末端を持つドミノを生成する
+δ(s,x)が受理状態で無ければNoneを返す (x:上側鎖の文字列　s:粘着末端の長さに対応する状態)*)
 Definition stopDomino{state symbol:finType}(M:@automaton state symbol)
 (s t:seq symbol):option(domino*domino):=
 let s0 := nth (init M) (enum state) (size s - 1) in
@@ -45,7 +55,8 @@ match s,t with
 |_,_=>None
 end.
 
-
+(*オートマトンからスティッカーシステムを構成するが、そのとき開始ドミノは
+二本鎖部分を持つ。*)
 Lemma st_correctP{state symbol:finType}(M:@automaton state symbol):
 all st_correct(filter_option[seq wkaccept M s|s<-language'(#|state|.+1)symbol]
   ++[seq startDomino M s|s <- language(#|state|.+1)symbol]).
@@ -103,6 +114,8 @@ apply/leq_subr.
 done.
 Qed.
 
+
+(*オートマトンからスティッカーシステムを構成する*)
 Definition Aut_to_Stk{state symbol:finType}(M:@automaton state symbol):=
 let A1 := filter_option[seq wkaccept M s|s<-language'(#|state|.+1)symbol] in
 let A2 := [seq startDomino M s|s <- language(#|state|.+1)symbol] in
@@ -113,6 +126,12 @@ let D2 := filter_option[seq stopDomino M t s|
 {|start:=(A1++A2);extend:=(D1++D2);startP:=st_correctP M|}.
 
 
+
+(*##########################################################################*)
+(*以下は構成したスティッカーの生成言語が元のオートマトンの受理言語と等しいことを示す*)
+
+(*スティッカーがある文字列sを生成するということは、sに対応する二本鎖配列が
+スティッカーの生成するドミノに含まれる事と等しい*)
 Lemma lang_gen{state symbol:finType}(M:@automaton state symbol)(a:symbol)
 (s:seq symbol)(n:nat):(a::s\in (ss_language_prime n (Aut_to_Stk M))) 
  = (WK(mkwkzip a s)\in[seq d<-ss_generate_prime n (Aut_to_Stk M)|is_wk d]).
@@ -165,7 +184,8 @@ move/(map_f decode).
 by rewrite/=unzip1_zip.
 Qed.
 
-
+(*startDominoとextentionDominoを結合させると、結合する場合は一回り大きいstartDominoに、
+結合しない場合はNoneとなる*)
 Lemma mu'lemma{state symbol:finType}(M:@automaton state symbol)
 (s t u:seq symbol):#|state|.+1<=size s -> size t = #|state|.+1 -> u<>nil->
 mu' (startDomino M s)(extentionDomino M t u)=
@@ -325,6 +345,9 @@ move:H.
 by rewrite e.
 done.
 Qed.
+
+(*startDominoとstopDominoを結合させると結合する場合は二本鎖ドミノに、
+結合しない場合はNoneとなる*)
 Lemma mu'lemma2{state symbol:finType}(M:@automaton state symbol)
 (s t u:seq symbol)(d:domino*domino): #|state|<size s ->
 Some d = (stopDomino M u t)->
@@ -430,7 +453,8 @@ Qed.
 
 
 
-
+(*nステップ進めた際にスティッカーが持つ粘着末端のあるドミノは、
+長さ(n+1)(#|state|+1)の文字列情報をもつstartDominoの形をしている*)
 Lemma start_extend{state symbol:finType}(M:@automaton state symbol)
 (n:nat):[seq startDomino M s|s <- language (n.+1*(#|state|.+1)) symbol] =i
   [seq d<-ss_generate_prime n (Aut_to_Stk M)|~~is_wk d].
@@ -500,8 +524,8 @@ have{H1}H:[seq d <- filter_option([seq mu' a d
               [seq mu' a d| a <- [seq a <- ss_generate_prime n (Aut_to_Stk M)
                           | ~~ is_wk a],d <- filter_option B])| ~~ is_wk d]=i
           [seq d <- filter_option([seq mu' a d
-     | a <- [seq startDomino M s | s <- language (n.+1 * #|state|.+1) symbol], d <- A] ++
-               [seq mu' a d| a <- [seq startDomino M s |
+     | a <- [seq startDomino M s | s <- language (n.+1 * #|state|.+1) symbol],
+ d <- A] ++[seq mu' a d| a <- [seq startDomino M s |
       s <- language (n.+1 * #|state|.+1) symbol],
       d <- filter_option B])| ~~ is_wk d].
 apply/eq_mem_filter/eq_mem_filter_option/eq_mem_cat;
@@ -776,7 +800,10 @@ apply/eq_memT/eq_memS/H3/eq_mem_cons/H/H4.
 apply/H/H4.
 Qed.
 
-
+(*n+1ステップ進めた際にスティッカーが持つ二本鎖ドミノは
+nステップでの二本鎖ドミノに加え、
+長さ(n+1)(#|state|+1)から(n+2)(#|state|+1)まででかつオートマトンが受理する文字列に
+対応する二本鎖ドミノとなっている*)
 Lemma start_stop{state symbol:finType}(M:@automaton state symbol)(n:nat):
 [seq d<-ss_generate_prime n.+1 (Aut_to_Stk M)|is_wk d]=i
 [seq d<-ss_generate_prime n (Aut_to_Stk M)|is_wk d] ++
@@ -1023,6 +1050,10 @@ by case:(take
 apply/H.
 Qed.
 
+
+(*nステップ進めた際にスティッカーが持つ二本鎖ドミノは
+長さ(n+1)(#|state|+1)以下の、
+オートマトンが受理する文字列に対応する二本鎖ドミノとなっている*)
 Lemma accept_gen{state symbol:finType}(M:@automaton state symbol)(n:nat):
 [seq d<-ss_generate_prime n (Aut_to_Stk M)|is_wk d] =i
 filter_option[seq wkaccept M s|s<-language'(n.+1*#|state|.+1)symbol].
@@ -1130,7 +1161,9 @@ Qed.
 
 
 
-
+(*任意のオートマトンに対してある片側スティッカーが存在し、任意の文字列に対して
+オートマトンの受理判定と十分にステップ数を進めたスティッカーの生成可否が一致する。
+すなわち、片側スティッカーの生成能力は正規言語以上である。*)
 Theorem REG_RSL{state symbol:finType}(M:@automaton state symbol)(s:seq symbol)
 (m:nat):s <> nil -> exists n:nat , n <= m ->
 accept M s = (s\in(ss_language_prime m (Aut_to_Stk M))).
