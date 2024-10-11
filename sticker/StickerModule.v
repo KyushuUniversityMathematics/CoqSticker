@@ -483,6 +483,131 @@ match s with
 end.
 
 
+Require Import AutomatonModule.
+(*オートマトンが受理する非空文字列に対して、対応する二本鎖ドミノを生成する*)
+Definition wkaccept{state symbol:finType}(M:@automaton state symbol)
+(s:seq symbol):option domino :=
+match s with
+|a::s'=>
+  if accept M s then
+    Some(WK(mkwkzip a s'))
+  else
+    None
+|_ => None
+end.
+
+(*右上に粘着末端を持つドミノを生成する。上側鎖が文字列情報を持ち、
+粘着末端の長さはδ*(s0,x)に対応 (x:上側鎖の文字列 s0:オートマトンの開始状態 δ*:遷移関数)*)
+Definition startDomino{state symbol:finType}(M:@automaton state symbol)
+(s:seq symbol):domino :=
+let n := (index(dstar(delta M)(init M)s)(enum state) + 1) in
+let w := take(size s - n)s in
+let r := drop(size s - n)s in
+let rho := zip (enum symbol) (enum symbol) in
+match w,r with
+|a::w',b::r' => R(mkwkzip a w')(mkend true b r')
+|_,_ => null
+end.
+
+(*左下と右上に粘着末端を持つドミノを生成する。
+右粘着末端の長さはδ*(s,x)に対応 (x:上側鎖の文字列　s:左粘着末端の長さに対応する状態)*)
+Definition extentionDomino{state symbol:finType}(M:@automaton state symbol)
+(s t:seq symbol):domino*domino:=
+let s0 := nth (init M) (enum state) (size t - 1) in
+let n := index (dstar (delta M) s0 s) (enum state) + 1 in
+let w := take(size s - n)s in
+let r := drop(size s - n)s in
+match t,w,r with
+|a::t',b::w',c::r'=>(null,LR(mkend false a t')(mkwkzip b w')(mkend true c r'))
+|_,_,_ => (null:@domino symbol (zip(enum symbol)(enum symbol)),null)
+end.
+
+(*左下に粘着末端を持つドミノを生成する
+δ(s,x)が受理状態で無ければNoneを返す (x:上側鎖の文字列　s:粘着末端の長さに対応する状態)*)
+Definition stopDomino{state symbol:finType}(M:@automaton state symbol)
+(s t:seq symbol):option(domino*domino):=
+let s0 := nth (init M) (enum state) (size s - 1) in
+match s,t with
+|a::s',b::t'=>
+  if (dstar (delta M) s0 t)\in final M then
+    Some(null:@domino symbol (zip(enum symbol)(enum symbol)),
+      L(mkend false a s')(mkwkzip b t'))
+  else
+    None
+|_,_=>None
+end.
+
+(*オートマトンからスティッカーシステムを構成するが、そのとき開始ドミノは
+二本鎖部分を持つ。*)
+Lemma st_correctP{state symbol:finType}(M:@automaton state symbol):
+all st_correct(filter_option[seq wkaccept M s|s<-language'(#|state|.+1)symbol]
+  ++[seq startDomino M s|s <- language(#|state|.+1)symbol]).
+Proof.
+rewrite all_cat.
+apply/andP.
+split.
+move:(language'nil #|state|.+1 symbol).
+elim:(language' #|state|.+1 symbol).
+done.
+move=>a l H.
+simpl.
+move/andP.
+case=>H1.
+move/H=>{}H.
+rewrite{1}/wkaccept.
+move:H1.
+case:a.
+done.
+move=>a l0 _.
+by case:(accept M (a::l0)).
+
+move:(languagelength #|state|.+1 symbol).
+elim:(language #|state|.+1 symbol).
+done.
+move=>a l H.
+rewrite/=.
+move/andP.
+case=>/eqP H1.
+move/H=>{}H.
+rewrite H Bool.andb_true_r.
+move:H1.
+case:a.
+done.
+simpl.
+move=>a{H}l[H1].
+rewrite/startDomino/=.
+rewrite H1.
+remember(dstar (delta M) (delta M (init M) a) l) as s.
+case H:(take(#|state|.+1 - (index s(enum state) + 1))(a :: l)).
+have:size(take(#|state|.+1-(index s(enum state) + 1))(a :: l))=0.
+by rewrite H.
+have H2:(0 < index s (enum state) + 1);[by rewrite addn1|].
+have H3:(0 < #|state|.+1);[done|].
+rewrite size_take/=H1 ltn_subrL H2 H3/=addn1 subSS =>{H1 H2 H3 Heqs a l}H.
+move:(fin_index s).
+by rewrite-subn_gt0 H.
+rewrite addn1.
+case H2:(drop(#|state|.+1 - (index s(enum state)).+1)(a :: l)).
+have{H2}:size(drop(#|state|.+1 - (index s(enum state)).+1)(a :: l))=0.
+by rewrite H2.
+rewrite size_drop/=H1 subSS subSn.
+done.
+apply/leq_subr.
+done.
+Qed.
+
+
+(*オートマトンからスティッカーシステムを構成する*)
+Definition Aut_to_Stk{state symbol:finType}(M:@automaton state symbol):=
+let A1 := filter_option[seq wkaccept M s|s<-language'(#|state|.+1)symbol] in
+let A2 := [seq startDomino M s|s <- language(#|state|.+1)symbol] in
+let D1 := [seq extentionDomino M s t|s<-language(#|state|.+1)symbol,
+                                     t<-language'(#|state|)symbol] in
+let D2 := filter_option[seq stopDomino M t s|
+  s <- language'(#|state|.+1)symbol,t <- language'(#|state|)symbol] in
+{|start:=(A1++A2);extend:=(D1++D2);startP:=st_correctP M|}.
+
+
 
 
 
