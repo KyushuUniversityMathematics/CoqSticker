@@ -58,5 +58,6 @@ Compute StickerVisualize abAscii(Aut_to_Stk mp).
 Compute DominoVisualize abAscii(WK(mkwkzip a[::b;a;a;b])).
 Definition s:sticker := Sticker ab_finType (zip (enum ab_finType)(enum ab_finType)) [::(WK(mkwkzip a[::b;a;a;b]))] [::((WK(mkwkzip a[::b;a;a;b])),(WK(mkwkzip a[::b;a;a;b])))] erefl.
 Compute StickerVisualize abAscii s.
+Compute enum bool_finType. (*=[::true;false]と本来は表示されるはず*)
 
 

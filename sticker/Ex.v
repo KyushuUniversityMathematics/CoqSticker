@@ -105,6 +105,8 @@ match s,w with
 |_ , _ => _2
 end.
 
+
+(*オートマトン*)
 Definition mp:automaton := {|init:=zero;delta:=delta_mp;final:=[set one]|}.
 Definition m1:automaton := {|init:=_0;delta:=delta_m1;final:=[set _1]|}.
 
@@ -112,3 +114,4 @@ Lemma ac_b : accept mp[::b].
 Proof. by rewrite/accept/=set11. Qed.
 Lemma ac_bbab : accept mp[::b;b;a;b].
 Proof. by rewrite/accept/=set11. Qed.
+
