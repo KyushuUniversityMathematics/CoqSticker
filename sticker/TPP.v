@@ -11,7 +11,7 @@ Compute Swap 2 5 [::0;1;2;3;4;5;6].
 (*indexは0から*)
 
 
-Fixpoint FindCycle(x y z:seq nat)(n:nat):seq nat:=
+Fixpoint FindCycle'(x y z:seq nat)(n:nat):seq nat:=
 match n with
 |0 => z
 |S n' =>
@@ -19,9 +19,27 @@ match n with
   if i == last 0 z then
     z
   else
-    FindCycle x y(i::z)n'
+    FindCycle' x y(rcons z i)n'
 end.
-Compute FindCycle[::5;1;7;9;3][::1;3;5;7;9][::0]4.
+Fixpoint FindCycle'(x y z:seq nat)(n:nat):seq(seq nat):=
+Compute FindCycle[::5;9;1;3;7][::1;3;5;7;9].
+Fixpoint CycleSwap'(x:seq nat):seq(nat*nat):=
+match x with
+|nil => nil
+|a::x' =>
+  match x' with
+  |nil => nil
+  |b::_ =>(a,b)::CycleSwap' x'
+  end
+end.
+Fixpoint CycleSwap(x:seq(seq nat)):seq(nat*nat):=
+match x with
+|nil => nil
+|a::x' => CycleSwap' a ++ CycleSwap x'
+end.
+Definition Cycle'(x y:seq nat):seq nat:=
+
+Theorem CycleP
 Fixpoint CycleDivide'(x y:seq nat)(z:seq(seq nat))(n:nat):seq(seq nat):=
 match n with
 |0 => z
