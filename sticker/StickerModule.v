@@ -21,6 +21,13 @@ Structure stickyend{symbol:finType}:= Se{
 (*ドミノを定義　二本鎖部分と粘着末端、もしくは空白部の組み合わせからなる*)
 Inductive domino{symbol:finType}{rho:Rho symbol}:=
 |null : domino
+|Simplex(s:@stickyend symbol)
+|WK(w:@wk symbol rho)
+|L(l:@stickyend symbol)(w:@wk symbol rho)
+|R(r:@stickyend symbol)(w:@wk symbol rho)
+|LR(l r:@stickyend symbol)(w:@wk symbol rho).
+Inductive domino{symbol:finType}{rho:Rho symbol}:=
+|null : domino
 |Simplex : @stickyend symbol -> domino
 |WK : @wk symbol rho -> domino
 |L : @stickyend symbol -> @wk symbol rho -> domino

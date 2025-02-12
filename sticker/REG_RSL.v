@@ -1131,12 +1131,12 @@ Qed.
 
 
 
-Theorem REG_RSL{state symbol:finType}(M:@automaton state symbol)(s:seq symbol)
-(m:nat):s <> nil -> exists n:nat , n <= m ->
+Theorem REG_RSL{state symbol:finType}(M:@automaton state symbol)(s:seq symbol):
+s <> nil -> exists n:nat ,forall m:nat, n <= m ->
 accept M s = (s\in(ss_language_prime m (Aut_to_Stk M))).
 Proof.
 destruct s as[|a s];[done|]=>_.
-apply ex_intro with (size s)=>H.
+apply ex_intro with (size s)=>m H.
 rewrite lang_gen accept_gen.
 have{H}:a::s\in language' (m.+1 * #|state|.+1) symbol.
 apply/language'lemma.

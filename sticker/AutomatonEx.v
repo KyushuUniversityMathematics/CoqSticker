@@ -14,9 +14,9 @@ match x1,x2 with |a,a=>true|b,b=>true|_,_=>false end.
 
 (*a=bとa==bの互換性の保証*)
 Lemma eq_Z2P:Equality.axiom Z2_eqb.
-Proof. move=>x y;apply: (iffP idP); rewrite /eq_ascii; by destruct x,y. Qed.
+Proof. move=>x y;apply: (iffP idP); rewrite /Z2_eqb; by destruct x,y. Qed.
 Lemma eq_abP:Equality.axiom ab_eqb.
-Proof. move=>x y;apply: (iffP idP); rewrite /eq_ascii; by destruct x,y. Qed.
+Proof. move=>x y;apply: (iffP idP); rewrite /ab_eqb; by destruct x,y. Qed.
 
 (*eqType属性の付与*)
 Definition Z2_eqMixin := EqMixin eq_Z2P.
