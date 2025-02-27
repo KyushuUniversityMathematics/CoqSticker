@@ -1,7 +1,9 @@
 From mathcomp Require Import all_ssreflect.
 
 Require Import AutomatonModule StickerModule myLemma.
-
+(** %
+asdkjabjs
+% **)
 Definition wkaccept{state symbol:finType}(M:@automaton state symbol)
 (s:seq symbol):option domino :=
 match s with
@@ -19,7 +21,7 @@ let w := take(size s - n)s in
 let r := drop(size s - n)s in
 let rho := zip (enum symbol) (enum symbol) in
 match w,r with
-|a::w',b::r' => R(mkwkzip a w')(mkend true b r')
+|a::w',b::r' => R(mkend true b r')(mkwkzip a w')
 |_,_ => null
 end.
 Definition extentionDomino{state symbol:finType}(M:@automaton state symbol)
@@ -29,7 +31,7 @@ let n := index (dstar (delta M) s0 s) (enum state) + 1 in
 let w := take(size s - n)s in
 let r := drop(size s - n)s in
 match t,w,r with
-|a::t',b::w',c::r'=>(null,LR(mkend false a t')(mkwkzip b w')(mkend true c r'))
+|a::t',b::w',c::r'=>(null,LR(mkend false a t')(mkend true c r')(mkwkzip b w'))
 |_,_,_ => (null:@domino symbol (zip(enum symbol)(enum symbol)),null)
 end.
 Definition stopDomino{state symbol:finType}(M:@automaton state symbol)
@@ -50,57 +52,32 @@ Lemma st_correctP{state symbol:finType}(M:@automaton state symbol):
 all st_correct(filter_option[seq wkaccept M s|s<-language'(#|state|.+1)symbol]
   ++[seq startDomino M s|s <- language(#|state|.+1)symbol]).
 Proof.
-rewrite all_cat.
-apply/andP.
-split.
+rewrite all_cat;apply/andP;split.
 move:(language'nil #|state|.+1 symbol).
-elim:(language' #|state|.+1 symbol).
-done.
-move=>a l H.
-simpl.
-move/andP.
-case=>H1.
+elim:(language' #|state|.+1 symbol);[done|]=>a l H.
+move/andP;case=>H1.
 move/H=>{}H.
-rewrite{1}/wkaccept.
-move:H1.
-case:a.
-done.
-move=>a l0 _.
-by case:(accept M (a::l0)).
+rewrite{1}/wkaccept/=.
+by destruct a;[|case:(accept M (s :: a))].
 
 move:(languagelength #|state|.+1 symbol).
-elim:(language #|state|.+1 symbol).
-done.
-move=>a l H.
-rewrite/=.
-move/andP.
-case=>/eqP H1.
-move/H=>{}H.
-rewrite H Bool.andb_true_r.
-move:H1.
-case:a.
-done.
-simpl.
-move=>a{H}l[H1].
-rewrite/startDomino/=.
-rewrite H1.
-remember(dstar (delta M) (delta M (init M) a) l) as s.
+elim:(language #|state|.+1 symbol);[done|]=>a l H.
+move/andP;case=>/eqP H1/H{}H.
+rewrite/={l}H Bool.andb_true_r.
+destruct a as [|a l];[done|].
+rewrite/startDomino H1.
+remember(dstar (delta M) (init M) (a :: l)) as s.
 case H:(take(#|state|.+1 - (index s(enum state) + 1))(a :: l)).
-have:size(take(#|state|.+1-(index s(enum state) + 1))(a :: l))=0.
-by rewrite H.
+have:size(take(#|state|.+1-(index s(enum state) + 1))(a :: l))=0;[by rewrite H|].
 have H2:(0 < index s (enum state) + 1);[by rewrite addn1|].
 have H3:(0 < #|state|.+1);[done|].
-rewrite size_take/=H1 ltn_subrL H2 H3/=addn1 subSS =>{H1 H2 H3 Heqs a l}H.
+rewrite size_take H1 ltn_subrL H2 H3/=addn1 subSS =>{H1 H2 H3 Heqs a l}H.
 move:(fin_index s).
 by rewrite-subn_gt0 H.
 rewrite addn1.
-case H2:(drop(#|state|.+1 - (index s(enum state)).+1)(a :: l)).
-have{H2}:size(drop(#|state|.+1 - (index s(enum state)).+1)(a :: l))=0.
-by rewrite H2.
-rewrite size_drop/=H1 subSS subSn.
-done.
-apply/leq_subr.
-done.
+case H2:(drop(#|state|.+1 - (index s(enum state)).+1)(a :: l));[|done].
+have{H2}:size(drop(#|state|.+1 - (index s(enum state)).+1)(a :: l))=0;[by rewrite H2|].
+by rewrite size_drop H1 subSS subSn;[|apply/leq_subr].
 Qed.
 
 Definition Aut_to_Stk{state symbol:finType}(M:@automaton state symbol):=
@@ -117,52 +94,31 @@ Lemma lang_gen{state symbol:finType}(M:@automaton state symbol)(a:symbol)
 (s:seq symbol)(n:nat):(a::s\in (ss_language_prime n (Aut_to_Stk M))) 
  = (WK(mkwkzip a s)\in[seq d<-ss_generate_prime n (Aut_to_Stk M)|is_wk d]).
 Proof.
-apply/bool_eqsplit.
-split.
 rewrite/ss_language_prime.
-elim(ss_generate_prime n (Aut_to_Stk M)).
-done.
-move=>a0 l H {n}.
-rewrite/=.
-case H1:(is_wk a0);[simpl|by move/H=>{}H].
-rewrite!in_cons.
-move/orP=>[/eqP{}H|].
-apply/orP.
-left.
-rewrite/mkwkzip.
-move:H.
-rewrite/decode{H1}.
-case:a0;(try done).
-case=>st ni rh H.
+elim:(ss_generate_prime n (Aut_to_Stk M));[done|]=>d l H.
+simpl;case:(is_wk d);[|by subst].
+rewrite/=!in_cons H.
+case:(WK (mkwkzip a s) \in [seq d0 <- l | is_wk d0]);[by rewrite!Bool.orb_true_r|].
+rewrite!Bool.orb_false_r.
+apply/bool_eqsplit;split;[|move=>/eqP{}H];(destruct d;[done|done|destruct w|done|done|done]).
+
+have{}H:unzip1 str=unzip2 str.
+move:rhoP{nilP}.
+elim:str;[done|]=>a0 l0{}H/andP.
+case=>H1/H{}H.
+rewrite/=H;f_equal.
+move:H1.
+elim:(enum symbol);[done|]=>a1 l1{}H.
+rewrite/=in_cons=>/orP.
+by case=>[/eqP{}H|];[subst|].
+
+simpl=>/eqP H1.
 apply/eqP.
 f_equal.
 apply/eqP.
-rewrite/eq_op/=/wk_eqb/=(_:(a,a)::zip s s=zip(a::s)(a::s));[|done].
-have H1:unzip1 st=unzip2 st.
-move:rh{ni H}.
-elim:st.
-done.
-move=>a0 l0 H.
-destruct a0.
-simpl.
-move/andP=>[]H1/H{}H.
-f_equal;[|apply/H].
-move:H1.
-elim:(enum symbol).
-done.
-move=>{}a{}l{}H.
-rewrite/=!in_cons.
-move/orP=>[/eqP[H1 H2]|].
-by subst.
-done.
-by rewrite H{2}H1 zip_unzip.
-move/H=>{}H.
-apply/orP.
-by right.
-
-rewrite/ss_language_prime/mkwkzip.
-move/(map_f decode).
-by rewrite/=unzip1_zip.
+rewrite/eq_op/=/wk_eqb/=(_:(a, a) :: zip s s=zip(a::s)(a::s));[|done].
+by rewrite!H1{2}H zip_unzip.
+by rewrite-H/=unzip1_zip.
 Qed.
 
 
@@ -258,10 +214,34 @@ rewrite ltnS.
 apply/ltnW/fin_index.
 
 f_equal.
+
+
+
+rewrite/mkend.
+have:a4::l4=a8::l8.
+rewrite-d3-d2 drop_cat size_cat (_:size s+size t - 
+(index(dstar(delta M)(init M)(s++t))(enum state)+1)<size s=false).
+rewrite-addnBA.
+rewrite add_subABA dstarLemma-ueq size_drop.
+repeat f_equal.
+by rewrite(subKn lens'')subn1 Heqn/=nth_index;[|apply/mem_enum].
+rewrite addn1 lent ltnS.
+apply/ltnW/fin_index.
+
+rewrite-addnBA.
+rewrite ltnNge.
+apply/negbF/leq_addr.
+rewrite addn1 lent ltnS.
+apply/ltnW/fin_index.
+
+move=>[H H1].
+by subst.
+
 rewrite/mkwkzip/mu_wk/=.
 apply/eqP.
 rewrite/eq_op/=/wk_eqb/=.
 apply/eqP.
+
 rewrite-!cons_zip-!zip_cat;[|done|done].
 rewrite-cons_zip-!cat_cons-catA{cons_zip}.
 suff H:((a5::l5)++(a2::l2)++(a3::l3)=(a7::l7)).
@@ -284,27 +264,6 @@ rewrite ltnNge.
 apply/negbF/leq_addr.
 rewrite addn1 lent ltnS.
 apply/ltnW/fin_index.
-
-
-rewrite/mkend.
-have:a4::l4=a8::l8.
-rewrite-d3-d2 drop_cat size_cat (_:size s+size t - 
-(index(dstar(delta M)(init M)(s++t))(enum state)+1)<size s=false).
-rewrite-addnBA.
-rewrite add_subABA dstarLemma-ueq size_drop.
-repeat f_equal.
-by rewrite(subKn lens'')subn1 Heqn/=nth_index;[|apply/mem_enum].
-rewrite addn1 lent ltnS.
-apply/ltnW/fin_index.
-
-rewrite-addnBA.
-rewrite ltnNge.
-apply/negbF/leq_addr.
-rewrite addn1 lent ltnS.
-apply/ltnW/fin_index.
-
-move=>[H H1].
-by subst.
 
 
 
