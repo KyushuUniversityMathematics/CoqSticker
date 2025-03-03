@@ -1,0 +1,4 @@
+-Q sticker MyLib
+sticker/AutomatonModule.v
+sticker/myLemma.v
+sticker/StickerModule.v
