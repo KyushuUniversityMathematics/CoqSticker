@@ -1,7 +1,7 @@
 From mathcomp Require Import all_ssreflect.
 
 (** 有限オートマトンの定義 **)
-Structure automaton{state symbol:finType}:= Automaton {
+Structure automaton {state symbol:finType}:= Automaton {
   init : state;
   delta : state -> symbol -> state;
   final : {set state}

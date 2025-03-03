@@ -1,5 +1,5 @@
 From mathcomp Require Import all_ssreflect.
-Require Import AutomatonModule.
+Require Import MyLib.AutomatonModule.
 
 (*列挙型の定義*)
 Inductive Z2 := zero|one.
@@ -18,8 +18,7 @@ Proof. move=>x y;apply: (iffP idP); rewrite /Z2_eqb; by destruct x,y. Qed.
 Lemma eq_abP:Equality.axiom ab_eqb.
 Proof. move=>x y;apply: (iffP idP); rewrite /ab_eqb; by destruct x,y. Qed.
 
-(*eqType属性の付与*)
-Definition Z2_eqMixin := EqMixin eq_Z2P.
+Definition Z2_eqMixin := eqMixin eq_Z2P.
 Canonical Z2_eqType := Eval hnf in EqType _ Z2_eqMixin.
 Definition ab_eqMixin := EqMixin eq_abP.
 Canonical ab_eqType := Eval hnf in EqType _ ab_eqMixin.

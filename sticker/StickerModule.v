@@ -1,3 +1,4 @@
+From HB Require Import structures.
 From mathcomp Require Import all_ssreflect.
 
 (** %
@@ -6,7 +7,7 @@ From mathcomp Require Import all_ssreflect.
 myLemma:自作の補題集\\
 ProofIrrelevance:同じ言明ならば異なる証明も同じとみなす
 \end{screen}% **)
-Require Import myLemma ProofIrrelevance.
+Require Import MyLib.myLemma ProofIrrelevance.
 
 (** %
 \vspace{0.3cm}
@@ -67,9 +68,7 @@ Proof.
 move=>a b;rewrite/wk_eqb;apply/(iffP idP);[move/eqP|move=>ab;by rewrite ab].
 by destruct a,b;simpl=>H;subst;f_equal;apply/proof_irrelevance.
 Qed.
-Canonical wk_eqMixin{f:finType}{rho:Rho f} := EqMixin (@eq_wkP f rho).
-Canonical wk_eqType{symbol:finType}{rho:Rho symbol} := 
-  Eval hnf in EqType _ (@wk_eqMixin symbol rho).
+HB.instance Definition wk_eqType{f:finType}{rho:Rho f} := hasDecEq.Build wk (@eq_wkP f rho).
 Definition end_eqb{symbol:finType}(x y:@stickyend symbol):bool:=
 match x,y with
 |Se true s1 _,Se true s2 _ => s1==s2
@@ -84,8 +83,7 @@ case:is_upper0;case:is_upper1;[|done|done|];
 move/eqP=>H;subst;f_equal;apply/proof_irrelevance.
 subst;case:y;case=>H _;by apply/eqP.
 Qed.
-Canonical end_eqMixin{symbol:finType} := EqMixin (@eq_endP symbol).
-Canonical end_eqType{f:finType}:= Eval hnf in EqType _ (@end_eqMixin f).
+HB.instance Definition end_eqType{f:finType} := hasDecEq.Build stickyend (@eq_endP f).
 Lemma domino_eq_dec{symbol:finType}{rho:Rho symbol}(x y:@domino symbol rho):
 {x=y}+{x<>y}.
 Proof.
@@ -106,9 +104,7 @@ Lemma eq_dominoP{symbol:finType}{rho:Rho symbol}:
 Equality.axiom (@domino_eqb symbol rho).
 Proof. move=>a b;rewrite/domino_eqb;apply/(iffP idP);
 by case:(domino_eq_dec a b). Qed.
-Canonical domino_eqMixin{f:finType}{rho:Rho f} := EqMixin (@eq_dominoP f rho).
-Canonical domino_eqType{symbol:finType}{rho:Rho symbol} := 
-  Eval hnf in EqType _ (@domino_eqMixin symbol rho).
+HB.instance Definition domino_eqType{f:finType}{rho:Rho f} := hasDecEq.Build domino (@eq_dominoP f rho).
 (*##########################################################################*)
 
 
@@ -560,7 +556,7 @@ match s with
 end.
 
 
-Require Import AutomatonModule.
+Require Import MyLib.AutomatonModule.
 (*オートマトンが受理する非空文字列に対して、対応する二本鎖ドミノを生成する*)
 (** %
 \vspace{0.3cm}

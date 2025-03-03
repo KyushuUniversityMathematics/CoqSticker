@@ -7,9 +7,10 @@ $m,n:nat\\
 m\le n\Rightarrow m-n=0$
 \end{screen}% **)
 Lemma lesub (m n:nat):m <= n <-> (m - n = 0).
-Proof. split;[move/(subnBl_leq 0);by rewrite subn0|].
-move:m;elim:n;[move=>m;rewrite subn0=>H;by rewrite H|].
-move=>n H;by case;[|move=>m;rewrite subSS;move/H].
+Proof.
+  split;[move/(subnBl_leq 0);by rewrite subn0|].
+  move:m;elim:n;[move=>m;rewrite subn0=>H;by rewrite H|].
+  move=>n H;by case;[|move=>m;rewrite subSS;move/H].
 Qed.
 
 (** %
